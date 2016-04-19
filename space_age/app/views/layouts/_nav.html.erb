@@ -6,6 +6,11 @@
     <button class="menu-icon" type="button"></button>
   </div>
   <div class="menu-centered">
+    <ul>
+    <% @destinations.each do |destination| %>
+      <li><%= link_to destination.planet, destination_path(destination.planet) %></li>
+    <% end %>
+  </ul>
     <h4 class="logo"> Logo </h4>
   </div>
 </div>
