@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 feature "user can view index page" do
-  scenario "user will see full options for images" do
+  xscenario "user will see full options for images" do
+
     trip = create_list(:trip, 3)
     visit root_path
     click_on "Trips"

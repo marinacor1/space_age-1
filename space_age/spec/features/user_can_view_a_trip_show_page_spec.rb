@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "user can view the show page of a location" do
-  scenario "user sees detailed information about the specific location" do
+  xscenario "user sees detailed information about the specific location" do
     mars = Trip.create(location: "Mars", price: "999", description: "Enjoy a beatiful stay at the red hot planet.")
     visit_root_path
     click_on "Trips"
