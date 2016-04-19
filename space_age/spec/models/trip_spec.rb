@@ -11,10 +11,11 @@ RSpec.describe Trip, type: :model do
   end
 
   it "can sum the prices in the trip(cart)" do
-    package1 = Package.new(id: 1, price: 1000, title: "Basic", description: "Basic package.")
-    trip = Trip.new({"1" => 1, "2" => 2, "3" => 1})
+    package1 = Package.create(id: 1, price: 1000, title: "Basic", description: "Basic package.")
+    package2 = Package.create(id: 2, price: 2000, title: "Basic", description: "Basic package.")
+    trip = Trip.new({"1" => 1, "2" => 2})
 
-   expect(trip.total_price).to eq()
+   expect(trip.total_price).to eq(5000)
 
   end
 end
