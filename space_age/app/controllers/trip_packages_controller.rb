@@ -1,4 +1,5 @@
 class TripPackagesController < ApplicationController
+
   def create
     package = Package.find(params[:package_id])
 
