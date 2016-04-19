@@ -3,6 +3,7 @@ class PackagesController < ApplicationController
     @packages = Package.all
   end
 
-  def show 
+  def show
+    @package = Package.find(params[:title])
   end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :welcome, only: [ :index ]
 
-  resources :packages, only: [ :index, :show ]
+  resources :packages, param: :title, only: [ :index, :show ]
 
 
 
