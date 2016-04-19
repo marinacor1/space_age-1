@@ -6,7 +6,7 @@ class TripPackagesController < ApplicationController
 
     session[:trip] = @trip.itinerary
 
-    flash.now[:notice] = "You have added #{package.title} to your trip. Your current trip costs: #{package.price}."
+    flash[:notice] = "You have added #{package.title} to your trip. Your current trip costs: #{package.price}."
     redirect_to package_path(package)
   end
 
