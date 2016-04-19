@@ -1,25 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "user can view the show page of a location" do
-  xscenario "user sees detailed information about the specific location" do
-    mars = Trip.create(location: "Mars", price: "999", description: "Enjoy a beatiful stay at the red hot planet.")
-    visit_root_path
-    click_on "Trips"
+  scenario "user sees detailed information about the specific location" do
+    package = create(:package)
+    visit packages_path
+    click_on package.title
 
-    expect(current_path).to eq(trips_path)
+    expect(current_path).to eq(package_path(package))
 
-    click_on "Mars"
-
-    expect(current_path).to eq(trip_path(mars))
-    within("nav_bar") do
-      expect(page).to have_link "Cart", href: cart_path
-      expect(page).to have_content "Logo"
-    end
-    expect(page).to have_content "Mars"
-#    page.has_css?('table tr.foo')
-#   page.should have_css('table tr.foo')
-#   within(:css, "li#employee") do
-    #   fill_in 'Name', :with => 'Jimmy'
-    # end
+    expect(page).to have_content package.title
+    expect(page).to have_content package.description
+    expect(page).to have_content package.price.to_s
+    expect(page).to have_xpath("//img[@src=\"#{package.image}\"]")
   end
 end
