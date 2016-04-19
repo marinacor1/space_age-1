@@ -1,0 +1,8 @@
+<% @packages.each do |package| %>
+  <%= package.title %>
+  <%= package.description %>
+  <%= image_tag package.image %>
+  <%= package.price %>
+<% end %>
+
+<%= @total_price %>

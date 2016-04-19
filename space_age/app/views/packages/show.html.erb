@@ -2,3 +2,4 @@
 <%= @package.description %>
 <%= @package.price %>
 <%= image_tag @package.image %>
+<%= button_to "Add Package to Trip", trip_packages_path(package_id: @package.id) %>
