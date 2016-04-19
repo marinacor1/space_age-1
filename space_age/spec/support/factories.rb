@@ -1,5 +1,6 @@
 FactoryGirl.define do
 
+
   sequence :title, ["explore", "basic", "luxury",
                     "adventure", "family"].cycle do |title|
                     "#{title} package"

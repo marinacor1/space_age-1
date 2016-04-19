@@ -3,6 +3,7 @@ class Trip
 
   def initialize(initial_itinerary)
     @itinerary = initial_itinerary || {}
+    
   end
 
   def add_package(package_id)

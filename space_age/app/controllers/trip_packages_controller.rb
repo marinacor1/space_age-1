@@ -9,4 +9,12 @@ class TripPackagesController < ApplicationController
     redirect_to package_path(package)
   end
 
+  def show
+    itinerary = session[:trip]
+    @total_price = Trip.new(itinerary).total_price
+    @packages = itinerary.keys.map do |id|
+      Package.find(id)
+    end
+  end
+
 end
