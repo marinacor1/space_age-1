@@ -2,11 +2,11 @@ require 'rails_helper'
 
 feature "user can view index page" do
   scenario "user will see full options for images" do
-    destination = create_list(:destination, 3)
+    trip = create_list(:trip, 3)
     visit root_path
     click_on "Destinations" #link to index
 
-    expect(current_path).to eq(destinations_path)
+    expect(current_path).to eq(trips_path)
     # fill_in "location", with: "Mars" #will replace title
     # fill_in "price", with: "$1000"
 

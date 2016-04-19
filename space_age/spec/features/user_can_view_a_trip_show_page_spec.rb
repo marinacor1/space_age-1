@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe "user can view the show page of a location" do
   scenario "user sees detailed information about the specific location" do
-    mars = Destination.create(location: "Mars", price: "999", description: "Enjoy a beatiful stay at the red hot planet.")
+    mars = Trip.create(location: "Mars", price: "999", description: "Enjoy a beatiful stay at the red hot planet.")
     visit_root_path
-    click_on "Destinatons"
+    click_on "Trips"
 
-    expect(current_path).to eq(destinations_path)
+    expect(current_path).to eq(trips_path)
 
     click_on "Mars"
 
-    expect(current_path).to eq(destination_path(mars))
+    expect(current_path).to eq(trip_path(mars))
     within("nav_bar") do
       expect(page).to have_link "Cart", href: cart_path
       expect(page).to have_content "Logo"
