@@ -12,7 +12,7 @@ class Trip
 
   def total_price
     itinerary.map do |id, quantity|
-      Package.find(id.to_s).price * quantity
+      Package.find(id).price * quantity
     end.reduce(:+)
   end
 
