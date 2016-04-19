@@ -13,14 +13,14 @@ feature "user can view index page" do
     # fill_in "description", with: "See the red planet up close."
     within("nav_bar") do
       expect(page).to have_link "Cart", href: cart_path
-      expect(page).to have_content "Website page"
+      expect(page).to have_content "Logo"
     end
     expect(page).to have_content "Mars"
     expect(page).to have_content "See the red planet up close"
     expect(page).to have_content "Moon"
     expect(page).to have_content "Walk on the moon"
     expect(page).to have_content "Deep Space"
-    expect(page).to have_content "See the skies like you have never before"
+    expect(page).to have_content "See the skies like you have never seen them before"
   end
 
 end
