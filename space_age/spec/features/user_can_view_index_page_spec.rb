@@ -4,17 +4,15 @@ feature "user can view index page" do
   scenario "user will see full options for images" do
     trip = create_list(:trip, 3)
     visit root_path
-    click_on "Destinations" #link to index
+    click_on "Trips"
 
     expect(current_path).to eq(trips_path)
-    # fill_in "location", with: "Mars" #will replace title
-    # fill_in "price", with: "$1000"
 
-    # fill_in "description", with: "See the red planet up close."
     within("nav_bar") do
       expect(page).to have_link "Cart", href: cart_path
       expect(page).to have_content "Logo"
     end
+
     expect(page).to have_content "Mars"
     expect(page).to have_content "See the red planet up close"
     expect(page).to have_content "Moon"
@@ -26,9 +24,9 @@ feature "user can view index page" do
 end
 
 
-#Location: Mars, Moon, Deep Space
-#Location table attributes:
-#location, price, description
-#Booking Packages: Hotel, Space Walk, Dinner, Rover Rental, Stargazing
-#Booking packages table attributes:
+#Destination: Mars, Moon, Deep Space
+#Trip table attributes:
+#location, price, description, image_path
+#Extras: Hotel, Space Walk, Dinner, Rover Rental, Stargazing
+#Extras table attributes:
 #Title, description, price
