@@ -17,11 +17,16 @@ FactoryGirl.define do
     Faker::Avatar.image("25x25")
   end
 
+  factory :destination do
+    planet "Mars"
+  end
+
   factory :package do
     title
     price
     description
     image
+    destination
   end
 
 end

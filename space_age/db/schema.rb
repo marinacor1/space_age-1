@@ -11,18 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419172456) do
+ActiveRecord::Schema.define(version: 20160419190603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "destinations", force: :cascade do |t|
+    t.string   "planet"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "packages", force: :cascade do |t|
     t.string   "title"
     t.decimal  "price"
     t.string   "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "destination_id"
   end
 
+  add_index "packages", ["destination_id"], name: "index_packages_on_destination_id", using: :btree
+
+  add_foreign_key "packages", "destinations"
 end

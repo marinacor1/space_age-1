@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :welcome, only: [ :index ]
 
-  resources :packages, param: :title, only: [ :index, :show ]
+  resources :packages, only: [ :index, :show ]
 
-
+  resources :destinations, only: [ :show ]
 
   root "welcome#index"
 
