@@ -4,7 +4,7 @@ class TripPackagesController < ApplicationController
 
     @trip.add_package(package)
 
-    session[:trip] = @trip.contents
+    session[:trip] = @trip.itinerary
 
     flash[:notice] = "You have added #{package.title} to your trip. Your current trip costs: #{package.price}."
     redirect_to package_path(package)
