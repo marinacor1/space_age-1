@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :packages, only: [ :index, :show ]
 
-  resources :destinations, only: [ :show ]
+  resources :destinations, param: :planet, only: [ :show ]
 
   root "welcome#index"
 

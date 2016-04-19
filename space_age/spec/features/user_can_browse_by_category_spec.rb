@@ -9,11 +9,12 @@ RSpec.feature "a guest can browse by destination" do
 
     click_link package.destination.planet
 
-    expect(current_path).to eq destination_path(package.destination)
+    expect(current_path).to eq destination_path(package.destination.planet)
 
-    binding.pry
-    expect(page).to have_link package.title, href: package_path(package)
-    expect(page).to have_xpath("//img[@src=\"#{package.image}\"]")
-    expect(page).to have_link package.image, href: package_path(package)
+    within ".planet-packages" do
+      expect(page).to have_content package.title
+      expect(page).to have_xpath("//img[@src=\"#{package.image}\"]")
+      expect(page).to have_link package.image, href: package_path(package)
+    end 
   end
 end

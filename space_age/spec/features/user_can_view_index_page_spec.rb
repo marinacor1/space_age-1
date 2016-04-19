@@ -10,8 +10,6 @@ feature "user can view package index page" do
 
     expect(current_path).to eq(packages_path)
 
-
-
     expect(page).to have_link package1.title, href: package_path(package1)
     expect(page).to have_xpath("//img[@src=\"#{package1.image}\"]")
     expect(page).to have_link package1.image, href: package_path(package1)
@@ -25,16 +23,4 @@ feature "user can view package index page" do
     expect(page).to have_link package3.image, href: package_path(package3)
 
   end
-
 end
-
-
-#Destination:
-  #Mars, Moon, Deep Space
-#package table attributes:
-  #destination_id, name: "explore package",  price, description, image
-
-
-#Extras: Hotel, Space Walk, Dinner, Rover Rental, Stargazing
-#Extras table attributes:
-#Title, description, price

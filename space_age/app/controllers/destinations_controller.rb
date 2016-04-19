@@ -1,7 +1,7 @@
 class DestinationsController < ApplicationController
 
   def show
-    @destination = Destination.find(params[:id])
+    @destination = Destination.find_by(planet: params[:planet])
   end
 
 end
