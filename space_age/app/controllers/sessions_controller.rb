@@ -1,6 +1,6 @@
-# class SessionsController < ApplicationController
-#
-#   def new
-#   end
-#
-# end
+class SessionsController < ApplicationController
+
+  def new
+  end
+
+end
