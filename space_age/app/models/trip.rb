@@ -16,4 +16,8 @@ class Trip
     end.sum
   end
 
+  def quantity
+    itinerary.values.sum 
+  end
+
 end

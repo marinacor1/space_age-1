@@ -1,4 +1,7 @@
 class TripPackagesController < ApplicationController
+
+  include TripPackagesHelper
+
   def show
     @packages = Package.all
   end
@@ -19,7 +22,20 @@ class TripPackagesController < ApplicationController
     @packages = itinerary.keys.map do |id|
       Package.find(id)
     end
+
   end
+
+  def update
+    if params[:operation] == "+"
+      increment_quantity(params[:id])
+    else
+      decrement_quantity(params[:id])
+    end
+
+    redirect_to '/trip'
+  end
+
+
 
   def destroy
     itinerary = session[:trip]
@@ -28,5 +44,6 @@ class TripPackagesController < ApplicationController
     flash[:delete_package] = "Successfully removed #{@package.title} from your trip"
     redirect_to "/trip"
   end
+
 
 end
