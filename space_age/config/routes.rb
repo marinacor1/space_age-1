@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: "users#show"
 
+  delete '/logout', to: 'sessions#destroy'
+
   resources :users, except: [:new, :show]
 
   get '/trip', to: "trip_packages#show"
