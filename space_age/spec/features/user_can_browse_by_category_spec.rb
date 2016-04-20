@@ -18,7 +18,7 @@ RSpec.feature "a guest can browse by destination" do
     end
   end
 
-  scenario "a guest sees all associated items for a destination" do
+  xscenario "a guest sees all associated items for a destination" do
     destination = Destination.new(id: 1, planet: "Mars")
     package1 = Package.new(title: "Basic", price: 100, description: "Happy place", image: "img1", destination_id: 1)
     package2 = Package.new(title: "Intermediate", price: 200, description: "Really enjoyable", image: "img2", destination_id: 1)

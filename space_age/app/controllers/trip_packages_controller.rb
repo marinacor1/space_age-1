@@ -1,4 +1,8 @@
 class TripPackagesController < ApplicationController
+  def show
+    @packages = Package.all
+  end
+  
   def create
     package = Package.find(params[:package_id])
 
