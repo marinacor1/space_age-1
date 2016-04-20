@@ -1,4 +1,4 @@
 <% @packages.each do |package| %>
-<%= link_to package.title, package %>
-<%= link_to(image_tag(package.image, alt: package.image), package_path(package))%>
+  <%= link_to package.title, package %>
+  <%= link_to(image_tag(package.image, alt: package.image), package_path(package))%>
 <%end %>
