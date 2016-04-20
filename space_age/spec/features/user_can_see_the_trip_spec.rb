@@ -18,7 +18,6 @@ RSpec.feature "user can see their packages in the trip-cart " do
     expect(current_path).to eq "/trip"
 
     total_price = package1.price + package2.price
-
     expect(page).to have_content(package1.title)
     expect(page).to have_content(package1.description)
     expect(page).to have_content(package1.price)
