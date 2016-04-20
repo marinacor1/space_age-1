@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get '/signup', to: "users#new"
 
-  resources :users, except: [:new]
+  get '/dashboard', to: "users#show"
+
+  resources :users, except: [:new, :show]
 
   get '/trip', to: "trip_packages#show"
 

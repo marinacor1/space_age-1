@@ -1,4 +1,5 @@
 New users
+<div class="form">
 
 <%= form_for @user do |f| %>
 <%= f.text_field :username, placeholder: "Username" %>
@@ -7,3 +8,4 @@ New users
 <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
 <%= f.submit "Create Account" %>
 <% end %>
+</div>

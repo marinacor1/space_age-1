@@ -27,12 +27,12 @@ RSpec.feature "guest can register" do
       click_on "Login"
 
       expect(current_path).to eq login_path
-      
+
       click_on "Create Account"
 
       expect(current_path).to eq signup_path
 
-      within 'form' do
+      within ".form" do
         fill_in "Username", with: "User"
         fill_in "Email", with: "email"
         fill_in "Password", with: "password"
@@ -40,7 +40,7 @@ RSpec.feature "guest can register" do
         click_button "Create Account"
       end
 
-      expect(current_path).to eq login_path
+      expect(current_path).to eq dashboard_path
     end
   end
 end
