@@ -8,14 +8,11 @@
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
     <%= render partial: 'layouts/nav' %>
-<% flash.each do |type, message|  %>
-<%= content_tag :div, message, class: "flash#{type}" %>
-<%end %>
-
-
+    <% flash.each do |type, message|  %>
+      <%= content_tag :div, message, class: "flash#{type}" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

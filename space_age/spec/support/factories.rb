@@ -9,17 +9,20 @@ FactoryGirl.define do
   sequence :price, [1000, 2000, 3000, 4000].cycle do |price|
                   price
                 end
+  sequence :planet, ["Mars", "Venus", "Jupiter"].cycle do |planet|
+                  planet
+                end
 
   sequence :description do |n|
     "description#{n}"
   end
 
   sequence :image do |n|
-    Faker::Avatar.image("25x25")
+    Faker::Avatar.image("25x2#{n}")
   end
 
   factory :destination do
-    planet "Mars"
+    planet
   end
 
   factory :package do

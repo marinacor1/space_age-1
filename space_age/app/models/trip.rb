@@ -3,7 +3,6 @@ class Trip
 
   def initialize(initial_itinerary)
     @itinerary = initial_itinerary || {}
-    
   end
 
   def add_package(package_id)
@@ -14,7 +13,7 @@ class Trip
   def total_price
     itinerary.map do |id, quantity|
       Package.find(id).price * quantity
-    end.reduce(:+)
+    end.sum
   end
 
 end

@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Package, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "validations" do
+    it { is_expected.to validate_presence_of(:title) }
+    it { is_expected.to validate_presence_of(:price) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_presence_of(:image) }
+    it { is_expected.to validate_uniqueness_of(:title) }
+    it { is_expected.to validate_uniqueness_of(:description) }
+    it { is_expected.to validate_uniqueness_of(:image) }
+    it { should belong_to(:destination) }
+  end
 end
