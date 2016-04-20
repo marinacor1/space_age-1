@@ -1,4 +1,61 @@
-<% @packages.each do |package| %>
-  <%= link_to package.title, package %>
-  <%= link_to(image_tag(package.image, alt: package.image), package_path(package))%>
-<%end %>
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+    <li class="orbit-slide is-active">
+      <%= image_tag("slide_1.jpeg") %>
+    </li>
+    <li class="orbit-slide">
+      <%= image_tag("slide_1.jpeg") %>
+    </li>
+    <li class="orbit-slide">
+      <%= image_tag("slide_2.jpeg") %>
+    </li>
+    <li class="orbit-slide">
+      <%= image_tag("slide_3.jpeg") %>
+    </li>
+  </ul>
+</div>
+<div class="row column text-center">
+  <h4>All Our Packages</h4>
+  <hr>
+</div>
+<div class="row small-up-2 large-up-4">
+    <% @packages.each do |package| %>
+    <div class="column">
+    <%= link_to(image_tag(package.image, class: "thumbnail", alt: package.image), package_path(package))%>
+    <%= link_to package.title, package, class:"button expanded" %>
+  </div>
+    <%end %>
+
+
+    <!-- <img class="thumbnail" src="http://placehold.it/300x400">
+    <h5>Nulla At Nulla Justo, Eget</h5>
+    <p>$400</p>
+    <a href="#" class="button expanded">Buy</a>
+    <div class="column">
+    <img class="thumbnail" src="http://placehold.it/300x400">
+    <h5>Nulla At Nulla Justo, Eget</h5>
+    <p>$400</p>
+    <a href="#" class="button expanded">Buy</a>
+    </div>
+    <div class="column">
+    <img class="thumbnail" src="http://placehold.it/300x400">
+    <h5>Nulla At Nulla Justo, Eget</h5>
+    <p>$400</p>
+    <a href="#" class="button expanded">Buy</a>
+    </div>
+    <div class="column">
+    <img class="thumbnail" src="http://placehold.it/300x400">
+    <h5>Nulla At Nulla Justo, Eget</h5>
+    <p>$400</p>
+    <a href="#" class="button expanded">Buy</a>
+    </div>
+    </div> -->
+    <hr>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+    $(document).foundation();
+    </script>
