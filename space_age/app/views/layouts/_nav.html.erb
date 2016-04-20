@@ -5,6 +5,9 @@
   <div class="title-bar-right">
     <a href= "<%= trip_path %>" class="cart-icon"><i class="logo fi-shopping-bag"></i></a>
     <%= link_to "Login", login_path %>
+      <% if current_user%>
+        <%="Logged in as #{@user.username}" %>
+      <% end  %>
   </div>
   <div class="menu-centered">
     <ul class = "menu">

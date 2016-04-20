@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :all_destinations
   before_action :set_trip
 
+  helper_method :current_user
+
   def all_destinations
     @destinations = Destination.all
   end
