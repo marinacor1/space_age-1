@@ -1,8 +1,15 @@
-<% @packages.each do |package| %>
-  <%= package.title %>
-  <%= package.description %>
-  <%= image_tag package.image %>
-  <%= package.price %>
+<div class="cart">
+<% unless @packages.nil? %>
+  <% @packages.each do |package| %>
+    <%= package.title %>
+    <%= package.description %>
+    <%= image_tag package.image %>
+    <%= package.price %>
+    <%= link_to "Remove", trip_package_path(package), method: :delete  %>
+  <% end %>
+  <%= @total_price %>
+<% else %>
+  <h1>Your Cart is Empty</h1>
 <% end %>
 
-<%= @total_price %>
+</div>

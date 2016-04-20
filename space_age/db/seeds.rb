@@ -3,7 +3,7 @@
   Destination.create(planet: "Mars")
 
 
-  package = Package.create(title: "Mars Adventure",
+  package = Package.create(title: "Adventure",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_mars_1.jpeg",
@@ -35,9 +35,8 @@
   puts "Created #{package.title}, price: #{package.price}"
 
 
-  # Destination.create(planet: "Venus")
-  # Destination.create(planet: "Mars")
-  # Destination.create(planet: "Jupiter")
+  Destination.create(planet: "Venus")
+
 
 
   package = Package.create(title: "Venus Adventure",
@@ -106,7 +105,3 @@
                            image: "planet_moon_5.jpeg",
                   destination_id: 3)
   puts "Created #{package.title}, price: #{package.price}"
-
-  # Package.create(title: "Explore", destination_id: 1)
-  # Package.create(title: "Adventure", destination_id: 2)
-  # Package.create(title: "Luxury", destination_id: 3)

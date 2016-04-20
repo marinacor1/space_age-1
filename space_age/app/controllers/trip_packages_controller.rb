@@ -20,4 +20,13 @@ class TripPackagesController < ApplicationController
       Package.find(id)
     end
   end
+
+  def destroy
+    itinerary = session[:trip]
+    @package = Package.find(params[:id])
+    itinerary.delete(params[:id])
+    flash[:delete_package] = "Successfully removed #{@package.title} from your trip"
+    redirect_to "/trip"
+  end
+
 end
