@@ -53,4 +53,3 @@ RSpec.feature "a guest can browse by destination" do
     expect(page).to have_content "Site not found."
     end
   end
-end
