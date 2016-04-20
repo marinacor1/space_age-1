@@ -24,12 +24,4 @@ RSpec.feature "a guest can browse by destination" do
       expect(page).to have_content package4.title
   end
 
-  xscenario "user will not be able to see category if category does not exist" do
-    destination = Destination.new(id: 1, planet: "Mars")
-    package1 = Package.new(title: "Basic", price: 100, description: "Happy place", image: "img1", destination_id: 1)
-
-    visit '/neptune'
-
-    expect(page).to have_content "Site not found."
-    end
   end
