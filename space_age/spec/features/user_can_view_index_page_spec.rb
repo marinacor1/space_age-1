@@ -42,8 +42,5 @@ feature "user can view package index page" do
     expect(page).to have_link package3.title, href: package_path(package3)
     expect(page).to have_xpath("//img[@src=\"#{package3.image}\"]")
     expect(page).to have_link package3.image, href: package_path(package3)
-
-
-
   end
 end
