@@ -15,4 +15,5 @@ RSpec.describe "user can land on root path" do
 
   end
 
+#user can see basic layout if in error page? 
 end

@@ -8,7 +8,6 @@ RSpec.feature "a guest can browse by destination" do
     visit root_path
 
     click_link package.destination.planet
-
     expect(current_path).to eq destination_path(package.destination.planet)
 
     within ".planet-packages" do
@@ -41,5 +40,15 @@ RSpec.feature "a guest can browse by destination" do
       expect(page).to have_xpath("//img[@src=\"#{package3.image}\"]")
       expect(page).to have_link package3.image, href: package_path(package3)
     end
+  end
+
+  xscenario "user will not be able to see category if category does not exist" do
+    destination = Destination.new(id: 1, planet: "Mars")
+    package1 = Package.new(title: "Basic", price: 100, description: "Happy place", image: "img1", destination_id: 1)
+
+    visit '/neptune'
+
+    expect(page).to have_content "Site not found."
+
   end
 end

@@ -23,7 +23,7 @@ feature "user can view package index page" do
     expect(page).to have_link package3.image, href: package_path(package3)
   end
 
-  scenario "url is case insensitive for index path" do
+  xscenario "url is case insensitive for index path" do
     package1, package2, package3 = create_list(:package, 3)
 
     visit '/pAckAges'
