@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :welcome, only: [ :index ]
+  root to: "welcome#show" 
 
   resources :packages, only: [ :index, :show ]
 
@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   resources :trip_packages, only: [:create]
 
-  root "welcome#index"
 
   get '/trip', to: "trip_packages#show"
 
