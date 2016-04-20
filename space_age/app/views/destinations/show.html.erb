@@ -1,6 +1,6 @@
 <% @destination.packages.each do |package| %>
-<h3><%= link_to package.title, package_path(package), class: "category-link" %></h3>
-  <div class="column">
+  <div class="column destination">
+    <h3><%= link_to package.title, package_path(package), class: "category-link" %></h3>
     <%= image_tag package.image, class: "package image" %>
   </div>
 <% end %>
