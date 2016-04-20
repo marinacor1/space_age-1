@@ -1,4 +1,5 @@
 
+
   Destination.create(planet: "Mars")
 
 
@@ -34,7 +35,9 @@
   puts "Created #{package.title}, price: #{package.price}"
 
 
-  Destination.create(planet: "Venus")
+  # Destination.create(planet: "Venus")
+  # Destination.create(planet: "Mars")
+  # Destination.create(planet: "Jupiter")
 
 
   package = Package.create(title: "Venus Adventure",
@@ -103,3 +106,7 @@
                            image: "planet_moon_5.jpeg",
                   destination_id: 3)
   puts "Created #{package.title}, price: #{package.price}"
+
+  # Package.create(title: "Explore", destination_id: 1)
+  # Package.create(title: "Adventure", destination_id: 2)
+  # Package.create(title: "Luxury", destination_id: 3)
