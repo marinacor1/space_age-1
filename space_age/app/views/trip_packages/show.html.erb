@@ -1,8 +1,12 @@
-<% @packages.each do |package| %>
-  <%= package.title %>
-  <%= package.description %>
-  <%= image_tag package.image %>
-  <%= package.price %>
-<% end %>
-
+<div class="cart">
+  <%unless @packages.nil? %>
+    <% @packages.each do |package| %>
+    <%= package.title %>
+    <%= package.description %>
+    <%= image_tag package.image %>
+    <%= package.price %>
+  <% end %>
 <%= @total_price %>
+<%else %>
+<h1>Your cart is empty.</h1>
+<%end %>
