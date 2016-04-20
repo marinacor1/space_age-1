@@ -41,12 +41,13 @@ RSpec.feature "user can add package to trip" do
     click_on "Add #{package2.title} to Trip" #this we need to rethink because the link would be for each item
     expect(page).to have_content("You have added #{package2.title} to your trip. Your current trip costs: #{package2.price}.")
 
-    click_on "View My Trip Details"
+    click_on "Trip"
+    total_prices = package1.price + package2.price
 
-    expect(current_path).to eq(trip_path)
+    expect(current_path).to eq("/trip")
     expect(page).to have_content "#{package.title}"
     expect(page).to have_content "#{package.description}"
     expect(page).to have_content "#{package.price}"
-    expect(page).to have_content "Your current trip costs:#{trip.total_price}"
+    expect(page).to have_content "Your current trip costs:#{total_prices}"
   end
 end
