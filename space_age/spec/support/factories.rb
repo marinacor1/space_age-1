@@ -18,11 +18,11 @@ FactoryGirl.define do
   end
 
   sequence :image do |n|
-    Faker::Avatar.image("25x25")
+    Faker::Avatar.image("25x2#{n}")
   end
 
   factory :destination do
-    planet 
+    planet
   end
 
   factory :package do
