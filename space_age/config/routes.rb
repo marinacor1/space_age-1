@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  root to: "welcome#show" 
+  root to: "welcome#show"
+  get '/trip', to: "trip_packages#show"
 
   resources :packages, only: [ :index, :show ]
 
-  resources :destinations, param: :planet, only: [ :show ]
+  # resources :destinations, param: :planet, only: [ :show ]
 
   resources :trip_packages, only: [:create]
 
 
-  get '/trip', to: "trip_packages#show"
+  get '/:planet', to: "destinations#show", as: :destination
 
 end
