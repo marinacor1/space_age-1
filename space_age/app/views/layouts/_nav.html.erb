@@ -4,12 +4,15 @@
   </div>
   <div class="title-bar-right">
     <a href= "<%= trip_path %>" class="cart-icon"><i class="logo fi-shopping-bag"></i></a>
+    <%= link_to "Login", login_path %>
   </div>
   <div class="menu-centered">
     <ul class = "menu">
       <h4 class="logo"> Logo </h4>
-      <% @destinations.each do |destination| %>
-        <li><%= link_to destination.planet, destination_path(destination.planet) %></li>
+      <% unless @destinations.nil? %>
+        <% @destinations.each do |destination| %>
+          <li><%= link_to destination.planet, destination_path(destination.planet) %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

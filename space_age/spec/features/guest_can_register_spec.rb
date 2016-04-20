@@ -26,8 +26,8 @@ RSpec.feature "guest can register" do
 
       click_on "Login"
 
+      save_and_open_page
       expect(current_path).to eq login_path
-
       click_on "Create Account"
 
       expect(current_path).to eq signup_path
@@ -40,7 +40,7 @@ RSpec.feature "guest can register" do
         click_button "Create Account"
       end
 
-      expect(current_path).to eq login_path        
+      expect(current_path).to eq login_path
     end
   end
 end

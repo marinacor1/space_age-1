@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "welcome#show"
+  get '/login', to: "sessions#new"
   get '/trip', to: "trip_packages#show"
 
   resources :packages, only: [ :index, :show ]
@@ -8,5 +9,6 @@ Rails.application.routes.draw do
 
 
   get '/:planet', to: "destinations#show", as: :destination
+
 
 end
