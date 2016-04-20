@@ -19,7 +19,7 @@ class TripPackagesController < ApplicationController
    def show
     itinerary = session[:trip]
     @total_price = Trip.new(itinerary).total_price
-    unless @packages.nil?
+    unless itinerary.empty?
       @packages = itinerary.keys.map do |id|
         Package.find(id)
       end
@@ -32,10 +32,8 @@ class TripPackagesController < ApplicationController
     else
       decrement_quantity(params[:id])
     end
-
     redirect_to '/trip'
   end
-
 
 
   def destroy
