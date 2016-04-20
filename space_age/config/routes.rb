@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :packages, only: [ :index, :show ]
 
-  resources :trip_packages, only: [:create]
+  resources :trip_packages, only: [ :create, :destroy ]
 
 
   get '/:planet', to: "destinations#show", as: :destination

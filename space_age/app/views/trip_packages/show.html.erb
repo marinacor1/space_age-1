@@ -3,6 +3,7 @@
   <%= package.description %>
   <%= image_tag package.image %>
   <%= package.price %>
+  <%= link_to "Remove", trip_package_path(package), method: :delete  %>
 <% end %>
 
 <%= @total_price %>
