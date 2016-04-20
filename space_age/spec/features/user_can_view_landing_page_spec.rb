@@ -14,4 +14,5 @@ RSpec.describe "user can land on root path" do
     # end
 
   end
+
 end
