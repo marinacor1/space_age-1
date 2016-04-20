@@ -14,6 +14,8 @@ RSpec.feature "a guest can browse by destination" do
       expect(page).to have_content package.title
       expect(page).to have_xpath("//img[@src=\"#{package.image}\"]")
       expect(page).to have_link package.image, href: package_path(package)
+      # expect(page).to have_link package.title, href: package_path(package)
+
     end
   end
 
@@ -49,6 +51,6 @@ RSpec.feature "a guest can browse by destination" do
     visit '/neptune'
 
     expect(page).to have_content "Site not found."
-
+    end
   end
 end
