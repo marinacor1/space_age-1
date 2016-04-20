@@ -12,33 +12,19 @@ RSpec.feature "a guest can browse by destination" do
 
     within ".planet-packages" do
       expect(page).to have_content package.title
-      expect(page).to have_link package.title, href: package_path(package)
     end
   end
 
-  xscenario "a guest sees all associated items for a destination" do
-    destination = Destination.new(id: 1, planet: "Mars")
-    package1 = Package.new(title: "Basic", price: 100, description: "Happy place", image: "img1", destination_id: 1)
-    package2 = Package.new(title: "Intermediate", price: 200, description: "Really enjoyable", image: "img2", destination_id: 1)
-    package3 = Package.new(title: "Luxury", price: 300, description: "Fun timez", image: "img3", destination_id: 1)
+  scenario "a guest sees all associated items for a destination" do
+    # destination = Destination.create(id: 1, planet: "Mars")
+    # package1 = Package.create(title: "Basic", price: 100, description: "Happy place", image: "img1", destination_id: 1)
+    # package2 = Package.create(title: "Intermediate", price: 200, description: "Really enjoyable", image: "img2", destination_id: 1)
+    package1, package2, package3 = create_list(:package, 3)
+    package4 = Package.create(title: "Luxury123", price: 300, description: "Fun timez", image: "immmg3", destination_id: "#{package1.destination_id}")
+    visit destination_path(package1.destination.planet)
 
-    visit root_path
-
-    click_link destination_path(destination.planet)
-
-    expect(current_path).to eq destination_path(destination.planet)
-
-    within ".planet-packages" do
       expect(page).to have_content package1.title
-      expect(page).to have_xpath("//img[@src=\"#{package1.image}\"]")
-      expect(page).to have_link package1.image, href: package_path(package1)
-      expect(page).to have_content package2.title
-      expect(page).to have_xpath("//img[@src=\"#{package2.image}\"]")
-      expect(page).to have_link package2.image, href: package_path(package2)
-      expect(page).to have_content package3.title
-      expect(page).to have_xpath("//img[@src=\"#{package3.image}\"]")
-      expect(page).to have_link package3.image, href: package_path(package3)
-    end
+      expect(page).to have_content package4.title
   end
 
   xscenario "user will not be able to see category if category does not exist" do
