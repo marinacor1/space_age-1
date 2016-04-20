@@ -13,7 +13,7 @@ RSpec.feature "user can see their packages in the trip-cart " do
 
     click_on "Add Package to Trip"
 
-    click_on "Trip"
+    find(".cart-icon").click
 
     expect(current_path).to eq "/trip"
 
