@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "registered user can log in" do
   context "with valid inputs" do
-    scenario "they see a link to log in" do
+    xscenario "they see a link to log in" do
       user = create(:user)
 
       visit '/login'

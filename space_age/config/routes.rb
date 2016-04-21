@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   get '/signup', to: "users#new"
   get '/dashboard', to: "users#show"
+  get '/orders' , to: "orders#index"
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, except: [:new, :show]
