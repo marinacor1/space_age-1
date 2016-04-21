@@ -4,12 +4,20 @@
   </div>
   <div class="title-bar-right">
     <a href= "<%= trip_path %>" class="cart-icon"><i class="logo fi-shopping-bag"></i></a>
+      <% if current_user%>
+        <%="Logged in as #{current_user.username}" %>
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", login_path %>
+      <% end  %>
   </div>
   <div class="menu-centered">
     <ul class = "menu">
       <h4 class="logo"> Logo </h4>
-      <% @destinations.each do |destination| %>
-        <li><%= link_to destination.planet, destination_path(destination.planet) %></li>
+      <% unless @destinations.nil? %>
+        <% @destinations.each do |destination| %>
+          <li><%= link_to destination.planet, destination_path(destination.planet) %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>
