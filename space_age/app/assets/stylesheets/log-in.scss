@@ -1,0 +1,46 @@
+// Default medium-gray color
+$medium-gray: black;
+// Default global padding
+$global-padding: 1rem;
+// Global value used for all elements that have a border radius.
+
+// Setting the form border color
+$form-border-color: $medium-gray;
+// Setting the form padding
+$form-padding: $global-padding;
+// Setting the form border radius
+
+
+@import "custom";
+
+.log-in-form {
+  padding: $form-padding;
+}
+
+.full-log-in {
+  @include background-image-spec;
+  background-image: url("https://images.unsplash.com/photo-1447433909565-04bfc496fe73?crop=entropy&dpr=2&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300");
+  min-height: 100vh;
+}
+
+.full-create-account {
+  @include background-image-spec;
+  background-image: url("https://images.unsplash.com/photo-1457364559154-aa2644600ebb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=dccf57fc99b9a448575f0f7b5cb507f4");
+  min-height: 100vh;
+}
+
+.full-log-in h4 {
+  color: white;
+}
+
+.full-create-account h4 {
+  color: white;
+}
+
+.login-page {
+  padding-top: 100px
+}
+
+.pad-header {
+  padding-bottom: 25px;
+}
