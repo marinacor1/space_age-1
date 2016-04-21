@@ -33,7 +33,7 @@ RSpec.feature "User can delete a package from their cart" do
       expect(page).to_not have_content package.title
       expect(page).to_not have_content package.price
       expect(page).to_not have_content package.image
-      expect(page).to have_content "0"
+      expect(page).to have_content "Your Cart is Empty"
     end
   end
 end
