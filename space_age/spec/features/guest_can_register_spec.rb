@@ -13,7 +13,7 @@ RSpec.feature "guest can register" do
 
       expect(current_path).to eq signup_path
 
-      within ".form" do
+      within ".login_form" do
         fill_in "Username", with: "User"
         fill_in "Email", with: "email"
         fill_in "Password", with: "password"
@@ -22,7 +22,7 @@ RSpec.feature "guest can register" do
       end
 
       expect(current_path).to eq dashboard_path
-      within ".title-bar-right" do
+      within ".title-bar-left" do
         expect(page).to have_content "Logged in as #{User.first.username}"
       end
 

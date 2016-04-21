@@ -2,17 +2,21 @@
 <div class="row column cart">
   <% unless @packages.nil? %>
     <% @packages.each do |package| %>
-    <div class="column package">
+    <div class="column">
       <div class="pricing-table">
         <p class="title"><%= package.title %></p>
         <p class="price">$<%=  package.price * package.quantity(session[:trip], package.id) %>
+
           <hr>
         </p>
-
+        <div class="package">
+        <p class="bullet-item"><%= package.description %></p>
+        <p class="bullet-item"><%= image_tag package.image, class: "thumbnail" %></p>
         <p class="bullet-item"><%= package.quantity(session[:trip], package.id) %></p>
         <p class="bullet-item"><%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %></p>
         <p class="bullet-item"><%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %></p>
         <p class="cta-button"><%= button_to "Remove", trip_package_path(package), method: :delete  %></p>
+        </div>
       </ul>
     </div>
     <% end %>
