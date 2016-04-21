@@ -3,11 +3,18 @@ trip-packages show
 <div class="cart">
 <% unless @packages.nil? %>
   <% @packages.each do |package| %>
-    <%= package.title %>
-    <%= package.description %>
-    <%= image_tag package.image %>
-    <%= package.price %>
-    <%= link_to "Remove", trip_package_path(package), method: :delete  %>
+  <div class="row column">
+    <div class="package">
+      <%= package.title %>
+      <%= package.description %>
+      <%= image_tag package.image %>
+      <%= package.quantity(session[:trip], package.id) %>
+      <%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %>
+      <%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %>
+      <%= package.price * package.quantity(session[:trip], package.id) %>
+      <%= link_to "Remove", trip_package_path(package), method: :delete  %>
+    </div>
+  </div>
   <% end %>
   <%= @total_price %>
 <% else %>

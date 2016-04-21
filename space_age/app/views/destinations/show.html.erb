@@ -1,14 +1,6 @@
-<h1>Destinations Show Page</h1>
-
-<div class="planet-packages">
-  <% unless @destination.nil? %>
-    <% @destination.packages.each do |package| %>
-      <div class="<%=package.title%>-package column">
-        <div class="category-link">
-            <h3><%= link_to package.title, package_path(package), class: "category-link" %></h3>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+<% @destination.packages.each do |package| %>
+  <div class="column destination">
+    <h3><%= link_to package.title, package_path(package), class: "category-link" %></h3>
+    <%= image_tag package.image, class: "package image" %>
+  </div>
+<% end %>
