@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/signup', to: "users#new"
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users, except: [:new, :show]
+  resources :users, except: [:new]
 
   namespace :admin do
     get '/dashboard', to: "users#show"

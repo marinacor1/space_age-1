@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def require_login!
+    redirect_to login_path unless current_admin?
+  end
+
   def all_destinations
     @destinations = Destination.all
   end
