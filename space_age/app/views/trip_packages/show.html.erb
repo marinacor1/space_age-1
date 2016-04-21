@@ -1,3 +1,7 @@
+<!-- <<<<<<< HEAD
+<h1>Trip Packages(cart)</h1>
+=======
+>>>>>>> master -->
 
 <div class="row column cart">
   <% unless @packages.nil? %>
@@ -26,4 +30,18 @@
   <div class="row">
     Total Price: <%= @total_price %>
   </div>
+<!-- <<<<<<< HEAD -->
+  <!-- <%# end %> -->
+  <!-- <%#= @total_price %> -->
+<!-- <%# else %> -->
+  <!-- <h1>Your Cart is Empty</h1> -->
+<!-- <%#end %> -->
+<% unless current_user %>
+  <%= link_to "Login or Create Account to Purchase", login_path %>
+<% else %>
+  <%= link_to "Checkout", checkout_path %>
+<% end %>
+
+<!-- =======
+>>>>>>> master -->
 </div>
