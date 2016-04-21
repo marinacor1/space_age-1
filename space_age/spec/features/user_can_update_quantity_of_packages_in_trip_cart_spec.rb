@@ -21,7 +21,7 @@ RSpec.feature "User can edit their cart" do
       expect(page).to have_content package.price * 2
     end
 
-
+    
     first('.package').click_on('+')
 
     expect(current_path).to eq "/trip"

@@ -6,10 +6,11 @@
         <h4 class="text-center pad-header">Please Create an Account</h4>
         <div class="login_form">
           <%= f.text_field :username, placeholder: "Username" %>
-        </div>
-        <%= f.password_field :password, placeholder: "Password" %>
-        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
-        <%= f.submit "Create Account", class: "button expanded"%>
+          <%= f.text_field :email, placeholder: "Email" %>
+          <%= f.password_field :password, placeholder: "Password" %>
+          <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+          <%= f.submit "Create Account", class: "button expanded"%>
+      </div>
       </div>
       <% end %>
   </div>
