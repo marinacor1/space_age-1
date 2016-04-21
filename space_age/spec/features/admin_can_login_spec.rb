@@ -7,7 +7,6 @@ RSpec.feature "admin can login" do
 
     admin_login
     # ApplicationController.any_instance.stubs(:current_user).returns(admin)
-
     expect(current_path).to eq '/admin/dashboard'
     expect(page).to have_content "Admin Dashboard"
   end
