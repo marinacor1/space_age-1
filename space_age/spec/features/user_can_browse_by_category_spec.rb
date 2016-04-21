@@ -10,9 +10,9 @@ RSpec.feature "a guest can browse by destination" do
     click_link package.destination.planet
     expect(current_path).to eq destination_path(package.destination.planet)
 
-    within ".planet-packages" do
-      expect(page).to have_content package.title
-    end
+
+    expect(page).to have_content package.title
+
   end
 
   scenario "a guest sees all associated items for a destination" do
