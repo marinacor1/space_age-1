@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :show]
 
   get '/trip', to: "trip_packages#show"
+  get '/checkout', to: "trip_packages#checkout"
 
   resources :packages, only: [ :index, :show ]
   resources :trip_packages, only: [ :create, :destroy, :update ]
