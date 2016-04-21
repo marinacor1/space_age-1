@@ -19,7 +19,7 @@ class TripPackagesController < ApplicationController
    def show
     itinerary = session[:trip]
     @total_price = Trip.new(itinerary).total_price
-    unless itinerary.empty?
+    unless itinerary.nil?
       @packages = itinerary.keys.map do |id|
         Package.find(id)
       end

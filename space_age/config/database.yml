@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: space_age_production
-  username: space_age
-  password: <%= ENV['SPACE_AGE_DATABASE_PASSWORD'] %>
