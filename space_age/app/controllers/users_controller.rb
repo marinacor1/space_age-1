@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params_check) #might want to do new
+    @user = User.create(params_check) 
     if @user.save
       session[:user_id] = @user.id
       redirect_to '/dashboard'
