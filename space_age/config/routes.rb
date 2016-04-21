@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   get '/signup', to: "users#new"
-  get '/dashboard', to: "users#show"
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, except: [:new, :show]
+
+  namespace :admin do
+    get '/dashboard', to: "users#show"
+  end
 
   get '/trip', to: "trip_packages#show"
   get '/checkout', to: "trip_packages#checkout"
