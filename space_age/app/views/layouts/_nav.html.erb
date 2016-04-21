@@ -18,6 +18,7 @@
         <% @destinations.each do |destination| %>
           <li><%= link_to destination.planet, destination_path(destination.planet) %></li>
         <% end %>
+        <li><%= link_to "All Packages", packages_path %></li>
       <% end %>
     </ul>
   </div>
