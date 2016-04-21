@@ -1,7 +1,21 @@
-packages show page
+<div class="row">
+    <div class="large-12 columns">
+      <%= image_tag @package.image, class: "show-image" %>
+      <hr>
+    </div>
+</div>
+  <div class="row">
+    <div class="large-4 columns">
+      <h5><%= @package.price %></h5>
+      <%= button_to "Add Package to Trip", trip_packages_path(package_id: @package.id) %>
+   </div>
+    <div class="large-8 columns">
+      <h4><%= @package.title  %></h4>
+    </div>
+  </div>
 
-<%= @package.title %>
-<%= @package.description %>
-<%= @package.price %>
-<%= image_tag @package.image %>
-<%= button_to "Add Package to Trip", trip_packages_path(package_id: @package.id) %>
+  <div class="row">
+    <div class="large-8 columns">
+      <p> <%= @package.description %> </p>
+    </div>
+  </div>
