@@ -20,4 +20,8 @@ class TripPackagesController < ApplicationController
       Package.find(id)
     end
   end
+
+  def destroy
+  end
+
 end

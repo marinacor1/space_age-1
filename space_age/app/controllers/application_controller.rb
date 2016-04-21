@@ -10,5 +10,4 @@ class ApplicationController < ActionController::Base
   def set_trip
     @trip = Trip.new(session[:trip])
   end
-
 end
