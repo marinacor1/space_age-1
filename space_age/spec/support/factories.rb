@@ -12,7 +12,13 @@ FactoryGirl.define do
                   planet
                 end
 
-  sequence :name, [1, 2, 3].cycle do |num|
+  sequence :username do |n|
+    "User#{n}"
+  end
+
+  sequence :email do |n|
+    "email#{n}"
+  end
 
 
   sequence :description do |n|
@@ -35,9 +41,9 @@ FactoryGirl.define do
     destination
   end
 
-  factory :user do |n|
-    username "User#{n}"
-    email "email#{n}@email.com"
+  factory :user do
+    username
+    email
     password "password"
     password_confirmation "password"
   end
