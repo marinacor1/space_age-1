@@ -1,6 +1,7 @@
 FactoryGirl.define do
-
-
+  sequence :order, [1, 2].cycle do |user_id|
+                    user_id
+                  end
   sequence :title, ["explore", "basic", "luxury",
                     "adventure", "family"].cycle do |title|
                     "#{title} package"
@@ -13,12 +14,19 @@ FactoryGirl.define do
                   planet
                 end
 
+  sequence :name, [1, 2, 3].cycle do |num|
+
+
   sequence :description do |n|
     "description#{n}"
   end
 
   sequence :image do |n|
     Faker::Avatar.image("25x2#{n}")
+  end
+
+  factory :order do
+   user
   end
 
   factory :destination do
