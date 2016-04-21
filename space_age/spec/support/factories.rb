@@ -33,4 +33,10 @@ FactoryGirl.define do
     destination
   end
 
+  factory :user do
+    username "User"
+    email "email@email.com"
+    password "password"
+    password_confirmation "password"
+  end
 end
