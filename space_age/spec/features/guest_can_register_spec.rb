@@ -56,9 +56,9 @@ RSpec.feature "guest can register" do
       expect(current_path).to eq login_path
 
       expect(page).to_not have_content "Your Account:"
-      expect(page).to_not have_content "Username: #{User.first.username}"
-      expect(page).to_not have_content "Email: #{User.first.email}"
-      expect(page).to_not have_content "Login"
+      expect(page).to_not have_content "Username:"
+      expect(page).to_not have_content "Email:"
+      expect(page).to have_content "Login"
       expect(page).to_not have_link "Logout", logout_path
     end
   end

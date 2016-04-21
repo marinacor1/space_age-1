@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/dashboard'
     else
-      render :new
+      redirect_to login_path
     end
   end
 
