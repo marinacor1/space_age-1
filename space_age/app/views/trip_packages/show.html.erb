@@ -1,40 +1,21 @@
-<div class="cart">
-<% unless @packages.nil? %>
-  <% @packages.each do |package| %>
-  <div class="row column">
-    <div class="package column">
-      <%= package.title %>
-      <%= package.description %>
-      <%= image_tag package.image, class: "thumbnail" %>
-      <%= package.quantity(session[:trip], package.id) %>
-      <%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %>
-      <%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %>
-      <%= package.price * package.quantity(session[:trip], package.id) %>
-      <%= link_to "Remove", trip_package_path(package), method: :delete  %>
-    </div>
-  </div>
-  <% end %>
-  <%= @total_price %>
-<% else %>
-  <h1>Your Cart is Empty</h1>
-<% end %>
-</div>
-
-
-<div class="row cart">
+<div class="row column cart">
   <% unless @packages.nil? %>
-  <% @packages.each do |package| %>
-  <div class="medium-4 columns package">
-     <ul class="pricing-table">
-       <li class="title"><%= package.title %></li>
-       <li class="price">$<%=  package.price * package.quantity(session[:trip], package.id) %>
-         <hr>
-       </li>
+    <% @packages.each do |package| %>
+    <div class="column package">
+      <ul class="pricing-table">
+        <li class="title"><%= package.title %></li>
+        <li class="price">$<%=  package.price * package.quantity(session[:trip], package.id) %>
+          <hr>
+        </li>
 
-       <li class="bullet-item"><%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %></li>
-       <li class="bullet-item"><%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %></li>
-       <li class="bullet-item">2 <span> users</span></li>
-       <li class="cta-button"><button class="button" href="#">Choose Plan</button></li>
-     </ul>
-   </div>
+        <li class="bullet-item"><%= package.quantity(session[:trip], package.id) %></li>
+        <li class="bullet-item"><%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %></li>
+        <li class="bullet-item"><%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %></li>
+        <li class="cta-button"><%= button_to "Remove", trip_package_path(package), method: :delete  %></li>
+      </ul>
+    </div>
+    <% end %>
+  <% else %>
+    <h2> Your Cart is Empty</h1>
+  <% end  %>
 </div>
