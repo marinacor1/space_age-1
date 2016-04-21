@@ -1,29 +1,28 @@
 class TripPackagesController < ApplicationController
+  before_action :find_package
+
 
   include TripPackagesHelper
 
-  def show
-    @packages = Package.all
+
+  def find_package
+    @package = Package.find(params[:package_id])
   end
 
   def create
-    package = Package.find(params[:package_id])
-
     @trip.add_package(package.id)
 
     session[:trip] = @trip.itinerary
-    flash[:notice] = "You have added #{package.title} to your trip. Your current trip costs: #{@trip.total_price}."
-    redirect_to package_path(package)
+    flash[:notice] = "You have added #{@package.title} to your trip. Your current trip costs: #{@trip.total_price}."
+    redirect_to package_path(@package)
   end
 
    def show
-    itinerary = session[:trip]
-    @total_price = Trip.new(itinerary).total_price
-    unless itinerary.nil?
-      @packages = itinerary.keys.map do |id|
-        Package.find(id)
-      end
-    end
+    # unless itinerary.nil?
+    #   @packages = itinerary.keys.map do |id|
+    #     Package.find(id)
+    #   end
+    # end
   end
 
   def update
@@ -38,11 +37,22 @@ class TripPackagesController < ApplicationController
 
   def destroy
     itinerary = session[:trip]
-    @package = Package.find(params[:id])
     itinerary.delete(params[:id])
     flash[:delete_package] = "Successfully removed #{@package.title} from your trip"
     redirect_to "/trip"
   end
 
+end
+
+class TripPackages
+
+  attr_accessor :packages
+
+  def initialize(package_id, itinerary)
+    @packages = Package.find_by
+  end
 
 end
+
+
+en
