@@ -35,8 +35,6 @@
     max-height: 333px;
     position: relative;
     width: 100%;
-    padding-left: 0 !important ;
-    padding-right: 0 !important ;
 }
 
 .column.destination {
@@ -51,4 +49,15 @@
   // left: 500px;
   width: 100%;
   z-index: 1000;
+}
+
+.show-image {
+  max-height: 333px;
+  position: relative;
+  width: 100%;
+}
+
+.thumbnail {
+  height: 300px;
+  width: 400px;
 }
