@@ -20,9 +20,8 @@ class Trip
     itinerary.values.sum
   end
 
-  def adjust_quantity(itinerary, id)
-    
-
+  def sub_quantity
+    itinerary.values_at(id.to_s).sum
   end
 
 end

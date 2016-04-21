@@ -6,11 +6,11 @@ class TripPackagesController < ApplicationController
 
 
   def find_package
-    @package = Package.find(params[:package_id])
+    @package = Package.find(params[:id])
   end
 
   def create
-    @trip.add_package(package.id)
+    @trip.add_package(@package.id)
 
     session[:trip] = @trip.itinerary
     flash[:notice] = "You have added #{@package.title} to your trip. Your current trip costs: #{@trip.total_price}."
@@ -53,6 +53,3 @@ class TripPackages
   end
 
 end
-
-
-en

@@ -5,7 +5,7 @@ class Package < ActiveRecord::Base
 
 
   def quantity(itinerary, id)
-    itinerary.values_at(id.to_s).sum
+  
   end
 
 end
