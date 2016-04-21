@@ -32,6 +32,7 @@ RSpec.feature "registered user can log in" do
       within ".login_form" do
         fill_in "Username", with: "User"
         fill_in "Password", with: "password"
+        click_on "Login"
       end
 
       expect(current_path).to eq(packages_path)
