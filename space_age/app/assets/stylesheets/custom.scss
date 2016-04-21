@@ -28,18 +28,27 @@
 
 .category-link {
   color: white;
-  text-align: center;
   text-transform: uppercase;
-  padding-top: 200px;
 }
 
-.Adventure-package {
-    @include background-image-spec;
-    background-image: url("https://images.unsplash.com/photo-1458785893233-0940d354ed8a?crop=entropy&dpr=2&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300");
-    min-height: 333px;
+.package {
+    max-height: 333px;
+    position: relative;
+    width: 100%;
+    padding-left: 0 !important ;
+    padding-right: 0 !important ;
 }
 
-.thumbnail {
-  width: 300px;
-  height: 275px;
+.column.destination {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.destination h3 {
+  position: absolute;
+  margin-top: 10%;
+  text-align: center;
+  // left: 500px;
+  width: 100%;
+  z-index: 1000;
 }
