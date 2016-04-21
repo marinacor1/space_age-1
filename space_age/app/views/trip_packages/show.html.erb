@@ -4,7 +4,7 @@
     <div class="column">
       <div class="pricing-table">
         <p class="title"><%= package.title %></p>
-        <p class="price">$<%=  package.price * package.quantity(session[:trip], package.id) %>
+        <p class="price">$<%=  package.price * @trip.sub_quantity(package.id) %>
           <hr>
         </p>
       <div class="package">
