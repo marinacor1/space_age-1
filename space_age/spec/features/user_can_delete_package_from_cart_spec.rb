@@ -18,8 +18,7 @@ RSpec.feature "User can delete a package from their cart" do
     click_on "Add Package to Trip"
 
     visit '/trip'
-
-    click_link 'Remove'
+    click_on 'Remove'
 
     expect(current_path).to eq "/trip"
 
