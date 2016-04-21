@@ -7,17 +7,18 @@ require 'rails_helper'
 
 RSpec.feature "user can see past orders" do
   scenario "user will see order history with all past orders" do
-    order1, order2, order3 = create_list(:order, 3)
+    user1, user2 = create_list(:user, 2)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(order1.user)
+    order1 = Order.create(user_id: user1.id)
+    order2 = Order.create(user_id: user1.id)
+    order3 = Order.create(user_id: user2.id)
+
+    ApplicationController.any_instance.stubs(:current_user).returns(user1)
 
     visit '/orders'
 
-    expect(page).to have_content "You ordered: #{order1.order_name}"
-    expect(page).to_not have_content "You ordered: #{order2.order_name}"
-    expect(page).to have_content "You ordered: #{order3.order_name}"
-
-
-    # order1.packages.pluck(:names)
+    expect(page).to have_content "Order Number: #{order1.id}"
+    expect(page).to have_content "Order Number: #{order2.id}"
+    expect(page).to_not have_content "Order Number: #{order3.id}"
   end
 end

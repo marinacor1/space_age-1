@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  
+
   sequence :title, ["explore", "basic", "luxury",
                     "adventure", "family"].cycle do |title|
                     "#{title} package"
@@ -35,9 +35,9 @@ FactoryGirl.define do
     destination
   end
 
-  factory :user do
-    username "User"
-    email "email@email.com"
+  factory :user do |n|
+    username "User#{n}"
+    email "email#{n}@email.com"
     password "password"
     password_confirmation "password"
   end
