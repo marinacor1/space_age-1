@@ -1,4 +1,7 @@
 <div class="row column cart">
+  <% if @trip.itinerary == {} %>
+    <h1 class= "text-center"> Your Cart is Empty </h1>
+  <% else %>
     <table>
       <thead>
         <tr>
@@ -23,7 +26,7 @@
               <%= link_to "", trip_package_path(package, package.id, operation: "-"), method: 'patch', class: "fi-arrow-down" %>
             </td>
             <td><%= package.price * @trip.sub_quantity(package.id) %></td>
-            <td><button class="fi-x"><td>
+            <td><%= link_to "", trip_package_path(package), method: :delete, class: "fi-x"  %></td>
         </tr>
         <% end %>
       </tbody>
@@ -36,5 +39,6 @@
         <%= link_to "Checkout", checkout_path, class: "button success" %>
       <% end %>
     </div>
+  <% end %>
 
 </div>
