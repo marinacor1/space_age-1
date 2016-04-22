@@ -21,8 +21,9 @@ RSpec.feature "User can edit their cart" do
       expect(page).to have_content package.price * 2
     end
 
-    
-    first('.package').click_on('+')
+    within '.package' do
+      first('.fi-arrow-up').click
+    end
 
     expect(current_path).to eq "/trip"
 
@@ -34,9 +35,10 @@ RSpec.feature "User can edit their cart" do
 
     expect(page).to have_content (package.price * 3) + package2.price
 
-
-    first('.package').click_on('-')
-    expect(current_path).to eq "/trip"
+    within '.package' do
+      first('.fi-arrow-down').click
+      expect(current_path).to eq "/trip"
+    end
 
 
     within ".cart" do

@@ -1,95 +1,17 @@
-body {
-  margin: 10rem 0; //for demo only
-  background: #d2d7d3;
-}
 
-$pt-background: #F2F1EF;
-$pt-highlight-color: #F9690E;
-$pt-main-color: #59ABE3;
-
-.pricing-table {
-  position: relative;
-  border-radius: 3px;
-  .title {
-    background: $pt-background;
-    color: $pt-main-color;
-    font-size: 2rem,
-  }
-  .price {
-    background: $pt-background;
-    color: #F9690E;
-    hr {
-      color: scale-color($pt-background, $lightness: -60%);
-      width: 70%;
-      margin: 0 auto;
-    }
-  }
-  .bullet-item {
-    background: $pt-background;
-    border: none;
-    font-size: 2rem;
-    span {
-      font-size: 1.3rem;
-    }
   .cart-image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    text-align: right;
+    width: 100px;
+    height: 100px;
     }
-  }
-}
 
-  .cta-button {
-    background: $pt-background;
-    .button {
-      background-color: $pt-highlight-color;
-      border-radius: 3px;
-      border-bottom: 3px solid scale-color($pt-highlight-color, $lightness: -30%);
-      &:hover {
-        background-color: scale-color($pt-highlight-color, $lightness: -30%);
-      }
-    }
-  span {
-    color: scale-color($pt-background, $lightness: -30%);
+  .fi-x {
+    color: red;
   }
-  transition: 0.4s ease-in-out;
-  z-index:13;
-}
 
-.recommended {
-  z-index:15;
-  box-shadow: 0px 2px 10px 0px rgba(50, 50, 50, 0.5);
-  border: 3px solid $pt-main-color;
-  transform: scale(1.25);
-  .best {
-    background: $pt-background;
-    text-align: center;
-    span {
-      position: relative;
-      text-align: center;
-      display: inline-block;
-      margin: 25%;
-      top: -1px;
-      background-color: $pt-main-color;
-      color: $pt-background;
-      padding: 0.6rem 1.5rem;
-      height: 2rem;
-      border-bottom-right-radius: 6px;
-      border-bottom-left-radius: 6px;
-    }
+  .fi-arrow-up {
+    color: green
   }
-  .title {
-    padding-top: 2rem;
+
+  .fi-arrow-down {
+    color: red 
   }
-  .cta-button .button {
-    background: $pt-main-color;
-    border-bottom: 3px solid scale-color($pt-main-color, $lightness: -30%);
-    &:hover {
-      background-color: scale-color($pt-main-color, $lightness: -30%);
-    }
-  }
-  @media only screen and (max-width: 40.063em) {
-    transform: scale(1);
-  }
-}

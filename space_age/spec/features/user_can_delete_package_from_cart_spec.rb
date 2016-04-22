@@ -10,7 +10,7 @@ RSpec.feature "User can delete a package from their cart" do
     visit '/trip'
 
     within ".package" do
-      click_on 'Remove'
+      find(".fi-x").click
     end
 
     expect(current_path).to eq "/trip"
