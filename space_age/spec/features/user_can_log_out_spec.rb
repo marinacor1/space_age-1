@@ -1,6 +1,4 @@
-# When I click "Logout"
-# Then I should see see "Login"
-# And I should not see "Logout"
+
 require 'rails_helper'
 
 RSpec.feature "user can log out" do
@@ -10,8 +8,8 @@ RSpec.feature "user can log out" do
     visit login_path
 
     within ".login_form" do
-      fill_in "Username", with: "User"
-      fill_in "Password", with: "password"
+      fill_in "Username", with: user.username
+      fill_in "Password", with: user.password
       click_on "Sign In"
     end
 

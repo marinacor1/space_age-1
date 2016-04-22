@@ -1,6 +1,5 @@
 FactoryGirl.define do
 
-
   sequence :title, ["explore", "basic", "luxury",
                     "adventure", "family"].cycle do |title|
                     "#{title} package"
@@ -12,6 +11,15 @@ FactoryGirl.define do
   sequence :planet, ["Mars", "Venus", "Jupiter"].cycle do |planet|
                   planet
                 end
+
+  sequence :username do |n|
+    "User#{n}"
+  end
+
+  sequence :email do |n|
+    "email#{n}"
+  end
+
 
   sequence :description do |n|
     "description#{n}"
@@ -34,8 +42,8 @@ FactoryGirl.define do
   end
 
   factory :user do
-    username "User"
-    email "email@email.com"
+    username
+    email
     password "password"
     password_confirmation "password"
   end
