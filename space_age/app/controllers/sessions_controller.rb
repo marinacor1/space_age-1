@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
       if current_admin?
         redirect_to admin_dashboard_path
       else
-      redirect_to packages_path
-    end
+        redirect_to packages_path
+      end
     else
       flash[:error] = "Incorrect email/password combination."
       redirect_to login_path
