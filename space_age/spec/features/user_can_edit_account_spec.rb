@@ -17,7 +17,6 @@ RSpec.feature "registered user can edit account" do
         fill_in "Password", with: "password"
         click_on "Edit Account"
       end
-
       expect(page).to have_content "JonBNasty"
       expect(page).to not_have_content "Andrew"
     end

@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @user = current_user
     current_user.update(params_check)
     if current_user.update
