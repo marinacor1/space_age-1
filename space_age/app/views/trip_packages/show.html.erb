@@ -1,47 +1,46 @@
-<!-- <<<<<<< HEAD
-<h1>Trip Packages(cart)</h1>
-=======
->>>>>>> master -->
-
 <div class="row column cart">
-  <% unless @packages.nil? %>
-    <% @packages.each do |package| %>
-    <div class="column">
-      <div class="pricing-table">
-        <p class="title"><%= package.title %></p>
-        <p class="price">$<%=  package.price * package.quantity(session[:trip], package.id) %>
-
-          <hr>
-        </p>
-        <div class="package">
-        <p class="bullet-item"><%= package.description %></p>
-        <p class="bullet-item"><%= image_tag package.image, class: "thumbnail" %></p>
-        <p class="bullet-item"><%= package.quantity(session[:trip], package.id) %></p>
-        <p class="bullet-item"><%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %></p>
-        <p class="bullet-item"><%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %></p>
-        <p class="cta-button"><%= button_to "Remove", trip_package_path(package), method: :delete  %></p>
-        </div>
-      </ul>
-    </div>
-    <% end %>
+  <% if @trip.itinerary == {} %>
+    <h1 class= "text-center"> Your Cart is Empty </h1>
   <% else %>
-    <h2> Your Cart is Empty</h1>
-  <% end  %>
-  <div class="row">
-    Total Price: <%= @total_price %>
-  </div>
-<!-- <<<<<<< HEAD -->
-  <!-- <%# end %> -->
-  <!-- <%#= @total_price %> -->
-<!-- <%# else %> -->
-  <!-- <h1>Your Cart is Empty</h1> -->
-<!-- <%#end %> -->
-<% unless current_user %>
-  <%= link_to "Login or Create Account to Purchase", login_path %>
-<% else %>
-  <%= link_to "Checkout", checkout_path %>
-<% end %>
+    <table>
+      <thead>
+        <tr>
+          <th width "200">Package Name</th>
+          <th>Description</th>
+          <th width "200"></th>
+          <th width "150">Price</th>
+          <th width "100">quantity</th>
+          <th width "150">Sub Total</th>
+          <th width "150"></th>
+        </tr>
+      </thead>
+      <tbody class="package">
+        <tr>
+        <% @packages.each do |package| %>
+            <td><%= package.title %></td>
+            <td><%= package.description %></td>
+            <td><%= image_tag package.image, class: "cart-image" %></td>
+            <td><%= package.price %></td>
+              <td><%= @trip.sub_quantity(package.id) %>
+                <%= link_to "", trip_package_path(package, package.id, operation: "+"), method: 'patch', class: "fi-arrow-up" %>
+                <% unless @trip.sub_quantity(package.id) == 1 %>
+                  <%= link_to "", trip_package_path(package, package.id, operation: "-"), method: 'patch', class: "fi-arrow-down" %>
+                <% end  %>
+              </td>
+            <td><%= package.price * @trip.sub_quantity(package.id) %></td>
+            <td><%= link_to "", trip_package_path(package), method: :delete, class: "fi-x"  %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-right">Total Price: <%= @trip.total_price %></div>
+    <div class="text-center">
+      <% unless current_user %>
+        <%= link_to "Login or Create Account to Purchase", login_path, class: "button primary" %>
+      <% else %>
+        <%= link_to "Checkout", checkout_path, class: "button success" %>
+      <% end %>
+    </div>
+  <% end %>
 
-<!-- =======
->>>>>>> master -->
 </div>
