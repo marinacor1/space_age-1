@@ -9,7 +9,7 @@
 #       And I should not see the item listed in cart
 
 RSpec.feature "User can delete a package from their cart" do
-  scenario "they no longer see the package in their cart" do
+  xscenario "they no longer see the package in their cart" do
 
     package = create(:package)
 
