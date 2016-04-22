@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :packages, only: [ :index, :show ]
   resources :trip_packages, only: [ :create, :destroy, :update ]
+  resources :orders, only: [ :show ]
 
   get '/:planet', to: "destinations#show", as: :destination
 end

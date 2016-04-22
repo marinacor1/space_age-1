@@ -1,8 +1,3 @@
-# Background: An existing user that has multiple orders
-# As an Authenticated User
-# When I visit "/orders"
-# Then I should see all orders belonging to me and no other orders
-
 require 'rails_helper'
 
 RSpec.feature "user can see past orders" do

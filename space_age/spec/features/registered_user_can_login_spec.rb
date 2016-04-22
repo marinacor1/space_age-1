@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "registered user can log in" do
   context "with valid inputs" do
-    xscenario "they see a link to log in" do
+    scenario "they see a link to log in" do
       user = create(:user)
 
       visit '/login'
@@ -11,8 +11,8 @@ RSpec.feature "registered user can log in" do
       expect(current_path).to eq(login_path)
 
       within ".login_form" do
-        fill_in "Username", with: "User"
-        fill_in "Password", with: "password"
+        fill_in "Username", with: user.username
+        fill_in "Password", with: user.password
         click_on "Sign In"
       end
 
@@ -31,7 +31,7 @@ RSpec.feature "registered user can log in" do
 
       expect(current_path).to eq(login_path)
       within ".login_form" do
-        fill_in "Username", with: "User"
+        fill_in "Username", with: user.username
         fill_in "Password", with: "password1"
         click_on "Sign In"
       end
@@ -51,7 +51,7 @@ RSpec.feature "registered user can log in" do
       expect(current_path).to eq(login_path)
       within ".login_form" do
         fill_in "Username", with: "Userzz"
-        fill_in "Password", with: "password"
+        fill_in "Password", with: user.password
         click_on "Sign In"
       end
       expect(current_path).to eq(login_path)
