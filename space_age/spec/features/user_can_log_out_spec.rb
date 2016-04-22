@@ -10,7 +10,7 @@ RSpec.feature "user can log out" do
     visit login_path
 
     within ".login_form" do
-      fill_in "Username", with: "User"
+      fill_in "Username", with: "Andrew"
       fill_in "Password", with: "password"
       click_on "Sign In"
     end

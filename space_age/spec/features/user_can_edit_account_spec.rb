@@ -23,7 +23,7 @@ RSpec.feature "registered user can edit account" do
     end
   end
 
-  context "with invalid params as an admin" do
+  xcontext "with invalid params as an admin" do
     xscenario "they see an error message" do
       user = create(:user)
 
@@ -42,7 +42,7 @@ RSpec.feature "registered user can edit account" do
     end
   end
 
-  context "as a guest" do
+  xcontext "as a guest" do
     xscenario "they see an error message" do
       user = create(:user)
 
