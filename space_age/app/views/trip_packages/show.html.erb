@@ -1,33 +1,32 @@
 <div class="row column cart">
-  <% unless @packages.nil? %>
-    <% @packages.each do |package| %>
-    <div class="column">
-      <div class="pricing-table">
-        <p class="title"><%= package.title %></p>
-        <p class="price">$<%=  package.price * @trip.sub_quantity(package.id) %>
-          <hr>
-        </p>
-      <div class="package">
-        <p class="bullet-item"><%= package.description %></p>
-        <!-- <p class="bullet-item"><%= image_tag package.image, class: "thumbnail" %></p> -->
-        <p class="bullet-item"><%= @trip.sub_quantity(package.id) %></p>
-        <p class="bullet-item"><%= button_to "+", trip_package_path(package, package.id, operation: "+"), method: 'patch' %></p>
-        <p class="bullet-item"><%= button_to "-", trip_package_path(package, package.id, operation: "-"), method: 'patch' %></p>
-        <p class="cta-button"><%= button_to "Remove", trip_package_path(package), method: :delete  %></p>
-      </div>
-      </ul>
-    </div>
-    <% end %>
-  <% else %>
-    <h2> Your Cart is Empty</h1>
-  <% end  %>
-  <div class="row">
-    Total Price: <%= @trip.total_price %>
-  </div>
-<% unless current_user %>
-  <%= link_to "Login or Create Account to Purchase", login_path %>
-<% else %>
-  <%= link_to "Checkout", checkout_path %>
-<% end %>
- </div>
- </div>
+    <table>
+      <thead>
+        <tr>
+          <th width "200">Package Name</th>
+          <th>Description</th>
+          <th width "200"></th>
+          <th width "150">Price</th>
+          <th width "100">quantity</th>
+          <th width "150">Sub Total</th>
+        </tr>
+      </thead>
+      <tbody class="package">
+        <tr>
+        <% @packages.each do |package| %>
+            <td><%= package.title %></td>
+            <td><%= package.description %></td>
+            <td><%= image_tag package.image, class: "cart-image" %></td>
+            <td><%= package.price %></td>
+            <td><%= @trip.sub_quantity(package.id) %>
+              <%= button_to "+ ", trip_package_path(package, package.id, operation: "+"), method: 'patch' %>
+              <%= button_to " - ", trip_package_path(package, package.id, operation: "-"), method: 'patch' %>
+            </td>
+            <td><%= package.price * @trip.sub_quantity(package.id) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="text-right">Total Price: <%= @trip.total_price %></div>
+    <div class=""></div>
+
+</div>

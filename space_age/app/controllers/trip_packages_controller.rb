@@ -20,11 +20,7 @@ class TripPackagesController < ApplicationController
   end
 
   def update
-    if params[:operation] == "+"
-      increment_quantity(params[:id])
-    else
-      decrement_quantity(params[:id])
-    end
+    @trip.adjust_quantity(params[:operation], params[:id])
     redirect_to '/trip'
   end
 
@@ -34,16 +30,6 @@ class TripPackagesController < ApplicationController
     @trip.itinerary.delete(params[:id])
     flash[:delete_package] = "Successfully removed #{package.title} from your trip"
     redirect_to "/trip"
-  end
-
-end
-
-class TripPackages
-
-  attr_accessor :packages
-
-  def initialize(package_id, itinerary)
-    @packages = Package.find_by
   end
 
 end
