@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     if current_user.updated_at?
       redirect_to user_path(current_user)
     else
+      flash[:error] = "Your account could not be updated. Please check your input and try again."
       render :edit
     end
   end
