@@ -2,11 +2,20 @@ require 'rails_helper'
 
 RSpec.feature "admin can login" do
   include FeatureHelper
-  it "when logged in admin can see admin dashboard" do
+  it "when admin logs in can see admin dashboard" do
     admin = User.create(username: "adminor", email: "emailzzz", password: "password", password_confirmation: "password", role: 1)
 
     admin_login
     expect(current_path).to eq '/admin/dashboard'
     expect(page).to have_content "Admin Dashboard"
+  end
+
+  it "when non admin tries to access admin dashboard gets error" do
+     user = create(:user)
+
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
+
+    visit admin_dashboard_path
+    expect(page).to have_content "The page you were looking for doesn't exist."
   end
 end
