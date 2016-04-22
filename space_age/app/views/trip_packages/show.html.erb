@@ -21,10 +21,12 @@
             <td><%= package.description %></td>
             <td><%= image_tag package.image, class: "cart-image" %></td>
             <td><%= package.price %></td>
-            <td><%= @trip.sub_quantity(package.id) %>
-              <%= link_to "", trip_package_path(package, package.id, operation: "+"), method: 'patch', class: "fi-arrow-up" %>
-              <%= link_to "", trip_package_path(package, package.id, operation: "-"), method: 'patch', class: "fi-arrow-down" %>
-            </td>
+              <td><%= @trip.sub_quantity(package.id) %>
+                <%= link_to "", trip_package_path(package, package.id, operation: "+"), method: 'patch', class: "fi-arrow-up" %>
+                <% unless @trip.sub_quantity(package.id) == 1 %>
+                  <%= link_to "", trip_package_path(package, package.id, operation: "-"), method: 'patch', class: "fi-arrow-down" %>
+                <% end  %>
+              </td>
             <td><%= package.price * @trip.sub_quantity(package.id) %></td>
             <td><%= link_to "", trip_package_path(package), method: :delete, class: "fi-x"  %></td>
         </tr>
