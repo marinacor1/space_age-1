@@ -109,15 +109,18 @@
 
   user = User.create(username: "default_user_1",
                         email: "default_user_1.email.com",
-                     password: "password",)
+                     password: "password",
+        password_confirmation: "password")
   puts "Created #{user.username}, role: #{user.role}"
   user = User.create(username: "default_user_2",
                         email: "default_user_2.email.com",
-                     password: "password",)
+                     password: "password",
+        password_confirmation: "password")
   puts "Created #{user.username}, role: #{user.role}"
   user = User.create(username: "default_user_3",
                         email: "default_user_3.email.com",
-                     password: "password",)
+                     password: "password",
+        password_confirmation: "password")
   puts "Created #{user.username}, role: #{user.role}\n\n"
 
   #create 3 admins
