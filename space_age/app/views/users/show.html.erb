@@ -2,5 +2,5 @@
   Your Account:
   Username: <%= @user.username %>
   Email: <%= @user.email %>
-  <%= link_to "Edit My Account", edit_user_path %>
+  <%= link_to "Edit My Account", edit_user_path(@user) %>
 </div>
