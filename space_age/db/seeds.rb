@@ -154,18 +154,64 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
+  order = Order.create(user_id: 1)
+  OrderPackage.create(user_id: 1, order_id: 2, package_id: 1)
+  OrderPackage.create(user_id: 1, order_id: 2, package_id: 2)
+  OrderPackage.create(user_id: 1, order_id: 2, package_id: 3)
+  puts "Created order \# #{order.id}"
+  puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"
+
+  order = Order.create(user_id: 1)
+  OrderPackage.create(user_id: 1, order_id: 3, package_id: 1)
+  OrderPackage.create(user_id: 1, order_id: 3, package_id: 2)
+  OrderPackage.create(user_id: 1, order_id: 3, package_id: 3)
+  puts "Created order \# #{order.id}"
+  puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"
+
   order = Order.create(user_id: 2)
-  OrderPackage.create(user_id: 2, order_id: 2, package_id: 3)
-  OrderPackage.create(user_id: 2, order_id: 2, package_id: 4)
-  OrderPackage.create(user_id: 2, order_id: 2, package_id: 5)
+  OrderPackage.create(user_id: 2, order_id: 4, package_id: 3)
+  OrderPackage.create(user_id: 2, order_id: 4, package_id: 4)
+  OrderPackage.create(user_id: 2, order_id: 4, package_id: 5)
+  puts "Created order \# #{order.id}"
+  puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"
+
+  order = Order.create(user_id: 2)
+  OrderPackage.create(user_id: 2, order_id: 5, package_id: 3)
+  OrderPackage.create(user_id: 2, order_id: 5, package_id: 4)
+  OrderPackage.create(user_id: 2, order_id: 5, package_id: 5)
+  puts "Created order \# #{order.id}"
+  puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"
+
+  order = Order.create(user_id: 2)
+  OrderPackage.create(user_id: 2, order_id: 6, package_id: 3)
+  OrderPackage.create(user_id: 2, order_id: 6, package_id: 4)
+  OrderPackage.create(user_id: 2, order_id: 6, package_id: 5)
   puts "Created order \# #{order.id}"
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
   order = Order.create(user_id: 3)
-  OrderPackage.create(user_id: 3, order_id: 3, package_id: 5)
-  OrderPackage.create(user_id: 3, order_id: 3, package_id: 6)
-  OrderPackage.create(user_id: 3, order_id: 3, package_id: 7)
+  OrderPackage.create(user_id: 3, order_id: 7, package_id: 5)
+  OrderPackage.create(user_id: 3, order_id: 7, package_id: 6)
+  OrderPackage.create(user_id: 3, order_id: 7, package_id: 7)
+  puts "Created order \# #{order.id}"
+  puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"
+
+  order = Order.create(user_id: 3)
+  OrderPackage.create(user_id: 3, order_id: 8, package_id: 5)
+  OrderPackage.create(user_id: 3, order_id: 8, package_id: 6)
+  OrderPackage.create(user_id: 3, order_id: 8, package_id: 7)
+  puts "Created order \# #{order.id}"
+  puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"order = Order.create(user_id: 3)
+  OrderPackage.create(user_id: 3, order_id: 9, package_id: 5)
+  OrderPackage.create(user_id: 3, order_id: 9, package_id: 6)
+  OrderPackage.create(user_id: 3, order_id: 9, package_id: 7)
   puts "Created order \# #{order.id}"
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
