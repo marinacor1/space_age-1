@@ -27,7 +27,7 @@
                   <%= link_to "", trip_package_path(package, package.id, operation: "-"), method: 'patch', class: "fi-arrow-down" %>
                 <% end  %>
               </td>
-            <td><%= package.price * @trip.sub_quantity(package.id) %></td>
+            <td><%= @trip.subtotal(package) %></td>
             <td><%= link_to "", trip_package_path(package), method: :delete, class: "fi-x"  %></td>
         </tr>
         <% end %>
