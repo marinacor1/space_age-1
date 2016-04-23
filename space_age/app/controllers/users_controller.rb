@@ -39,8 +39,9 @@ class UsersController < ApplicationController
   def destroy
     @user = current_user
     @user.destroy
-    session.clear 
+    session.clear
     redirect_to root_path
+    flash[:error] = "Account Successfully Deleted"
   end
 
   private
