@@ -3,4 +3,6 @@ class Package < ActiveRecord::Base
   validates_presence_of :title, :price, :description, :image
   validates :title, :description, :image, uniqueness: true
 
+  enum status:  %w(active inactive)
+
 end
