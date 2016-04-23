@@ -13,8 +13,12 @@ RSpec.describe Order, type: :model do
     order = Order.new(id: 1)
     order.save(validate: false)
 
-    order_package = OrderPackage.new(order_id: 1, package_id: 1, sub_quantity: 3)
-    order_package.save(validate: false)
+    order_package1 = OrderPackage.new(order_id: 1, package_id: 1)
+    order_package2 = OrderPackage.new(order_id: 1, package_id: 1)
+    order_package3 = OrderPackage.new(order_id: 1, package_id: 1)
+    order_package1.save(validate: false)
+    order_package2.save(validate: false)
+    order_package3.save(validate: false)
 
     expect(order.package_quantity(1)).to eq 3
   end
@@ -26,13 +30,13 @@ RSpec.describe Order, type: :model do
     order = Order.new(id: 1)
     order.save(validate: false)
 
-    order_package1 = OrderPackage.new(order_id: 1, package_id: 1, sub_quantity: 3)
-    order_package2 = OrderPackage.new(order_id: 1, package_id: 1, sub_quantity: 3)
+    order_package1 = OrderPackage.new(order_id: 1, package_id: 1)
+    order_package2 = OrderPackage.new(order_id: 1, package_id: 1)
     order_package1.save(validate: false)
     order_package2.save(validate: false)
 
 
-    expect(order.total_quantity).to eq 6
+    expect(order.total_quantity).to eq 2
   end
 
   it "can retrieve package_names" do

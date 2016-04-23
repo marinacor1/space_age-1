@@ -11,11 +11,11 @@ class Order < ActiveRecord::Base
   end
 
   def package_quantity(package_id)
-    order_packages.find_by(package_id: package_id).sub_quantity
+    order_packages.where(package_id: package_id).count
   end
 
   def total_quantity
-    order_packages.sum(:sub_quantity)
+    order_packages.count
   end
 
   def package_names
