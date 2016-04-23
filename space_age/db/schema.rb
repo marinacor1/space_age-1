@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421213617) do
+ActiveRecord::Schema.define(version: 20160422142300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,27 @@ ActiveRecord::Schema.define(version: 20160421213617) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "order_packages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "order_id"
+    t.integer  "package_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_packages", ["order_id"], name: "index_order_packages_on_order_id", using: :btree
+  add_index "order_packages", ["package_id"], name: "index_order_packages_on_package_id", using: :btree
+  add_index "order_packages", ["user_id"], name: "index_order_packages_on_user_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "packages", force: :cascade do |t|
     t.string   "title"
@@ -44,5 +65,9 @@ ActiveRecord::Schema.define(version: 20160421213617) do
     t.integer  "role",                  default: 0
   end
 
+  add_foreign_key "order_packages", "orders"
+  add_foreign_key "order_packages", "packages"
+  add_foreign_key "order_packages", "users"
+  add_foreign_key "orders", "users"
   add_foreign_key "packages", "destinations"
 end

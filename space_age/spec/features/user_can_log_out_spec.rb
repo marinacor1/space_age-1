@@ -1,6 +1,4 @@
-# When I click "Logout"
-# Then I should see see "Login"
-# And I should not see "Logout"
+
 require 'rails_helper'
 
 RSpec.feature "user can log out" do

@@ -1,13 +1,3 @@
-# Background: My cart has an item in it
-#       As a visitor
-#       When I visit "/cart"
-#       And I click link "Remove"
-#       Then my current page should be "/cart"
-#       And I should see a message styled in green
-#       And the message should say "Successfully removed SOME_ITEM from your cart."
-#       And the title "SOME_ITEM" should be a link to that item in case the user wants to add it back
-#       And I should not see the item listed in cart
-
 RSpec.feature "User can delete a package from their cart" do
   xscenario "they no longer see the package in their cart" do
 
@@ -20,7 +10,7 @@ RSpec.feature "User can delete a package from their cart" do
     visit '/trip'
 
     within ".package" do
-      click_on 'Remove'
+      find(".fi-x").click
     end
 
     expect(current_path).to eq "/trip"

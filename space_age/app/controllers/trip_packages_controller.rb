@@ -2,13 +2,8 @@ class TripPackagesController < ApplicationController
 
   include TripPackagesHelper
 
-  def show
-    @packages = Package.all
-  end
-
   def create
     package = Package.find(params[:package_id])
-
     @trip.add_package(package.id)
 
     session[:trip] = @trip.itinerary
@@ -17,32 +12,24 @@ class TripPackagesController < ApplicationController
   end
 
    def show
-    itinerary = session[:trip]
-    @total_price = Trip.new(itinerary).total_price
-    unless itinerary.nil?
-      @packages = itinerary.keys.map do |id|
+    unless @trip.itinerary.nil?
+      @packages = @trip.itinerary.keys.map do |id|
         Package.find(id)
       end
     end
   end
 
   def update
-    if params[:operation] == "+"
-      increment_quantity(params[:id])
-    else
-      decrement_quantity(params[:id])
-    end
+    @trip.adjust_quantity(params[:operation], params[:id])
     redirect_to '/trip'
   end
 
 
   def destroy
-    itinerary = session[:trip]
-    @package = Package.find(params[:id])
-    itinerary.delete(params[:id])
-    flash[:delete_package] = "Successfully removed #{@package.title} from your trip"
+    package = Package.find(params[:id])
+    @trip.itinerary.delete(params[:id])
+    flash[:delete_package] = "Successfully removed #{package.title} from your trip"
     redirect_to "/trip"
   end
-
 
 end

@@ -1,0 +1,12 @@
+<h1>Order # <%= @order.id %> details</h1>
+<hr>
+<ul>
+  <% @order.packages.each do |package| %>
+    <li><%= package.title %> <%= link_to "show", package_path(package) %> Cost: <%= package.price %></li><br>
+  <% end %>
+</ul>
+<hr>
+<h5>Submitted <%= @order.created_at %></h5>
+<h5>Total price for this order: <%= @order.total_cost %></h5>
+<h5>order <%= @order.status %> @ <%= @order.updated_at %> </h5>
+<hr>
