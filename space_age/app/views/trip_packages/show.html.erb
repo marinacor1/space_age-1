@@ -38,7 +38,7 @@
       <% unless current_user %>
         <%= link_to "Login or Create Account to Purchase", login_path, class: "button primary" %>
       <% else %>
-        <%= link_to "Checkout", checkout_path, class: "button success" %>
+        <%= link_to "Checkout", orders_path, class: "button success", method: :post %>
       <% end %>
     </div>
   <% end %>
