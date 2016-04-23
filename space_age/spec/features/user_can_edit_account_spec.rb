@@ -18,13 +18,17 @@ RSpec.feature "registered user can edit account" do
         fill_in "Password confirmation", with: "password1"
         click_on "Edit Account"
       # end
+       #is there a way to test that admin has been updated?
       expect(page).to have_content "JonBNasty@nasty.com"
       expect(page).not_to have_content "email@email.com"
     end
   end
 
   context "with invalid params as an admin" do
-    scenario "they see an error message" do
+    scenario "they are redirected to index" do
+      #TODO currently the admin can reach all these sites, however when they edit, they end up editing themselves
+      #this is not easily testable in a feature test but is in the model test
+      
       user = create(:user)
       admin = User.create(username: "adminor", email: "emailzzz", password: "password", password_confirmation: "password", role: 1)
 
@@ -39,8 +43,13 @@ RSpec.feature "registered user can edit account" do
       end
 
       visit dashboard_path(user)
-      expect(page).to_not have_content "Edit My Account"
+      click_on "Edit My Account"
 
+      fill_in "Username", with: "adminorz"
+      fill_in "Password", with: "password"
+      click_on "Edit Account"
+
+      #currently the admin can edit, but it's its own account
       visit edit_user_path(user)
       expect(page).to have_content "The page you were looking for doesn't exist."
     end
