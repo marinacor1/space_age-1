@@ -19,8 +19,8 @@
         <% @orders.each do |order| %>
           <td><%= order.id %></td>
           <td><%= order.status %></td>
-          <td><%= order.total_cost%></td>
-          <td><%= order.total_quantity %></td>
+          <td><%= order.package_total_price%></td>
+          <td><%= order.total_cost %></td>
           <td><%= order.package_names %></td>
           <td><%= link_to "View", order_path(order), class: "button primary" %></td>
       </tr>

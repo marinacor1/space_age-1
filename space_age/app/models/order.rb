@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
 
   enum status: %w(Pending Paid Cancelled)
 
+
   def package_total_price
     packages.sum(:price)
   end
