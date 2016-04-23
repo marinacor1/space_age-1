@@ -3,18 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Eccentric" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <%= render partial: 'layouts/nav' %>
-  <div class="flash">
+  <div class="row flash small-4 small-offset-2 no-border">
     <% flash.each do |type, message|  %>
-      <%= content_tag :div, message, class: "flash_#{type}" %>
+    <div class="callout" data-closable>
+        <%= content_tag :div, message, class: "callout #{type}" %>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     <% end %>
   </div>
     <%= yield %>
   </body>
 </html>
+
+<!-- <div class="alert callout" data-closable>
+  <h5>This is Important!</h5>
+  <p>But when you're done reading it, click the close button in the corner to dismiss this alert.</p>
+  <p>I'm using the default <code>data-closable</code> parameters, and simply fade out.</p>
+
+</div>
+<div class="success callout" data-closable="slide-out-right">
+  <h5>This a friendly message.</h5>
+  <p>And when you're done with me, I close using a Motion UI animation.</p>
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> -->

@@ -208,7 +208,9 @@
   OrderPackage.create(user_id: 3, order_id: 8, package_id: 7)
   puts "Created order \# #{order.id}"
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
-  puts "for #{order.user.username}"order = Order.create(user_id: 3)
+  puts "for #{order.user.username}"
+  
+  order = Order.create(user_id: 3)
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 5)
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 6)
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 7)
