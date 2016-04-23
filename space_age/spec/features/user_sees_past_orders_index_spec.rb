@@ -12,8 +12,8 @@ RSpec.feature "user can see past orders" do
 
     visit '/orders'
 
-    expect(page).to have_content "Order Number: #{order1.id}"
-    expect(page).to have_content "Order Number: #{order2.id}"
-    expect(page).to_not have_content "Order Number: #{order3.id}"
+    expect(page).to have_content order1.id
+    expect(page).to have_content order2.id
+    expect(page).to_not have_content order3.id
   end
 end

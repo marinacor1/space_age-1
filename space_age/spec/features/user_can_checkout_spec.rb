@@ -20,9 +20,16 @@ RSpec.feature "User can checkout" do
     expect(current_path).to eq orders_path
 
     order = Order.first
-
     expect(page).to have_content "Order was Successfully Placed"
-    expect(page).to have_content "Order Number: #{order.id}"
-    expect(page).to have_link "View", order_path(order)
+
+    within '.orders' do
+      expect(page).to have_content order.id
+      expect(page).to have_content order.status
+      expect(page).to have_content order.total_cost
+      expect(page).to have_content order.total_quantity
+      expect(page).to have_content order.package_names
+      expect(page).to have_link "View", order_path(order)
+    end
   end
+  scenario
 end

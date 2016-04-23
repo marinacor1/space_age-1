@@ -11,6 +11,10 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def package_total_price
+    packages.sum(:price)
+  end
+
   def package_quantity(package_id)
     order_packages.find_by(package_id: package_id).sub_quantity
   end

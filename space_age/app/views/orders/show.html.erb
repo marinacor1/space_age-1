@@ -1,4 +1,4 @@
-<h1>Order # <%= @order.id %> details</h1>
+<h1><%= @order.id %> details</h1>
 <hr>
 <ul>
   <% @order.packages.each do |package| %>
@@ -7,6 +7,6 @@
 </ul>
 <hr>
 <h5>Submitted <%= @order.created_at %></h5>
-<h5>Total price for this order: <%= @order.total_cost %></h5>
-<h5>order <%= @order.status %> @ <%= @order.updated_at %> </h5>
+<h5>Total price for this order: <%= @order.package_total_price %></h5>
+<h5><%= @order.status %> @ <%= @order.updated_at %> </h5>
 <hr>
