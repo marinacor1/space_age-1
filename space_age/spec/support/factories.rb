@@ -33,6 +33,12 @@ FactoryGirl.define do
     planet
   end
 
+  factory :order do
+    user
+    status 1
+    total_cost 3000
+  end
+
   factory :package do
     title
     price

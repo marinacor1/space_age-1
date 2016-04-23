@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def index
     @orders = current_user.orders
   end
@@ -8,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.create(user_id: current_user.id, status: 1)
+    order = Order.create(user_id: current_user.id, total_cost: @trip.total_price, status: 1)
     @trip.itinerary.keys.each do |id|
       order.order_packages.create(user_id: current_user.id, order_id: order.id, package_id: id.to_i, sub_quantity: @trip.sub_quantity(id.to_i))
     end

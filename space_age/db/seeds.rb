@@ -146,7 +146,7 @@
 
   #create 3 orders per default user, containing 3 packages each
 
-  order = Order.create(user_id: 1)
+  order = Order.create(user_id: 1, total_cost: 2000)
   OrderPackage.create(user_id: 1, order_id: 1, package_id: 1, sub_quantity: 2)
   OrderPackage.create(user_id: 1, order_id: 1, package_id: 2, sub_quantity: 2)
   OrderPackage.create(user_id: 1, order_id: 1, package_id: 3, sub_quantity: 2)
@@ -154,7 +154,7 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 1)
+  order = Order.create(user_id: 1, total_cost: 1500)
   OrderPackage.create(user_id: 1, order_id: 2, package_id: 1, sub_quantity: 2)
   OrderPackage.create(user_id: 1, order_id: 2, package_id: 2, sub_quantity: 2)
   OrderPackage.create(user_id: 1, order_id: 2, package_id: 3, sub_quantity: 2)
@@ -162,7 +162,7 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 1)
+  order = Order.create(user_id: 1, total_cost: 1000)
   OrderPackage.create(user_id: 1, order_id: 3, package_id: 1, sub_quantity: 2)
   OrderPackage.create(user_id: 1, order_id: 3, package_id: 2, sub_quantity: 2)
   OrderPackage.create(user_id: 1, order_id: 3, package_id: 3, sub_quantity: 2)
@@ -170,7 +170,7 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 2)
+  order = Order.create(user_id: 2, total_cost: 1000)
   OrderPackage.create(user_id: 2, order_id: 4, package_id: 3, sub_quantity: 2)
   OrderPackage.create(user_id: 2, order_id: 4, package_id: 4, sub_quantity: 2)
   OrderPackage.create(user_id: 2, order_id: 4, package_id: 5, sub_quantity: 2)
@@ -178,7 +178,7 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 2)
+  order = Order.create(user_id: 2, total_cost: 1000)
   OrderPackage.create(user_id: 2, order_id: 5, package_id: 3, sub_quantity: 2)
   OrderPackage.create(user_id: 2, order_id: 5, package_id: 4, sub_quantity: 2)
   OrderPackage.create(user_id: 2, order_id: 5, package_id: 5, sub_quantity: 2)
@@ -186,7 +186,7 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 2)
+  order = Order.create(user_id: 2, total_cost: 3000)
   OrderPackage.create(user_id: 2, order_id: 6, package_id: 3, sub_quantity: 2)
   OrderPackage.create(user_id: 2, order_id: 6, package_id: 4, sub_quantity: 1)
   OrderPackage.create(user_id: 2, order_id: 6, package_id: 5, sub_quantity: 2)
@@ -194,7 +194,7 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 3)
+  order = Order.create(user_id: 3, total_cost: 5000)
   OrderPackage.create(user_id: 3, order_id: 7, package_id: 5, sub_quantity: 2)
   OrderPackage.create(user_id: 3, order_id: 7, package_id: 6, sub_quantity: 1)
   OrderPackage.create(user_id: 3, order_id: 7, package_id: 7, sub_quantity: 1)
@@ -202,13 +202,13 @@
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
   puts "for #{order.user.username}"
 
-  order = Order.create(user_id: 3)
+  order = Order.create(user_id: 3, total_cost: 1000)
   OrderPackage.create(user_id: 3, order_id: 8, package_id: 5, sub_quantity: 1)
   OrderPackage.create(user_id: 3, order_id: 8, package_id: 6, sub_quantity: 2)
   OrderPackage.create(user_id: 3, order_id: 8, package_id: 7, sub_quantity: 1)
   puts "Created order \# #{order.id}"
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
-  order = Order.create(user_id: 3)
+  order = Order.create(user_id: 3, total_cost: 5000)
 
   puts "for #{order.user.username}"
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 5, sub_quantity: 3)
