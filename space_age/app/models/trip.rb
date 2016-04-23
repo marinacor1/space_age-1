@@ -16,6 +16,10 @@ class Trip
     end.sum
   end
 
+  def subtotal(package)
+    package.price * sub_quantity(package.id)
+  end
+
   def quantity
     itinerary.values.sum
   end
