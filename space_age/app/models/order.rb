@@ -6,7 +6,9 @@ class Order < ActiveRecord::Base
   enum status: %w(Pending Paid Cancelled)
 
   def total_cost
-    packages.sum(:price)
+    packages.reduce(0) do |total, package|
+      total += package_quantity(package.id) * package.price
+    end
   end
 
   def package_quantity(package_id)
