@@ -56,26 +56,20 @@ RSpec.feature "registered user can edit account" do
       click_on "Edit Account"
       #currently the admin can edit, but it's its own account
       visit edit_user_path(user)
-      expect(page).to have_content "You are not authorized to be at this site."
+      expect(page).to have_content "The page you were looking for doesn't exist."
     end
   end
 
-  xcontext "as a guest" do
-    xscenario "they see an error message" do
+  context "as a guest" do
+    scenario "they see an error message" do
       user = create(:user)
 
-      visit '/login'
-      click_on "Login"
+      visit dashboard_path(user)
+      expect(page).to have_content "The page you were looking for doesn't exist."
 
-      expect(current_path).to eq(login_path)
-      within ".login_form" do
-        fill_in "Username", with: "Userzz"
-        fill_in "Password", with: "password"
-        click_on "Sign In"
-      end
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content "Incorrect email/password combination."
-      expect(page).to_not have_link "Logout", logout_path
+
+      visit edit_user_path(user)
+      expect(page).to have_content "The page you were looking for doesn't exist."
     end
   end
 
