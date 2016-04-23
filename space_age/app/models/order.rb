@@ -18,6 +18,14 @@ class Order < ActiveRecord::Base
     order_packages.count
   end
 
+  def subtotal(package)
+    package_quantity(package.id) * package.price
+  end
+
+  def format_time(time)
+    time.strftime("%B %d, %Y @ %l:%M%p")
+  end
+
   def package_names
     packages.pluck(:title).join(", ")
   end
