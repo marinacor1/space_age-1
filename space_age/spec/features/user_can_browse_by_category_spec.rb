@@ -12,7 +12,6 @@ RSpec.feature "a guest can browse by destination" do
 
 
     expect(page).to have_content package.title
-
   end
 
   scenario "a guest sees all associated items for a destination" do
