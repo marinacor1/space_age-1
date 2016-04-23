@@ -45,6 +45,7 @@ FactoryGirl.define do
     description
     image
     destination
+    status 0
   end
 
   factory :user do

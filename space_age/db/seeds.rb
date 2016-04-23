@@ -7,32 +7,43 @@
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_mars_1.jpeg",
-                  destination_id: 1)
+                  destination_id: 1,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Mars Family",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_mars_2.jpeg",
-                  destination_id: 1)
+                  destination_id: 1,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Mars Luxury",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_mars_3.jpeg",
-                  destination_id: 1)
+                  destination_id: 1,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Mars Weekend",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_mars_4.jpeg",
-                  destination_id: 1)
+                  destination_id: 1,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Mars Service Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_mars_5.jpeg",
-                  destination_id: 1)
-  puts "Created #{package.title}, price: #{package.price}\n\n"
+                  destination_id: 1,
+                          status: 0)
+  puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}\n\n"
+
 
 
   Destination.create(planet: "Venus")
@@ -42,33 +53,42 @@
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_venus_1.jpeg",
-                  destination_id: 2)
+                  destination_id: 2,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Venus Family",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_venus_2.jpeg",
-                  destination_id: 2)
+                  destination_id: 2,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Venus Luxury",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_venus_3.jpeg",
-                  destination_id: 2)
+                  destination_id: 2,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Venus Weekend",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_venus_4.jpeg",
-                  destination_id: 2)
+                  destination_id: 2,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Venus Service Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_venus_5.jpeg",
-                  destination_id: 2)
-  puts "Created #{package.title}, price: #{package.price}\n\n"
-
+                  destination_id: 2,
+                          status: 0)
+  puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}\n\n"
 
 
   Destination.create(planet: "Moon")
@@ -78,32 +98,52 @@
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_moon_1.jpeg",
-                  destination_id: 3)
+                  destination_id: 3,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Moon Family",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_moon_2.jpeg",
-                  destination_id: 3)
+                  destination_id: 3,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Moon Luxury",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_moon_3.jpeg",
-                  destination_id: 3)
+                  destination_id: 3,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Moon Weekend",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_moon_4.jpeg",
-                  destination_id: 3)
+                  destination_id: 3,
+                          status: 0)
   puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}"
   package = Package.create(title: "Moon Service Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
                            image: "planet_moon_5.jpeg",
-                  destination_id: 3)
-  puts "Created #{package.title}, price: #{package.price}\n\n"
+                  destination_id: 3,
+                          status: 0)
+  puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}\n\n"
+
+  #create one sold out package
+  package = Package.create(title: "Moon Popular Trip",
+                     description: Faker::Lorem.paragraph,
+                           price: rand(3..9) + 1000,
+                           image: "sold_out.jpeg",
+                  destination_id: 3,
+                          status: 1)
+  puts "Created #{package.title}, price: #{package.price}"
+  puts "Status: #{package.status}\n\n"
 
   #create 3 default users
 
@@ -208,11 +248,10 @@
   OrderPackage.create(user_id: 3, order_id: 8, package_id: 7)
   puts "Created order \# #{order.id}"
   puts "containing #{OrderPackage.where(order_id: order.id).count} packages"
+  puts "for #{order.user.username}"
 
 
   order = Order.create(user_id: 3, total_cost: 5000)
-
-  puts "for #{order.user.username}"
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 5)
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 6)
   OrderPackage.create(user_id: 3, order_id: 9, package_id: 7)
