@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "registered user can delete account" do
   include FeatureHelper
   context "with valid params" do
-    scenario "they see the packages page" do
+    scenario "they see the welcome page" do
       user = create(:user)
 
       user_login
@@ -13,9 +13,14 @@ RSpec.feature "registered user can delete account" do
       click_on "Delete My Account"
 
       expect(current_path).to eq(root_path)
-      expect(page).to not_have_content "Andrew"
+      expect(page).to_not have_content "Andrew"
       expect(page).not_to have_content "email@email.com"
       expect(page).to have_content "Account Successfully Deleted"
+
+      within("#title-bar-left") do
+        expect(page).to have_content "Login"
+        expect(page).to_not have_content "Logout"
+      end
     end
   end
 
