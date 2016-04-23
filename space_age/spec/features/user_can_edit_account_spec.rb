@@ -45,12 +45,15 @@ RSpec.feature "registered user can edit account" do
       expect(current_path).to eq '/admin/dashboard'
 
       visit dashboard_path(user)
-      click_on "Edit My Account"
 
-      fill_in "Username", with: "adminorz"
+      click_on "Edit My Account"
+      expect(page).to have_content "admin"
+      expect(page).to_not have_content "Andrew"
+
+
+      fill_in "Email", with: "adminorz"
       fill_in "Password", with: "password"
       click_on "Edit Account"
-
       #currently the admin can edit, but it's its own account
       visit edit_user_path(user)
       expect(page).to have_content "You are not authorized to be at this site."
