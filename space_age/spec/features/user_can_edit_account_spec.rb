@@ -23,22 +23,26 @@ RSpec.feature "registered user can edit account" do
     end
   end
 
-  xcontext "with invalid params as an admin" do
-    xscenario "they see an error message" do
+  context "with invalid params as an admin" do
+    scenario "they see an error message" do
       user = create(:user)
+      admin = User.create(username: "adminor", email: "emailzzz", password: "password", password_confirmation: "password", role: 1)
 
       visit '/login'
       click_on "Login"
 
       expect(current_path).to eq(login_path)
       within ".login_form" do
-        fill_in "Username", with: "User"
-        fill_in "Password", with: "password1"
+        fill_in "Username", with: "adminor"
+        fill_in "Password", with: "password"
         click_on "Sign In"
       end
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content "Incorrect email/password combination."
-      expect(page).to_not have_link "Logout", logout_path
+
+      visit dashboard_path(user)
+      expect(page).to_not have_content "Edit My Account"
+
+      visit edit_user_path(user)
+      expect(page).to have_content "The page you were looking for doesn't exist."
     end
   end
 
