@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
       order.order_packages.create(user_id: current_user.id, order_id: order.id, package_id: id.to_i, sub_quantity: @trip.sub_quantity(id.to_i))
     end
     flash[:success] = "Order was Successfully Placed"
+    session[:trip].clear
     redirect_to orders_path
   end
 
