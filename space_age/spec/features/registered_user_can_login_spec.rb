@@ -31,11 +31,7 @@ RSpec.feature "registered user can log in" do
 
       expect(current_path).to eq(login_path)
       within ".login_form" do
-<<<<<<< HEAD
         fill_in "Username", with: "Andrew"
-=======
-        fill_in "Username", with: user.username
->>>>>>> master
         fill_in "Password", with: "password1"
         click_on "Sign In"
       end

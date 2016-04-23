@@ -41,11 +41,16 @@ FactoryGirl.define do
     destination
   end
 
+  # factory :andrew do
+  #   username "Andrew"
+  #   email "email@email.com"
+  #   password "password"
+  #   password_confirmation "password"
+  # end
+
   factory :user do
-    username "Andrew"
-    email "email@email.com"
-    # username
-    # email
+    username
+    email
     password "password"
     password_confirmation "password"
   end
