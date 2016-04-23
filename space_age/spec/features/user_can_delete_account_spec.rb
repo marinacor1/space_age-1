@@ -27,18 +27,16 @@ RSpec.feature "registered user can delete account" do
     xscenario "they see an error message" do
       user = create(:user)
 
-      visit '/login'
-      click_on "Login"
+      user_login
 
-      expect(current_path).to eq(login_path)
-      within ".login_form" do
-        fill_in "Username", with: "User"
-        fill_in "Password", with: "password1"
-        click_on "Sign In"
-      end
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content "Incorrect email/password combination."
-      expect(page).to_not have_link "Logout", logout_path
+      expect(current_path).to eq(packages_path)
+      visit '/dashboard'
+      click_on "Delete My Account"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to_not have_content "Andrew"
+      expect(page).not_to have_content "email@email.com"
+      expect(page).to have_content "Account Successfully Deleted"
     end
   end
 
@@ -46,19 +44,16 @@ RSpec.feature "registered user can delete account" do
     xscenario "they see an error message" do
       user = create(:user)
 
-      visit '/login'
-      click_on "Login"
+      user_login
 
-      expect(current_path).to eq(login_path)
-      within ".login_form" do
-        fill_in "Username", with: "Userzz"
-        fill_in "Password", with: "password"
-        click_on "Sign In"
-      end
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content "Incorrect email/password combination."
-      expect(page).to_not have_link "Logout", logout_path
+      expect(current_path).to eq(packages_path)
+      visit '/dashboard'
+      click_on "Delete My Account"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to_not have_content "Andrew"
+      expect(page).not_to have_content "email@email.com"
+      expect(page).to have_content "Account Successfully Deleted"
     end
   end
-
 end
