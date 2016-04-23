@@ -4,7 +4,7 @@ RSpec.feature "registered user can edit account" do
   include FeatureHelper
   context "with valid params" do
     scenario "they see a form to edit account" do
-      user = create(:user)
+      @user = create(:user)
 
       user_login
 
@@ -34,7 +34,7 @@ RSpec.feature "registered user can edit account" do
       click_on "Login"
 
       expect(current_path).to eq(login_path)
-      
+
       within ".login_form" do
         fill_in "Username", with: "admin"
         fill_in "Password", with: "password"
