@@ -9,7 +9,11 @@ RSpec.feature "registered user can delete account" do
       user_login
 
       expect(current_path).to eq(packages_path)
+
       visit '/dashboard'
+      expect(page).to have_content "Andrew"
+      expect(page).to have_content "email@email.com"
+
       click_on "Delete My Account"
 
       expect(current_path).to eq(root_path)
@@ -23,37 +27,33 @@ RSpec.feature "registered user can delete account" do
     end
   end
 
-  xcontext "with invalid params as an admin" do
-    xscenario "they see an error message" do
+  context "with invalid params as an admin" do
+    scenario "they are able to delete their own account and not another users" do
       user = create(:user)
+      admin = User.create(username: "admin", email: "emailzzz", password: "password", password_confirmation: "password", role: 1)
 
-      user_login
+      visit '/login'
+      click_on "Login"
 
-      expect(current_path).to eq(packages_path)
-      visit '/dashboard'
+      expect(current_path).to eq(login_path)
+
+      within ".login_form" do
+        fill_in "Username", with: "admin"
+        fill_in "Password", with: "password"
+        click_on "Sign In"
+      end
+
+      visit dashboard_path(user)
+      expect(page).to have_content "admin"
+      expect(page).to have_content "emailzzz"
+
       click_on "Delete My Account"
 
       expect(current_path).to eq(root_path)
-      expect(page).to_not have_content "Andrew"
-      expect(page).not_to have_content "email@email.com"
+      expect(page).to_not have_content "admin"
+      expect(page).not_to have_content "emailzzz"
       expect(page).to have_content "Account Successfully Deleted"
     end
   end
 
-  xcontext "as a guest" do
-    xscenario "they see an error message" do
-      user = create(:user)
-
-      user_login
-
-      expect(current_path).to eq(packages_path)
-      visit '/dashboard'
-      click_on "Delete My Account"
-
-      expect(current_path).to eq(root_path)
-      expect(page).to_not have_content "Andrew"
-      expect(page).not_to have_content "email@email.com"
-      expect(page).to have_content "Account Successfully Deleted"
-    end
-  end
 end
