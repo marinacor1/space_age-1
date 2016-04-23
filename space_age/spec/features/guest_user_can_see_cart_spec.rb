@@ -1,15 +1,4 @@
-# As a visitor when I have items in my cart
-# And when I visit "/cart"
-# I should not see an option to "Checkout"
-# I should see an option to "Login or Create Account to Checkout"
 
-# After I create an account
-# And I visit "/cart
-# Then I should see all of the data that was there when I was not logged in
-
-# When I click "Logout"
-# Then I should see see "Login"
-# And I should not see "Logout"
 require 'rails_helper'
 
 RSpec.feature "guest user can see cart" do
@@ -23,7 +12,7 @@ RSpec.feature "guest user can see cart" do
 
       visit '/trip'
 
-      expect(page).to_not have_link("Checkout", checkout_path)
+      expect(page).to_not have_content("Checkout")
       expect(page).to have_link("Login or Create Account to Purchase", login_path)
     end
   end
@@ -57,7 +46,7 @@ RSpec.feature "guest user can see cart" do
       expect(page).to have_content package.price.to_s
       # expect(page).to have_xpath("//img[@src=\"#{package.image}\"]")
 
-      expect(page).to have_link("Checkout", checkout_path)
+      expect(page).to have_content("Checkout")
       expect(page).to_not have_link("Login or Create Account to Purchase", login_path)
     end
   end

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/signup', to: "users#new"
 
   get '/dashboard', to: "users#show"
-  get '/orders' , to: "orders#index"
 
   delete '/logout', to: 'sessions#destroy'
 
@@ -16,12 +15,14 @@ Rails.application.routes.draw do
     get '/dashboard', to: "users#show"
   end
 
+
+
   get '/trip', to: "trip_packages#show"
-  get '/checkout', to: "trip_packages#checkout"
 
   resources :packages, only: [ :index, :show ]
   resources :trip_packages, only: [ :create, :destroy, :update ]
-  resources :orders, only: [ :show ]
+  resources :orders, only: [ :show, :create ]
+  get '/orders' , to: "orders#index"
 
   get '/:planet', to: "destinations#show", as: :destination
 end

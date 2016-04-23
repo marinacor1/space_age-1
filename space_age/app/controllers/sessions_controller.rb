@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         redirect_to packages_path
       end
     else
-      flash[:error] = "Incorrect email/password combination."
+      flash[:alert] = "Incorrect email/password combination."
       redirect_to login_path
     end
   end

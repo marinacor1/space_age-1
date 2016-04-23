@@ -27,7 +27,7 @@
                   <%= link_to "", trip_package_path(package, package.id, operation: "-"), method: 'patch', class: "fi-arrow-down" %>
                 <% end  %>
               </td>
-            <td><%= package.price * @trip.sub_quantity(package.id) %></td>
+            <td><%= @trip.subtotal(package) %></td>
             <td><%= link_to "", trip_package_path(package), method: :delete, class: "fi-x"  %></td>
         </tr>
         <% end %>
@@ -38,7 +38,7 @@
       <% unless current_user %>
         <%= link_to "Login or Create Account to Purchase", login_path, class: "button primary" %>
       <% else %>
-        <%= link_to "Checkout", checkout_path, class: "button success" %>
+        <%= link_to "Checkout", orders_path, class: "button success", method: :post %>
       <% end %>
     </div>
   <% end %>

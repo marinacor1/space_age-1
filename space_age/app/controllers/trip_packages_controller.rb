@@ -7,7 +7,7 @@ class TripPackagesController < ApplicationController
     @trip.add_package(package.id)
 
     session[:trip] = @trip.itinerary
-    flash[:notice] = "You have added #{package.title} to your trip. Your current trip costs: #{@trip.total_price}."
+    flash[:success] = "You have added #{package.title} to your trip. Your current trip costs: #{@trip.total_price}."
     redirect_to package_path(package)
   end
 
@@ -28,7 +28,7 @@ class TripPackagesController < ApplicationController
   def destroy
     package = Package.find(params[:id])
     @trip.itinerary.delete(params[:id])
-    flash[:delete_package] = "Successfully removed #{package.title} from your trip"
+    flash[:warning] = "Successfully removed #{package.title} from your trip"
     redirect_to "/trip"
   end
 
