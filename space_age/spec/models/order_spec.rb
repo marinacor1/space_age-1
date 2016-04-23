@@ -51,4 +51,25 @@ RSpec.describe Order, type: :model do
 
     expect(order.package_names).to eq "Mars"
   end
+
+  it "can calculate subtotal" do
+    package1 = Package.new(id: 1, price: 2000)
+    package1.save(validate: false)
+
+    package2 = Package.new(id: 2, price: 2000)
+    package2.save(validate: false)
+
+    order = Order.new(id: 1)
+    order.save(validate: false)
+
+    order_package1 = OrderPackage.new(order_id: 1, package_id: 1)
+    order_package1.save(validate: false)
+    order_package2 = OrderPackage.new(order_id: 1, package_id: 1)
+    order_package2.save(validate: false)
+    order_package3 = OrderPackage.new(order_id: 1, package_id: 2)
+    order_package3.save(validate: false)
+
+    expect(order.subtotal(package1)).to eq 4000.0
+    expect(order.subtotal(package2)).to eq 2000.0
+  end
 end
