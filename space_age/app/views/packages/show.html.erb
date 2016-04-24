@@ -1,4 +1,5 @@
 <div class="row column">
+  <br>
   <div class="column small-12 large-9">
     <div class="show-image-container small-centered">
       <%= image_tag @package.image, class: "show-image" %>
@@ -12,8 +13,8 @@
       <% else %>
         <%= button_to "Sold Out", package_path(@package), class: "expanded disabled button", method: "get" %><br>
       <% end  %>
-      <p> <%= @package.description %> </p><br><br>
-      <h6>Cost per passenger: <%= @package.price %>⋕</h6>
+      <p> <%= @package.description %> </p>
+      <h6><strong>Cost per passenger: <%= @package.price %>⋕</strong>Cost per passenger: <%= @package.price %>⋕</h6>
     </div>
   </div>
 </div>

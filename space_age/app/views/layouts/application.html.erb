@@ -7,9 +7,10 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <%= render partial: 'layouts/nav' %>
+      <%= render partial: 'layouts/nav' %>
   <div class="row flash small-4 small-offset-2 no-border">
     <% flash.each do |type, message|  %>
     <div class="callout" data-closable>
@@ -23,17 +24,3 @@
     <%= yield %>
   </body>
 </html>
-
-<!-- <div class="alert callout" data-closable>
-  <h5>This is Important!</h5>
-  <p>But when you're done reading it, click the close button in the corner to dismiss this alert.</p>
-  <p>I'm using the default <code>data-closable</code> parameters, and simply fade out.</p>
-
-</div>
-<div class="success callout" data-closable="slide-out-right">
-  <h5>This a friendly message.</h5>
-  <p>And when you're done with me, I close using a Motion UI animation.</p>
-  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div> -->

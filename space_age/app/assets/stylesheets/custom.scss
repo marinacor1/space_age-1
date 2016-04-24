@@ -1,3 +1,4 @@
+
 .off-canvas-wrap {
   .inner-wrap{
     min-height: 100vh;
@@ -16,16 +17,69 @@
   min-height: 100vh;
  }
 
+.menu-centered {
+
+}
+
 .centered-button {
   text-align:center;
   margin:auto;
   padding-top: 400px
 }
 
-.logo {
-  color: black
+
+.centered-text {
+  text-align: center;
 }
 
+#data-stick-container {
+width: 100%;
+}
+
+.nav-button {
+  background-color: black
+}
+
+.nav-top {
+  background-image: url("https://images.unsplash.com/photo-1447774105426-9d78ea5204cd?crop=entropy&dpr=2&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1250");
+}
+
+.sticky {
+  position: absolute;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.sticky.is-stuck {
+  position: fixed;
+  z-index: 5;
+}
+
+.logo {
+  color: white;
+  font-family: 'Vollkorn', serif;
+}
+
+hr {
+    border: none;
+    height: 4px;
+    color: #333;
+    background-color: #333; /* Modern Browsers */
+}
+
+.image-tag {
+  background-color: rgba(0,0,0, 0.05);
+  margin-bottom: 0;
+
+}
+
+.package-tag {
+  color: black;
+}
+
+.orbit-image {
+  max-height: 90vh
+}
 .category-link {
   color: white;
   text-transform: uppercase;

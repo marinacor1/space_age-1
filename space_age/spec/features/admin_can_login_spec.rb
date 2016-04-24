@@ -8,7 +8,7 @@ RSpec.feature "admin can login" do
     admin_login
 
     expect(current_path).to eq '/admin/dashboard'
-    expect(page).to have_content "Admin Dashboard"
+    expect(page).to have_content "Welcome to Your Dashboard, adminor"
   end
 
   it "when non admin registered user tries to access admin dashboard gets error" do
