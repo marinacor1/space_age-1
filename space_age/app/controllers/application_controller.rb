@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       render file: "/public/404"
     end
   end
-  
+
   def require_login!
     redirect_to login_path unless current_admin?
   end
@@ -31,11 +31,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user == User.find(params[:id])
-    #if user is the correct user
   end
 
   def current_admin?
