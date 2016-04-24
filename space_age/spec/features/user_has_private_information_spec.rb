@@ -15,7 +15,7 @@ RSpec.feature "user cannot see another users private data" do
                        package_id: package2.id)
 
     user_login
-    visit order_path(user2)
+    visit order_path(order)
 
     expect(page).to have_content "The page you were looking for doesn't exist."
     expect(page).to_not have_content package1.title
