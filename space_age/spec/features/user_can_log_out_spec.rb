@@ -4,6 +4,7 @@ require 'rails_helper'
 RSpec.feature "user can log out" do
   scenario "they see a link to log in and not a link to log out" do
     user = create(:user)
+    create(:destination)
 
     visit login_path
 

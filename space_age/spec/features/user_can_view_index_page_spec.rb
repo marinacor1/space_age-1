@@ -12,15 +12,14 @@ feature "user can view package index page" do
 
     expect(page).to have_link package1.title, href: package_path(package1)
     expect(page).to have_xpath("//img[@src=\"#{package1.image}\"]")
-    expect(page).to have_link package1.image, href: package_path(package1)
+
 
     expect(page).to have_link package2.title, href: package_path(package2)
     expect(page).to have_xpath("//img[@src=\"#{package2.image}\"]")
-    expect(page).to have_link package2.image, href: package_path(package2)
 
     expect(page).to have_link package3.title, href: package_path(package3)
     expect(page).to have_xpath("//img[@src=\"#{package3.image}\"]")
-    expect(page).to have_link package3.image, href: package_path(package3)
+
   end
 
   xscenario "url is case insensitive for index path" do
@@ -33,14 +32,14 @@ feature "user can view package index page" do
 
     expect(page).to have_link package1.title, href: package_path(package1)
     expect(page).to have_xpath("//img[@src=\"#{package1.image}\"]")
-    expect(page).to have_link package1.image, href: package_path(package1)
+
 
     expect(page).to have_link package2.title, href: package_path(package2)
     expect(page).to have_xpath("//img[@src=\"#{package2.image}\"]")
-    expect(page).to have_link package2.image, href: package_path(package2)
+
 
     expect(page).to have_link package3.title, href: package_path(package3)
     expect(page).to have_xpath("//img[@src=\"#{package3.image}\"]")
-    expect(page).to have_link package3.image, href: package_path(package3)
+    
   end
 end
