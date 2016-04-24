@@ -7,9 +7,10 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <%= render partial: 'layouts/nav' %>
+      <%= render partial: 'layouts/nav' %>
   <div class="row flash small-4 small-offset-2 no-border">
     <% flash.each do |type, message|  %>
     <div class="callout" data-closable>

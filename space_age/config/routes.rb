@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "welcome#show"
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
@@ -15,8 +16,6 @@ Rails.application.routes.draw do
     get '/dashboard', to: "users#show"
     resources :users, only: [ :update, :delete ]
   end
-
-
 
   get '/trip', to: "trip_packages#show"
 
