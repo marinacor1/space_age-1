@@ -16,7 +16,7 @@ class PackagesController < ApplicationController
       redirect_to package_path(@package)
     else
       flash[:alert] = @package.errors.full_messages.join(", ")
-      render :admin_dashboard
+      redirect_to admin_dashboard_path
     end
 
   end
