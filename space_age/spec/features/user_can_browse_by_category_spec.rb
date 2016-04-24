@@ -12,7 +12,6 @@ RSpec.feature "a guest can browse by destination" do
 
 
     expect(page).to have_content package.title
-
   end
 
   scenario "a guest sees all associated items for a destination" do
@@ -24,12 +23,11 @@ RSpec.feature "a guest can browse by destination" do
       expect(page).to have_content package4.title
   end
 
-  xscenario "user will not be able to see category if category does not exist" do
+  scenario "user will not be able to see category if category does not exist" do
     destination = Destination.new(id: 1, planet: "Mars")
     package1 = Package.new(title: "Basic", price: 100, description: "Happy place", image: "img1", destination_id: 1)
 
     visit '/neptune'
-
-    expect(page).to have_content "Site not found."
+    expect(page).to have_content "The page you were looking for doesn't exist."
     end
   end
