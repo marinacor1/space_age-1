@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  # before_action :authorized_user, only[:show]
+  before_action :authorized_user, only: [:show]
 
   def authorized_user
    unless logged_in? || current_admin?
