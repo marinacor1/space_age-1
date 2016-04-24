@@ -1,14 +1,18 @@
 class OrdersController < ApplicationController
+  # before_action :correct_user, only[:show]
+
+  def correct_user
+    unless logged_in?
+      render file: "/public/404"
+    end
+  end
 
   def index
     @orders = current_user.orders
   end
 
   def show
-    @order = Order.find(params[:id]) unless @order.nil?
-    if @order.nil?
-      render file: "/public/404"
-    end
+    @order = Order.find(params[:id])
   end
 
   def create

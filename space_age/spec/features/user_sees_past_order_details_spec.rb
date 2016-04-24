@@ -20,7 +20,6 @@ RSpec.feature "user sees past order details" do
 
       expect(current_path).to eq order_path(order)
 
-
       total_price = package1.price + package2.price
 
         expect(page).to have_content(package1.title)

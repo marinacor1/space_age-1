@@ -5,6 +5,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def logged_in_user
+    unless current_user
+      render file: "/public/404"
+    end
+  end
+
+  def correct_logged_in_user
+    unless logged_in?
+      render file: "/public/404"
+    end
+  end
+  
   def require_login!
     redirect_to login_path unless current_admin?
   end

@@ -2,18 +2,6 @@ class UsersController < ApplicationController
   before_action :correct_logged_in_user, only: [:edit, :update, :destroy]
   before_action :logged_in_user, except: [:new, :create]
 
-  def logged_in_user
-    unless current_user
-      render file: "/public/404"
-    end
-  end
-
-  def correct_logged_in_user
-    unless logged_in?
-      render file: "/public/404"
-    end
-  end
-
   def index
    @users = User.all
   end
