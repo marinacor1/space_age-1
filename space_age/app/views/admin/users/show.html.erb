@@ -17,6 +17,13 @@
       </div>
     </div>
     <div class="accordian-item">
+      <a href="#" class="accordian-title">Delete Account</a>
+      <div class="accordian-content" data-tab-content>
+        <h6 class="centered-text">Are You Sure? We'll Miss You So!</h6>
+        <%= button_to "I\'m Sure- Delete my Account", users_path, method: "delete", class: "button expanded" %>
+      </div>
+    </div>
+    <div class="accordian-item">
       <a href="#" class="accordian-title">Create a New Destination</a>
       <div class="accordian-content" data-tab-content>
         <%= form_for @destination do |f| %>
@@ -35,6 +42,8 @@
         <%= f.number_field :price, in: 1000..10000, step: "any" %>
         <%= f.label :destination_id, "Choose a Destination for the New Package" %>
         <%= f.collection_select :destination_id, @destinations, :id, :planet, include_blank: true %>
+        <%= f.label :image, "Choose an Image" %>
+        <%= f.file_field :image %>
         <%= f.submit class: "button expanded"%>
         <% end %>
       </div>
