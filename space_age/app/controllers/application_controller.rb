@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :all_destinations
   before_action :set_trip
 
+
   helper_method :current_user
 
   def logged_in_user
