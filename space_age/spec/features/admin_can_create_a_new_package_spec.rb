@@ -5,7 +5,7 @@ RSpec.feature "admin can add a new item" do
 
     admin = User.new(id: 1, username: "jb", role: 1)
     admin.save(validates: false)
-    package_image_path = "http://i666.photobucket.com/albums/vv27/Ades6_6_6/Wallcifi90.jpg"
+
 
     destination = create(:destination)
 
@@ -13,13 +13,15 @@ RSpec.feature "admin can add a new item" do
 
     visit admin_dashboard_path(admin)
 
+    image = 'spec/support/fixtures/people_1.jpg'
     click_on "Create a New Package"
 
     fill_in "Package Title", with: "Super Lux"
     fill_in "Package Description", with: "very lux"
     fill_in "Choose a Price for the New Package", with: 1000.00
     select destination.planet, from: "Choose a Destination"
-    fill_in "Choose an Image", with: package_image_path
+    attach_file('Choose an Image', File.absolute_path(image))
+
 
     click_on "Create Package"
 
@@ -31,6 +33,6 @@ RSpec.feature "admin can add a new item" do
     expect(page).to have_content "very lux"
     expect(page).to have_content "1000.0"
     expect(page).to have_content destination.planet
-    expect(page).to have_css("img[src=\"#{package_image_path}\"]")
+
   end
 end

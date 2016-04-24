@@ -1,3 +1,5 @@
+
+
 FactoryGirl.define do
 
   sequence :title, ["explore", "basic", "luxury",
@@ -25,9 +27,6 @@ FactoryGirl.define do
     "description#{n}"
   end
 
-  sequence :image do |n|
-    Faker::Avatar.image("25x2#{n}")
-  end
 
   factory :destination do
     planet
@@ -43,7 +42,7 @@ FactoryGirl.define do
     title
     price
     description
-    image
+    image { File.new("#{Rails.root}/spec/support/fixtures/people_1.jpg") }
     destination
     status 0
   end
