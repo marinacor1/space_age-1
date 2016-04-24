@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :correct_logged_in_user, only: [:edit, :update]
   before_action :logged_in_user, except: [:new, :create]
-  #current_admin and current_user
 
   def index
    @users = User.all

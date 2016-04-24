@@ -5,18 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  def logged_in?
-    current_user == User.find(params[:id])
-  end
-
   def logged_in_user
     unless current_user
-      render file: "/public/404"
-    end
-  end
-
-  def correct_logged_in_user
-    unless logged_in?
       render file: "/public/404"
     end
   end
