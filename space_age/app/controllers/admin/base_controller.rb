@@ -7,6 +7,14 @@ class Admin::BaseController < ApplicationController
 
   def current_admin?
     current_user && current_user.admin?
-  end 
+  end
+
+  def show
+  end
+
+  def destroy
+    
+  end
+
 
 end
