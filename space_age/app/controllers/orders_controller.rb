@@ -5,7 +5,10 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:id]) unless @order.nil?
+    if @order.nil?
+      render file: "/public/404"
+    end
   end
 
   def create
