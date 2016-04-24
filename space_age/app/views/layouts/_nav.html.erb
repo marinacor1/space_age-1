@@ -13,7 +13,8 @@
     </div>
     <div class="menu-centered">
       <ul class = "menu">
-        <h4 class="logo">Eccentric</h4>
+        <h3 class="logo">Eccentric</h3>
+        <hr size="1px">
         <% unless @destinations.nil? %>
           <% @destinations.each do |destination| %>
             <li><%= link_to destination.planet, destination_path(destination.planet), class: "button nav-button shadow" %></li>

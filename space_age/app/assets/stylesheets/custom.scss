@@ -1,3 +1,4 @@
+
 .off-canvas-wrap {
   .inner-wrap{
     min-height: 100vh;
@@ -31,9 +32,8 @@ width: 100%;
 }
 
 .nav-button {
-  background-color: #696969
+  background-color: black
 }
-
 
 .nav-top {
   background-image: url("https://images.unsplash.com/photo-1447774105426-9d78ea5204cd?crop=entropy&dpr=2&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1250");
@@ -51,7 +51,15 @@ width: 100%;
 }
 
 .logo {
-  color: white
+  color: white;
+  font-family: 'Vollkorn', serif;
+}
+
+hr {
+    border: none;
+    height: 4px;
+    color: #333;
+    background-color: #333; /* Modern Browsers */
 }
 
 .orbit-image {
