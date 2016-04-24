@@ -11,6 +11,5 @@ RSpec.feature "admin information is private" do
     visit '/admin/dashboard'
 
     expect(page).to have_content "The page you were looking for doesn't exist"
-    expect(page).to have_content "The page you were looking for doesn't exist"
   end
 end
