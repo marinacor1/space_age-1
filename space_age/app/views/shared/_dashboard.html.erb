@@ -4,8 +4,8 @@
 </div>
 
 <div class="row small-4 offset-4">
-  <div class="accordian" data-accordian data-allow-all-closed="true">
-    <div class="accordian-item">
+  <ul class="accordian" data-accordian>
+    <li class="accordian-item" data-accordian-item>
       <a href="#" class="accordian-title">Edit Account</a>
       <div class="accordian-content" data-tab-content>
         <%= form_for @user do |f| %>
@@ -16,9 +16,9 @@
         <%= f.submit "Update Account", class: "button expanded"%>
         <% end %>
       </div>
-    </div>
+    </li>
     <% if current_user.admin? %>
-      <div class="accordian-item">
+      <li class="accordian-item" data-accordian-item>
         <a href="#" class="accordian-title">Create a New Destination</a>
         <div class="accordian-content" data-tab-content>
           <%= form_for @destination do |f| %>
@@ -26,8 +26,8 @@
           <%= f.submit class: "button expanded"%>
           <% end %>
         </div>
-      </div>
-      <div class="accordian-item">
+      </li>
+      <li class="accordian-item" data-accordian-item>
         <a href="#" class="accordian-title">Create a New Package</a>
         <div class="accordian-content" data-tab-content>
           <%= form_for @package do |f| %>
@@ -42,7 +42,7 @@
           <%= f.submit class: "button expanded"%>
           <% end %>
         </div>
-      </div>
+      </li>
     <% end %>
-  </div>
+  </ul>
 </div>
