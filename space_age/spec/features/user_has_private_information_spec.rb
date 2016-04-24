@@ -1,6 +1,5 @@
 require 'rails_helper'
-# As an Authenticated User
-# I cannot view another user's private data (current or past orders, etc)
+
 RSpec.feature "user cannot see another users private data" do
   include FeatureHelper
   it "is private data like current or past orders" do
