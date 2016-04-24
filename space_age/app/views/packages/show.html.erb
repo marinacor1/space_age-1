@@ -7,7 +7,11 @@
   </div>
   <div class="column small-12 large-3 small-centered">
     <div class="show-info-container">
+      <% if @package.active? %>
         <%= button_to "Add Package to Trip", trip_packages_path(package_id: @package.id), class: "expanded success button"%><br>
+      <% else %>
+        <%= button_to "Sold Out", package_path(@package), class: "expanded disabled button", method: "get" %><br>
+      <% end  %>
       <p> <%= @package.description %> </p><br><br>
       <h6>Cost per passenger: <%= @package.price %>⋕</h6>
     </div>
