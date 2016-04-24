@@ -62,6 +62,16 @@ hr {
     background-color: #333; /* Modern Browsers */
 }
 
+.image-tag {
+  background-color: rgba(0,0,0, 0.05);
+  margin-bottom: 0;
+
+}
+
+.package-tag {
+  color: black;
+}
+
 .orbit-image {
   max-height: 90vh
 }
