@@ -1,12 +1,4 @@
 class OrdersController < ApplicationController
-  before_action :authorized_user, only: [:show]
-
-  def authorized_user
-   unless logged_in? || current_admin?
-      render file: "/public/404"
-    end
-  end
-
   def index
     @orders = current_user.orders
   end

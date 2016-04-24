@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   before_action :correct_logged_in_user, only: [:edit, :update, :destroy]
   before_action :logged_in_user, except: [:new, :create]
+  before_action :authorized_user, only: [:show]
+
+  def authorized_user
+   unless logged_in? || current_admin?
+      render file: "/public/404"
+    end
+  end
 
   def logged_in?
     current_user == User.find(params[:id])
