@@ -10,7 +10,8 @@ RSpec.feature "registered user can edit account" do
 
       expect(current_path).to eq(packages_path)
       visit '/dashboard'
-      click_on "Edit My Account"
+
+      click_on "Edit Account"
 
       fill_in "Email", with: "JonBNasty@nasty.com"
       fill_in "Password", with: "password1"
