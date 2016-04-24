@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :correct_logged_in_user, only: [:edit, :update, :destroy]
+  # before_action :correct_logged_in_user, only: [:edit, :update]
   before_action :logged_in_user, except: [:new, :create]
   #current_admin and current_user
 
@@ -22,7 +22,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    if current_user == User.find(params[:id])
+      @user = current_user
+    else
+      render file: "/public/404"
+    end
   end
 
   def update
@@ -37,14 +41,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-  end
-
-  def destroy
-    @user = current_user
-    @user.destroy
-    session.clear
-    redirect_to root_path
-    flash[:error] = "Account Successfully Deleted"
   end
 
   private

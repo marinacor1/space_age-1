@@ -40,17 +40,6 @@ RSpec.feature "registered user can edit account" do
       end
       expect(current_path).to eq '/admin/dashboard'
 
-      visit dashboard_path(user)
-
-      click_on "Edit My Account"
-      expect(page).to have_content "admin"
-      expect(page).to_not have_content "Andrew"
-
-
-      fill_in "Email", with: "adminorz"
-      fill_in "Password", with: "password"
-      click_on "Edit Account"
-
       visit edit_user_path(user)
       expect(page).to have_content "The page you were looking for doesn't exist."
     end
