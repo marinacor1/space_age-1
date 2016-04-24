@@ -21,8 +21,6 @@ RSpec.feature "user sees past order details" do
 
       expect(current_path).to eq order_path(order)
 
-      total_price = package1.price + package2.price
-
         expect(page).to have_content(package1.title)
         expect(page).to have_content(package1.price)
         expect(page).to have_link(package1.title, package_path(package1))
@@ -32,7 +30,7 @@ RSpec.feature "user sees past order details" do
 
       within ".order-details" do
         expect(page).to have_content("Pending")
-        expect(page).to have_content(total_price)
+        expect(page).to have_content("3000.0")
         expect(page).to have_content(order.format_time(order.created_at))
         expect(page).to have_content(order.format_time(order.updated_at))
       end
