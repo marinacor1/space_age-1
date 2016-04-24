@@ -1,22 +1,26 @@
 class OrdersController < ApplicationController
-  before_action :authorized_user, only: [:show]
+  # before_action :authorized_user, only: [:show]
 
-  def authorized_user
-   unless authorized_order_user? || current_admin?
-      render file: "/public/404"
-    end
-  end
-
-  def authorized_order_user?
-    current_user == Order.find(params[:id]).user
-  end
+  # def authorized_user
+  #  unless authorized_order_user? || current_admin?
+  #     render file: "/public/404"
+  #   end
+  # end
+  #
+  # def authorized_order_user?
+  #   current_user == Order.find(params[:id]).user
+  # end
 
   def index
     @orders = current_user.orders
   end
 
   def show
-    @order = Order.find(params[:id])
+    if current_user == Order.find(params[:id]).user
+      @order = Order.find(params[:id])
+    else
+      render file: "/public/404"
+    end
   end
 
   def create
