@@ -1,7 +1,1 @@
-<div class="row">
-  Your Account:
-  Username: <%= @user.username %>
-  Email: <%= @user.email %>
-  <%= link_to "Edit My Account", edit_user_path(@user) %>
-  <%= link_to "Delete My Account", user_path(@user), method: :delete %>
-</div>
+<%= render partial: 'shared/dashboard' %>

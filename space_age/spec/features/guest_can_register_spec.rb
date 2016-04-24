@@ -26,9 +26,10 @@ RSpec.feature "guest can register" do
         expect(page).to have_content "Logged in as #{User.first.username}"
       end
 
-      expect(page).to have_content "Your Account:"
-      expect(page).to have_content "Username: #{User.first.username}"
-      expect(page).to have_content "Email: #{User.first.email}"
+      expect(page).to have_content "Welcome to Your Dashboard, User"
+      expect(page).to have_css "#user_username"
+      expect(page).to have_css "#user_email"
+
       expect(page).to_not have_content "Login"
       expect(page).to have_link "Logout", logout_path
     end
