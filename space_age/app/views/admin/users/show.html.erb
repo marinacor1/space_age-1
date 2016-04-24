@@ -44,7 +44,7 @@
         <%= f.label :destination_id, "Choose a Destination for the New Package" %>
         <%= f.collection_select :destination_id, @destinations, :id, :planet, include_blank: true %>
         <%= f.label :image, "Choose an Image" %>
-        <%= f.text_field :image %>
+        <%= f.file_field :image %>
         <%= f.submit class: "button expanded"  %>
         <% end %>
       </div>

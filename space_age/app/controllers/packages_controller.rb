@@ -21,10 +21,6 @@ class PackagesController < ApplicationController
 
   end
 
-
-
-
-
   private
 
   def package_params
