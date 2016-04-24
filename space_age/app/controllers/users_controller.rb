@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :correct_logged_in_user, only: [:edit, :update, :destroy]
   before_action :logged_in_user, except: [:new, :create]
   #current_admin and current_user
-  
+
   def index
    @users = User.all
   end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params_check)
-      redirect_to user_path(@user)
+      redirect_to  '/dashboard'
     else
       flash[:error] = "Your account could not be updated. Please check your input and try again."
       render :edit
