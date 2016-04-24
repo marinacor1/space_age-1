@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "welcome#show"
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
@@ -14,8 +15,6 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: "users#show"
   end
-
-
 
   get '/trip', to: "trip_packages#show"
 

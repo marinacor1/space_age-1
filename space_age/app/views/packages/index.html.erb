@@ -1,33 +1,45 @@
-  <div class="featured-packages">
- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
   <ul class="orbit-container">
-    <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-    <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-    <li class="orbit-slide is-active">
-      <%= image_tag("slide_1.jpeg") %>
+    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    <li class="is-active orbit-slide">
+      <img class="orbit-image" src="https://images.unsplash.com/photo-1417577097439-425fb7dec05e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=0fa9b1dc741ae8ca7c1ad725561fc6b5" alt="Space">
+      <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
     </li>
     <li class="orbit-slide">
-      <%= image_tag("slide_1.jpeg") %>
+      <img class="orbit-image" src="https://images.unsplash.com/photo-1447433819943-74a20887a81e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=6aec177d11f79bc9d704cdf69db41e39" alt="Space">
+      <figcaption class="orbit-caption">Explore</figcaption>
     </li>
     <li class="orbit-slide">
-      <%= image_tag("slide_2.jpeg") %>
+      <img class="orbit-image" src="https://images.unsplash.com/photo-1457979406492-d1e6b97f3f55?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=a828cec8532c27af2de4f245d9085c64" alt="Space">
+      <figcaption class="orbit-caption">Lift</figcaption>
     </li>
     <li class="orbit-slide">
-      <%= image_tag("slide_3.jpeg") %>
+      <img class="orbit-image" src="https://images.unsplash.com/photo-1457365050282-c53d772ef8b2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=5814eb3b3c914cbbb967a6801b05c625" alt="Space">
+      <figcaption class="orbit-caption">Expanse</figcaption>
     </li>
-  </ul>
+  <nav class="orbit-bullets">
+    <button class="is-active" data-slide="0"><span class="show-for-sr"></span><span class="show-for-sr"></span></button>
+    <button data-slide="1"><span class="show-for-sr"></span></button>
+    <button data-slide="2"><span class="show-for-sr"></span></button>
+    <button data-slide="3"><span class="show-for-sr"></span></button>
+  </nav>
 </div>
-<div class="row column text-center">
-  <h4 class="text-center">All Our Packages</h4>
-</div>
-  <hr>
-</div>
-<div class="row small-up-2 large-up-4">
-    <% @packages.each do |package| %>
-    <div class="column">
-    <%= link_to(image_tag(package.image, class: "thumbnail", alt: package.image), package_path(package))%>
-    <%= link_to package.title, package, class:"button expanded" %>
+<br>
+<hr>
+<h3 class="text-center"> Our Packages</h3>
+<hr>
+<br>
+<div class="row small-up-1 medium-up-2 large-up-4 featured-packages">
+  <% @packages.each do |package| %>
+  <div class="column">
+    <h5 class="image-tag text-center"><%= link_to package.title, package_path(package), class: "package-tag" %></h5>
+    <div class="image-wrapper overlay-fade-in">
+      <%= image_tag package.image, class: "thumbnail" %>
+      <div class="image-overlay-content">
+        <h2><%= link_to "Explore", package_path(package) %></h2>
+      </div>
+    </div>
   </div>
-    <%end %>
-    <hr>
+  <% end %>
 </div>

@@ -1,25 +1,26 @@
 <div class="row column cart">
   <% if @trip.itinerary == {} %>
+    <br>
     <h1 class= "text-center"> Your Cart is Empty </h1>
   <% else %>
     <table>
       <thead>
         <tr>
+          <th width "300"></th>
           <th width "200">Package Name</th>
-          <th>Description</th>
+          <th width "200">Description</th>
           <th width "200"></th>
           <th width "150">Price</th>
-          <th width "100">quantity</th>
+          <th width "100">Passengers</th>
           <th width "150">Sub Total</th>
-          <th width "150"></th>
         </tr>
       </thead>
       <tbody class="package">
         <tr>
         <% @packages.each do |package| %>
+            <td><%= image_tag package.image, class: "cart-image" %></td>
             <td><%= package.title %></td>
             <td><%= package.description %></td>
-            <td><%= image_tag package.image, class: "cart-image" %></td>
             <td><%= package.price %></td>
               <td><%= @trip.sub_quantity(package.id) %>
                 <%= link_to "", trip_package_path(package, package.id, operation: "+"), method: 'patch', class: "fi-arrow-up" %>
