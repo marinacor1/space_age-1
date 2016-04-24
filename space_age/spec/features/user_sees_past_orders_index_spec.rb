@@ -8,7 +8,7 @@ RSpec.feature "user can see past orders" do
     order2 = Order.create(user_id: user1.id, total_cost: 2000)
     order3 = Order.create(user_id: user2.id, total_cost: 3000)
 
-    ApplicationController.any_instance.stubs(:current_user).returns(user1)
+    ApplicationController.any_instance.stubs(:current_user).returns(user1) 
 
     visit '/orders'
     expect(page).to have_content order1.id
