@@ -12,12 +12,10 @@ RSpec.feature "registered user can edit account" do
       visit '/dashboard'
       click_on "Edit My Account"
 
-      # within ".edit_form" do
-        fill_in "Email", with: "JonBNasty@nasty.com"
-        fill_in "Password", with: "password1"
-        fill_in "Password confirmation", with: "password1"
-        click_on "Edit Account"
-      # end
+      fill_in "Email", with: "JonBNasty@nasty.com"
+      fill_in "Password", with: "password1"
+      fill_in "Password confirmation", with: "password1"
+      click_on "Edit Account"
 
       expect(page).to have_content "JonBNasty@nasty.com"
       expect(page).not_to have_content "email@email.com"
