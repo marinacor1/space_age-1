@@ -6,21 +6,24 @@ RSpec.feature "registered user can edit account" do
     scenario "they see a form to edit account" do
       @user = create(:user)
 
+      email = @user.email
+
       user_login
 
       expect(current_path).to eq(packages_path)
       visit '/dashboard'
-      click_on "Edit My Account"
+      click_on "Update Account"
 
-      # within ".edit_form" do
-        fill_in "Email", with: "JonBNasty@nasty.com"
+
+        fill_in "Email", with: "JonB"
         fill_in "Password", with: "password1"
         fill_in "Password confirmation", with: "password1"
         click_on "Edit Account"
-      # end
 
-      expect(page).to have_content "JonBNasty@nasty.com"
-      expect(page).not_to have_content "email@email.com"
+
+      expect(page).to have_content "Welcome to Your Dashboard, #{@user.username}"
+      expect(page).to have_content "JonB"
+      expect(page).not_to have_content email
     end
   end
 
@@ -44,7 +47,7 @@ RSpec.feature "registered user can edit account" do
 
       visit dashboard_path(user)
 
-      click_on "Edit My Account"
+      click_on "Update Account"
       expect(page).to have_content "admin"
       expect(page).to_not have_content "Andrew"
 

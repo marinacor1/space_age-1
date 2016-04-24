@@ -48,6 +48,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    @destination = Destination.new
+    @package = Package.new
   end
 
   def destroy

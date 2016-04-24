@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :users, except: [:new]
-  get '/dashboard', to: "users#show"
+  get '/dashboard', to: "users#show" 
 
   namespace :admin do
     get '/dashboard', to: "users#show"

@@ -6,15 +6,17 @@ RSpec.feature "registered user can delete account" do
     scenario "they see the welcome page" do
       @user = create(:user)
 
+
       user_login
       expect(current_path).to eq(packages_path)
 
       visit '/dashboard'
 
-      expect(page).to have_content @user.username
-      expect(page).to have_content @user.email
+      expect(page).to have_content "Welcome to Your Dashboard, #{@user.username}"
+      expect(page).to have_css "#user_username"
+      expect(page).to have_css "#user_email"
 
-      click_on "Delete My Account"
+      click_on "I\'m Sure- Delete my Account"
 
       expect(current_path).to eq(root_path)
       expect(page).to_not have_content @user.username
@@ -47,7 +49,7 @@ RSpec.feature "registered user can delete account" do
       expect(page).to have_content "admin"
       expect(page).to have_content "emailzzz"
 
-      click_on "Delete My Account"
+      click_on "I\'m Sure- Delete my Account"
 
       expect(current_path).to eq(root_path)
       expect(page).to_not have_content "admin"
