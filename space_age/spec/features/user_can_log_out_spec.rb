@@ -2,17 +2,12 @@
 require 'rails_helper'
 
 RSpec.feature "user can log out" do
+  include FeatureHelper
   scenario "they see a link to log in and not a link to log out" do
-    user = create(:user)
-    create(:destination)
 
-    visit login_path
+    @user = create(:user)
 
-    within ".login_form" do
-      fill_in "Username", with: user.username
-      fill_in "Password", with: user.password
-      click_on "Sign In"
-    end
+    user_login
 
     visit '/cart'
 
