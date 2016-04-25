@@ -4,7 +4,7 @@
       <% if current_user%>
         <p class="text-left">
           <%= link_to "Welcome, #{current_user.username}", dashboard_path, class: "welcome" if !current_user.admin? %>
-          <%= link_to "Welcome, #{current_user.username}", admin_dashboard_path, class: "welcom" if current_user.admin? %>
+          <%= link_to "Welcome, #{current_user.username}", admin_dashboard_path, class: "welcome" if current_user.admin? %>
         </p>
         <%= link_to "Logout", logout_path, method: :delete, class: "logo" %>
       <% else %>

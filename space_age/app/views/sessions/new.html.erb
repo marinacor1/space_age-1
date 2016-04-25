@@ -6,7 +6,7 @@
           <h4 class="text-center">Please Log In</h4>
           <div class="login_form">
             <%= f.text_field :username, placeholder: "Username", type: "text" %>
-            <%= f.password_field :password, placeholder: "Password", type: "text" %>
+            <%= f.password_field :password, placeholder: "Password" %>
             <%= f.submit "Sign In", class: "button expanded" %>
           </div>
           <p class="text-center"><%= link_to "Create Account", signup_path %></p>
