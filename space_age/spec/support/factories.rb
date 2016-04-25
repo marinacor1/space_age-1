@@ -22,7 +22,6 @@ FactoryGirl.define do
     "email#{n}"
   end
 
-
   sequence :description do |n|
     "description#{n}"
   end
