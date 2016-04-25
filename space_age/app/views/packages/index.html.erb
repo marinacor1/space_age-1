@@ -35,7 +35,7 @@
   <div class="column">
     <h5 class="image-tag text-center"><%= link_to package.title, package_path(package), class: "package-tag" %></h5>
     <div class="image-wrapper overlay-fade-in">
-      <%= image_tag package.image, class: "thumbnail" %>
+      <%= image_tag package.image.url, class: "thumbnail" %>
       <div class="image-overlay-content">
         <h2><%= link_to "Explore", package_path(package) %></h2>
       </div>

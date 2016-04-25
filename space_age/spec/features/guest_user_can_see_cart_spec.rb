@@ -42,9 +42,8 @@ RSpec.feature "guest user can see cart" do
       visit '/trip'
 
       expect(page).to have_content package.title
-      # expect(page).to have_content package.description
+      expect(page).to have_content package.description
       expect(page).to have_content package.price.to_s
-      # expect(page).to have_xpath("//img[@src=\"#{package.image}\"]")
 
       expect(page).to have_content("Checkout")
       expect(page).to_not have_link("Login or Create Account to Purchase", login_path)
