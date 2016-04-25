@@ -19,7 +19,6 @@ RSpec.feature "User can delete a package from their cart" do
       expect(page).to have_content "Successfully removed #{package.title} from your trip"
       expect(page).to have_selector ".flash_delete_package"
     end
-    # expect(page).to have_link package.title, href: package_path(package)
 
     within '.cart' do
       expect(page).to_not have_content package.title

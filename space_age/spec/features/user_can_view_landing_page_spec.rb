@@ -8,11 +8,11 @@ RSpec.describe "user can land on root path" do
 
     expect(page).to have_link "Explore", href: packages_path
 
-    # within("nav_bar") do
-    #   expect(page).to have_link "Cart", href: cart_path
-    #   expect(page).to have_content "Logo"
-    # end
+    within(".nav") do
+      expect(page).to have_css ".fi-shopping-bag"
+      expect(page).to have_link "All Packages", href: packages_path
+      expect(page).to have_content "Eccentric"
+    end
 
   end
-
 end
