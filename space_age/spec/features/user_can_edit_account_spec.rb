@@ -41,7 +41,6 @@ RSpec.feature "registered user can edit account" do
       click_on "Update Account"
       expect(page).to have_content "admin"
       expect(page).to_not have_content "Andrew"
-
     end
   end
 
