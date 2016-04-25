@@ -14,7 +14,6 @@ RSpec.feature "registered user can edit account" do
       visit '/dashboard'
       click_on "Update Account"
 
-
         fill_in "Email", with: "JonB"
         fill_in "Password", with: "password1"
         fill_in "Password confirmation", with: "password1"
