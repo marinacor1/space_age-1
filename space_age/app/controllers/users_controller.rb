@@ -33,7 +33,6 @@ class UsersController < ApplicationController
       redirect_to  '/dashboard'
     else
       flash[:error] = "Your account could not be updated. Please check your input and try again."
-      render :edit
     end
   end
 
