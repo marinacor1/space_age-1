@@ -12,13 +12,31 @@ RSpec.feature "registered user can edit account" do
       visit '/dashboard'
       click_on "Update Account"
 
-        fill_in "Email", with: "JonB"
-        fill_in "Password", with: "password1"
-        fill_in "Password confirmation", with: "password1"
-        click_on "Edit Account"
+      fill_in "Email", with: "JonB"
+      fill_in "Password", with: "password1"
+      fill_in "Password confirmation", with: "password1"
+      click_on "Edit Account"
 
       expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
       expect(page).to have_content "JonB"
+      expect(page).not_to have_content email
+    end
+  end
+  context "with valid params but without password" do
+    include FeatureHelper
+    scenario "they see a form to edit account" do
+      user = User.create(username: "hotdog", email: "wassup", password: "password", password_confirmation: "password")
+
+      user_login
+
+      visit '/dashboard'
+      click_on "Update Account"
+
+      fill_in "Email", with: "JonZ"
+      click_on "Edit Account"
+
+      expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
+      expect(page).to have_content "JonZ"
       expect(page).not_to have_content email
     end
   end
