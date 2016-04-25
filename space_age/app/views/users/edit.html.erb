@@ -1,4 +1,4 @@
-Edit Your Account current_user.username
+Edit Your Account <%= current_user.username.capitalize %>
 <%= form_for current_user do |f| %>
   <%= f.text_field :username, placeholder: "Username" %>
   <%= f.text_field :email, placeholder: "Email" %>
