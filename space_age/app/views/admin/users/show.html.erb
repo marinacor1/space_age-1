@@ -15,13 +15,28 @@
         <%= form_for @user do |f| %>
         <%= f.text_field :username %>
         <%= f.text_field :email %>
-        <%= f.password_field :password, placeholder: "New Password" %>
-        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+        <%= f.password_field :password, placeholder: "Confirm Password" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password Again" %>
         <%= f.submit "Update Account", class: "button expanded"%>
         <% end %>
       </div>
     </li>
   </ul>
+  </div>
+  <br>
+  <div class="row small-4 offset-4 passwordchange">
+    <ul class="accordion" data-accordion>
+      <li class="accordion-item" data-accordion-item>
+        <a href="#" class="accordian-title"><h3 class="text-center">Change Your Password</h3></a>
+        <div class="accordion-content" data-tab-content>
+          <%= form_for @user do |f| %>
+          <%= f.password_field :password, placeholder: "New Password" %>
+          <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+          <%= f.submit "Update Password", class: "button expanded"%>
+          <% end %>
+        </div>
+      </li>
+    </ul>
   <ul class="accordion" data-accordion>
     <li class="accordion-item" data-accordion-item>
       <a href="#" class="accordian-title"><h3 class="text-center">Create a New Package</h3></a>
