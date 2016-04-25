@@ -51,10 +51,6 @@ RSpec.feature "registered user can edit account" do
 
       visit dashboard_path(user)
       expect(page).to have_content "The page you were looking for doesn't exist."
-
-
-      visit edit_user_path(user)
-      expect(page).to have_content "The page you were looking for doesn't exist."
     end
   end
 
