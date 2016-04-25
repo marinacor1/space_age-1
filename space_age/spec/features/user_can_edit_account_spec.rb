@@ -1,16 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature "registered user can edit account" do
-  include FeatureHelper
   context "with valid params" do
     scenario "they see a form to edit account" do
-      @user = create(:user)
+      user = create(:user)
 
-      email = @user.email
+      ApplicationController.any_instance.stubs(:current_user).returns(user)
 
-      user_login
+      email = user.email
 
-      expect(current_path).to eq(packages_path)
       visit '/dashboard'
       click_on "Update Account"
 
@@ -19,7 +17,7 @@ RSpec.feature "registered user can edit account" do
         fill_in "Password confirmation", with: "password1"
         click_on "Edit Account"
 
-      expect(page).to have_content "Welcome to Your Dashboard, #{@user.username}"
+      expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
       expect(page).to have_content "JonB"
       expect(page).not_to have_content email
     end
@@ -36,12 +34,7 @@ RSpec.feature "registered user can edit account" do
 
       expect(current_path).to eq(login_path)
 
-      within ".login_form" do
-        fill_in "Username", with: "admin"
-        fill_in "Password", with: "password"
-        click_on "Sign In"
-      end
-      expect(current_path).to eq '/admin/dashboard'
+      ApplicationController.any_instance.stubs(:current_user).returns(admin)
 
       visit dashboard_path(user)
 
