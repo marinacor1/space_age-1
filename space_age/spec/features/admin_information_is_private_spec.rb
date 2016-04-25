@@ -15,7 +15,6 @@ RSpec.feature "admin information is private" do
   it "guest does not have admin access" do
     admin = User.create(username: "adminor", email: "emailzo", password: "password", password_confirmation: "password", role: 1)
 
-
     visit '/admin/dashboard'
 
     expect(page).to have_content "The page you were looking for doesn't exist"
