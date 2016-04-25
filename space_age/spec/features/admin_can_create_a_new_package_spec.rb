@@ -20,7 +20,7 @@ RSpec.feature "admin can add a new item" do
     fill_in "Package Description", with: "very lux"
     fill_in "Choose a Price for the New Package", with: 1000.00
     select destination.planet, from: "Choose a Destination"
-    attach_file('Choose an Image', File.absolute_path(image))
+    
 
 
     click_on "Create Package"
