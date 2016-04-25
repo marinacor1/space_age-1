@@ -1,6 +1,7 @@
 
 <div class="row small-6 offset-3">
   <h4 class="centered-text">Welcome to Your Dashboard, <%= @user.username %></h4>
+  <h4 class="centered-text"><%= @user.email %></h4>
 </div>
 
 <div class="row small-4 offset-4">
@@ -16,7 +17,13 @@
         <%= f.submit "Update Account", class: "button expanded"%>
         <% end %>
       </div>
-    </div>
+      <div class="accordian-item">
+       <a href="#" class="accordian-title">Delete Account</a>
+       <div class="accordian-content" data-tab-content>
+         <h6 class="centered-text">Are You Sure? We'll Miss You So!</h6>
+         <%= button_to "I\'m Sure- Delete my Account", user_path(@user), method: :delete, class: "button expanded" %>
+       </div>
+     </div>
     <% if current_user.admin? %>
       <div class="accordian-item" data-accordian-item>
         <a href="#" class="accordian-title">Create a New Destination</a>

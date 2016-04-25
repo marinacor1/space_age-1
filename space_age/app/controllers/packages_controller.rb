@@ -8,4 +8,23 @@ class PackagesController < ApplicationController
     @package = Package.find(params[:id])
   end
 
+  def create
+    @package = Package.new(package_params)
+
+    if @package.save
+      flash[:success] = "Package: #{@package.title} Created"
+      redirect_to package_path(@package)
+    else
+      flash[:alert] = @package.errors.full_messages.join(", ")
+      render :admin_dashboard
+    end
+
+  end
+
+  private
+
+  def package_params
+    params.require(:package).permit(:title, :description, :price, :destination_id, :image)
+  end
+
 end

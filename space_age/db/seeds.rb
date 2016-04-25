@@ -6,7 +6,7 @@
   package = Package.create(title: "Adventure",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_mars_1.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_mars_1.jpg"),
                   destination_id: 1,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -14,7 +14,7 @@
   package = Package.create(title: "Mars Family",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_mars_2.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_mars_2.jpg"),
                   destination_id: 1,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -22,7 +22,7 @@
   package = Package.create(title: "Mars Luxury",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_mars_3.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_mars_3.jpg"),
                   destination_id: 1,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -30,7 +30,7 @@
   package = Package.create(title: "Mars Weekend",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_mars_4.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_mars_4.jpg"),
                   destination_id: 1,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -38,7 +38,7 @@
   package = Package.create(title: "Mars Service Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_mars_5.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_mars_5.jpg"),
                   destination_id: 1,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -52,7 +52,7 @@
   package = Package.create(title: "Venus Adventure",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_venus_1.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_venus_1.jpg"),
                   destination_id: 2,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -60,7 +60,7 @@
   package = Package.create(title: "Venus Family",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_venus_2.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_venus_2.jpg"),
                   destination_id: 2,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -68,7 +68,7 @@
   package = Package.create(title: "Venus Luxury",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_venus_3.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_venus_3.jpg"),
                   destination_id: 2,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -76,7 +76,7 @@
   package = Package.create(title: "Venus Weekend",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_venus_4.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_venus_4.jpg"),
                   destination_id: 2,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -84,7 +84,7 @@
   package = Package.create(title: "Venus Service Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_venus_5.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_venus_5.jpg"),
                   destination_id: 2,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -97,7 +97,7 @@
   package = Package.create(title: "Moon Adventure",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_moon_1.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_moon_1.jpg"),
                   destination_id: 3,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -105,7 +105,7 @@
   package = Package.create(title: "Moon Family",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_moon_2.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_moon_2.jpg"),
                   destination_id: 3,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -113,7 +113,7 @@
   package = Package.create(title: "Moon Luxury",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_moon_3.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_moon_3.jpg"),
                   destination_id: 3,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -121,7 +121,7 @@
   package = Package.create(title: "Moon Weekend",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_moon_4.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_moon_4.jpg"),
                   destination_id: 3,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -129,7 +129,7 @@
   package = Package.create(title: "Moon Service Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "planet_moon_5.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/planet_moon_5.jpg"),
                   destination_id: 3,
                           status: 0)
   puts "Created #{package.title}, price: #{package.price}"
@@ -139,7 +139,7 @@
   package = Package.create(title: "Moon Popular Trip",
                      description: Faker::Lorem.paragraph,
                            price: rand(3..9) + 1000,
-                           image: "sold_out.jpeg",
+                           image: File.new("#{Rails.root}/app/assets/images/sold_out.jpg"),
                   destination_id: 3,
                           status: 1)
   puts "Created #{package.title}, price: #{package.price}"
