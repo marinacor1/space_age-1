@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::BaseController
-  # before_action: require_login!, except: [:new, :create]
+
   def show
     @user = current_user
     @destination = Destination.new
@@ -8,7 +8,7 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def index
-    @users = User.all 
+    @users = User.all
   end
 
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: "users#show"
     resources :users, only: [ :update, :delete ]
+    get '/orders' , to: "orders#index"
   end
 
   get '/trip', to: "trip_packages#show"

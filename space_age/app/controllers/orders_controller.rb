@@ -1,11 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    if current_user.role == 1
-      @orders = Order.all
-    else
-      @orders = current_user.orders
-    end
+    @orders = current_user.orders
   end
 
   def show
