@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature "admin information is private" do
-  include FeatureHelper
   it "registered user does not have admin access" do
-    @user = User.create(username: "Sam", email: "email123kk", password: "password", password_confirmation: "password")
+    user = User.create(username: "Sam", email: "email123kk", password: "password", password_confirmation: "password")
     admin = User.create(username: "adminor", email: "emailzo", password: "password", password_confirmation: "password", role: 1)
 
-    user_login
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
 
     visit '/admin/dashboard'
 
@@ -15,7 +14,6 @@ RSpec.feature "admin information is private" do
 
   it "guest does not have admin access" do
     admin = User.create(username: "adminor", email: "emailzo", password: "password", password_confirmation: "password", role: 1)
-
 
     visit '/admin/dashboard'
 
