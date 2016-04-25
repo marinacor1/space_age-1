@@ -51,11 +51,9 @@ RSpec.feature "User can checkout" do
     order = Order.first
 
     expect(page).to have_content("Your Cart is Empty")
-
     expect(page).to_not have_content order.id
     expect(page).to_not have_content order.status
     expect(page).to_not have_content order.total_cost
-    expect(page).to_not have_content order.total_quantity
     expect(page).to_not have_content order.package_names
     expect(page).to_not have_link "View", order_path(order)
   end
