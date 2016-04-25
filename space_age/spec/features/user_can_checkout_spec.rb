@@ -59,4 +59,16 @@ RSpec.feature "User can checkout" do
     expect(page).to_not have_content order.package_names
     expect(page).to_not have_link "View", order_path(order)
   end
+
+  scenario "guest cannot checkout" do
+    package1 = create(:package)
+    visit package_path(package1)
+
+    click_on "Add Package to Trip"
+
+    visit '/trip'
+    click_on "Login or Create Account to Purchase"
+
+    expect(current_path).to eq(login_path)
+  end
 end
