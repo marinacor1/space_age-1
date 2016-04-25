@@ -5,10 +5,7 @@ RSpec.describe Package, type: :model do
     it { is_expected.to validate_presence_of(:title) }
     it { is_expected.to validate_presence_of(:price) }
     it { is_expected.to validate_presence_of(:description) }
-    it { is_expected.to validate_presence_of(:image) }
     it { is_expected.to validate_uniqueness_of(:title) }
-    it { is_expected.to validate_uniqueness_of(:description) }
-    it { is_expected.to validate_uniqueness_of(:image) }
     it { should belong_to(:destination) }
   end
 end
