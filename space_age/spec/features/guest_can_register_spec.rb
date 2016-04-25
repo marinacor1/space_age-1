@@ -23,7 +23,7 @@ RSpec.feature "guest can register" do
 
       expect(current_path).to eq dashboard_path
       within ".title-bar-left" do
-        expect(page).to have_content "Logged in as #{User.first.username}"
+        expect(page).to have_content "Welcome, #{User.first.username}"
       end
 
       expect(page).to have_content "Welcome to Your Dashboard, User"
