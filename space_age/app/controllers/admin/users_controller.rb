@@ -7,4 +7,8 @@ class Admin::UsersController < Admin::BaseController
     @destinations = Destination.all
   end
 
+  def index
+    @users = User.all 
+  end
+
 end
