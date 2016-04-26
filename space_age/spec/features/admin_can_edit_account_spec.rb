@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "admin can edit account" do
   include FeatureHelper
-  xcontext "with valid params" do
+  context "with valid params" do
     scenario "they see a form to edit account" do
     admin = User.create(username: "adminor", email: "emailz", password: "password", password_confirmation: "password", role: 1)
 
@@ -12,11 +12,10 @@ RSpec.feature "admin can edit account" do
       click_on "Update Account"
 
         fill_in "Email", with: "JonB"
-        fill_in "Password", with: "password"
-        fill_in "Password confirmation", with: "password1"
-        click_on "Edit Account"
+        fill_in "Confirm Password", with: "password"
+        click_on "Update Account"
 
-      expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
+      expect(page).to have_content "Welcome to Your Dashboard, #{admin.username}"
       expect(page).to have_content "JonB"
       expect(page).not_to have_content "emailz"
     end
@@ -32,9 +31,9 @@ RSpec.feature "admin can edit account" do
       visit '/dashboard'
       click_on "Update Account"
 
-      fill_in "Password", with: "JonZ"
+      fill_in "New Password", with: "JonZ"
       fill_in "Password confirmation", with: "JonZ"
-      click_on "Edit Account"
+      click_on "Update Password"
       expect(page).to have_content "Welcome to Your Dashboard, #{@user.username.capitalize}"
     end
   end
