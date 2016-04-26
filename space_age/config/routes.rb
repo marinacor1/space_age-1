@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
 
   get '/trip', to: "trip_packages#show"
+  resources :charges, only: [ :new, :create ]
 
   resources :packages, only: [ :index, :show, :create ]
   resources :trip_packages, only: [ :create, :destroy, :update ]
