@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= content_for?(:title) ? yield(:title) : "Eccentric" %></title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:200|Open+Sans' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -18,7 +19,6 @@
       <button class"close-button" aria-label="Dismiss alert" type="button" data-close >
         <span aria-hidden="true" >&times;</span>
       </button>
-      <!-- <a href="#" class="close">&CircleTimes;</a> -->
     </div>
   </div>
   <% end %>
@@ -26,9 +26,3 @@
   <%= render partial: 'layouts/footer' %>
 </body>
 </html>
-
-<!-- <div class="callout" data-closable>
-<#%#= content_tag :div, message, class: "callout #{type}" %>
-<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-<span aria-hidden="true">&times;</span>
-</button> -->
