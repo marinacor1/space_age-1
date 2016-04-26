@@ -15,7 +15,7 @@ RSpec.feature "admin can edit account" do
         fill_in "Confirm Password", with: "password"
         click_on "Update Account"
 
-      expect(page).to have_content "Welcome to Your Dashboard, #{admin.username}"
+      expect(page).to have_content "Welcome to Your Dashboard, Adminor"
       expect(page).to have_content "JonB"
       expect(page).not_to have_content "emailz"
     end
