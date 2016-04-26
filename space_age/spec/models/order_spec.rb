@@ -35,7 +35,6 @@ RSpec.describe Order, type: :model do
     order_package1.save(validate: false)
     order_package2.save(validate: false)
 
-
     expect(order.total_quantity).to eq 2
   end
 

@@ -10,11 +10,11 @@ RSpec.feature "admin can edit account" do
 
       expect(current_path).to eq(admin_dashboard_path)
       click_on "Update Account"
-save_and_open_page
-      fill_in "Email", with: "JonB"
-      fill_in "Password", with: "password"
-      fill_in "Password confirmation", with: "password1"
-      click_on "Edit Account"
+
+        fill_in "Email", with: "JonB"
+        fill_in "Password", with: "password"
+        fill_in "Password confirmation", with: "password1"
+        click_on "Edit Account"
 
       expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
       expect(page).to have_content "JonB"
