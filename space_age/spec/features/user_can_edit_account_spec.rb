@@ -13,9 +13,9 @@ RSpec.feature "registered user can edit account" do
       click_on "Update Account"
 
       fill_in "Email", with: "JonB"
-      fill_in "Password", with: "password1"
-      fill_in "Password confirmation", with: "password1"
-      click_on "Edit Account"
+      fill_in "Confirm Password", with: "password1"
+      fill_in "Confirm Password Again", with: "password1"
+      click_on "Update Account"
 
       expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
       expect(page).to have_content "JonB"
@@ -33,9 +33,9 @@ RSpec.feature "registered user can edit account" do
       visit '/dashboard'
       click_on "Update Account"
 
-      fill_in "Password", with: "JonZ"
-      fill_in "Password confirmation", with: "JonZ"
-      click_on "Edit Account"
+      fill_in "Confirm Password", with: "JonZ"
+      fill_in "Confirm Password Again", with: "JonZ"
+      click_on "Update Account"
       expect(page).to have_content "Welcome to Your Dashboard, #{@user.username.capitalize}"
     end
   end
