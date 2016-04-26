@@ -9,7 +9,17 @@
   }
 
   .fi-arrow-up {
-    color: green
+    color: #2be28a;
+  }
+
+  .quantity {
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    top: 25%;
+    right: 37%;
+    z-index: 100;
+
   }
 
   .fi-arrow-down {

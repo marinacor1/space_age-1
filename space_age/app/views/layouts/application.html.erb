@@ -23,11 +23,12 @@
   </div>
   <% end %>
   <%= yield %>
+  <%= render partial: 'layouts/footer' %>
 </body>
 </html>
 
 <!-- <div class="callout" data-closable>
-        <#%#= content_tag :div, message, class: "callout #{type}" %>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-          <span aria-hidden="true">&times;</span>
-        </button> -->
+<#%#= content_tag :div, message, class: "callout #{type}" %>
+<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+<span aria-hidden="true">&times;</span>
+</button> -->

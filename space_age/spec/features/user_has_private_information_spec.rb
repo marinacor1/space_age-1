@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "user cannot see another users private data" do
-  include FeatureHelper
   it "is private data like current or past orders" do
-    @user = User.create(username: "Maria", email: "email1666k", password: "password", password_confirmation: "password")
+    user = User.create(username: "Maria", email: "email1666k", password: "password", password_confirmation: "password")
     user2 = User.create(username: "Miguel", email: "email277k", password: "password", password_confirmation: "password")
 
     order = Order.create(user_id: user2.id, total_cost: 3000)
@@ -13,7 +12,7 @@ RSpec.feature "user cannot see another users private data" do
     OrderPackage.create(order_id: order.id, user_id: user2.id,
                        package_id: package2.id)
 
-    user_login
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
     visit order_path(order)
 
     expect(page).to have_content "The page you were looking for doesn't exist."

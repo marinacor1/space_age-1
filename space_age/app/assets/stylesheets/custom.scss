@@ -82,7 +82,7 @@ hr {
 }
 
 .orbit-image {
-  max-height: 90vh
+  max-height: 70vh
 }
 .category-link {
   color: white;
@@ -165,5 +165,18 @@ div.callout {
 }
 
 .fi-shopping-bag {
-   font-size: 28px
+   font-size: 36px;
+   position: relative;
+}
+
+.fi-torso {
+  font-size: 36px;
+}
+
+.dropdown a {
+  color: white;
+}
+
+.user-info {
+  background-color: black;
 }
