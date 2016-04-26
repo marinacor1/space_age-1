@@ -1,28 +1,15 @@
-== README
+## Eccentric Travel E-Commerce Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Spage Age is an e-commerce site for space travel for Eccentric Travel. Shop various packages on three different planets and book your flight today!
 
-Things you may want to cover:
+**Want to interact with the app?** [Click here](https://http://eccentric-travel.herokuapp.com/).
+Or, [view the original spec](https://github.com/turingschool/curriculum/blob/master/source/projects/little_shop.markdown).
 
-* Ruby version
+#### Features
 
-* System dependencies
+* **Index:** Full view of packages with javascript and Foundation 5 framework used
+* **Cart** Ability to shop and add packages to a cart
+* **Stripe** Ability to pay using the Stripe API.
+* **Testing** Feature and model testing with RSpec and Capybara
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![App in Action](http://recordit.co/nbFNiwYYC6)
