@@ -9,13 +9,14 @@ RSpec.feature "admin can edit account" do
       admin_login
 
       expect(current_path).to eq(admin_dashboard_path)
+      save_and_open_page
       click_on "Update Account"
 
-        fill_in "Email", with: "JonB"
-        fill_in "Confirm Password", with: "password"
-        fill_in "Confirm Password Again", with: "password"
+      fill_in "Email", with: "JonB"
+      fill_in "Confirm Password", with: "password"
+      fill_in "Confirm Password Again", with: "password"
 
-        click_on "Update Account"
+      click_on "Update Account"
 
       visit admin_dashboard_path
 
