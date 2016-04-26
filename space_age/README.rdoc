@@ -10,5 +10,6 @@ Or, [view the original spec](https://github.com/turingschool/curriculum/blob/mas
 * **Index:** Full view of packages with javascript and Foundation 5 framework used
 * **Cart** Ability to shop and add packages to a cart
 * **Stripe** Ability to pay using the Stripe API.
+* **Testing** Feature and model testing with RSpec and Capybara
 
 ![App in Action](http://recordit.co/nbFNiwYYC6)
