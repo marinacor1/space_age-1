@@ -23,20 +23,18 @@ RSpec.feature "admin can edit account" do
     end
   end
 
-  xcontext "with valid params only password" do
-    include FeatureHelper
+  context "with valid params only password" do
     scenario "they see a form to edit account" do
-      @user = User.create(username: "hotdog", email: "wassup", password: "password", password_confirmation: "password")
+      admin = User.create(username: "adminor", email: "emailz", password: "password", password_confirmation: "password", role: 1)
 
-      user_login
+      admin_login
 
       visit '/dashboard'
-      click_on "Update Account"
 
       fill_in "New Password", with: "JonZ"
-      fill_in "Password confirmation", with: "JonZ"
+      fill_in "Confirm New Password", with: "JonZ"
       click_on "Update Password"
-      expect(page).to have_content "Welcome to Your Dashboard, #{@user.username.capitalize}"
+      expect(page).to have_content "Welcome to Your Dashboard, Adminor"
     end
   end
 end
