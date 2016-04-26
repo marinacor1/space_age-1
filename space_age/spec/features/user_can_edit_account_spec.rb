@@ -22,6 +22,7 @@ RSpec.feature "registered user can edit account" do
       expect(page).not_to have_content email
     end
   end
+  
   context "with valid params only password" do
     include FeatureHelper
     scenario "they see a form to edit account" do
