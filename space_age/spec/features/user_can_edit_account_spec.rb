@@ -7,16 +7,16 @@ RSpec.feature "registered user can edit account" do
 
       ApplicationController.any_instance.stubs(:current_user).returns(user)
 
-      email = user.email  
+      email = user.email
 
       visit '/dashboard'
       click_on "Update Account"
-
+    within "#row small-4 offset-4 userchange" do
       fill_in "Email", with: "JonB"
       fill_in "Password", with: "password1"
       fill_in "Password confirmation", with: "password1"
       click_on "Edit Account"
-
+    end
       expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
       expect(page).to have_content "JonB"
       expect(page).not_to have_content email

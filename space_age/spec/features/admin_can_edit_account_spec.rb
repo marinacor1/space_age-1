@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "admin can edit account" do
   include FeatureHelper
-  context "with valid params" do
+  xcontext "with valid params" do
     scenario "they see a form to edit account" do
     admin = User.create(username: "adminor", email: "emailz", password: "password", password_confirmation: "password", role: 1)
 
