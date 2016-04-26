@@ -19,21 +19,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    if current_user == User.find(params[:id])
-      @user = current_user
-    else
-      render file: "/public/404"
-    end
-  end
-
   def update
     @user = current_user
     if @user.update_attributes(params_check)
+      flash[:error] = "Success! Your account updated."
       redirect_to  '/dashboard'
     else
       flash[:error] = "Your account could not be updated. Please check your input and try again."
-      render :edit
+      redirect_to  '/dashboard'
     end
   end
 
