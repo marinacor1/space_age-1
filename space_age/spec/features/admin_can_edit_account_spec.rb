@@ -11,8 +11,8 @@ RSpec.feature "admin can edit account" do
       expect(current_path).to eq(admin_dashboard_path)
       click_on "Edit Your Username or Email"
       fill_in "Email", with: "JonB"
+      fill_in "Enter Password", with: "password"
       fill_in "Confirm Password", with: "password"
-      fill_in "Confirm Password Again", with: "password"
 
       click_on "Update Account"
 

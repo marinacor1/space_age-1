@@ -15,8 +15,8 @@
         <%= form_for @user do |f| %>
         <%= f.text_field :username, placeholder: "Username" %>
         <%= f.text_field :email, placeholder: "Email" %>
-        <%= f.password_field :password, placeholder: "Confirm Password" %>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password Again" %>
+        <%= f.password_field :password, placeholder: "Enter Password" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
         <%= f.submit "Update Account", class: "button expanded"%>
         <% end %>
       </div>
@@ -31,7 +31,7 @@
       <div class="accordion-content" data-tab-content>
         <%= form_for @user do |f| %>
         <%= f.password_field :password, placeholder: "New Password" %>
-        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm New Password" %>
         <%= f.submit "Update Password", class: "button expanded"%>
         <% end %>
       </div>

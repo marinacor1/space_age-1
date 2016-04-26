@@ -12,8 +12,8 @@ RSpec.feature "registered user can edit account" do
       visit '/dashboard'
 
       fill_in "Email", with: "JonB"
+      fill_in "Enter Password", with: "password1"
       fill_in "Confirm Password", with: "password1"
-      fill_in "Confirm Password Again", with: "password1"
       click_on "Update Account"
 
       expect(page).to have_content "Welcome to Your Dashboard, #{user.username}"
