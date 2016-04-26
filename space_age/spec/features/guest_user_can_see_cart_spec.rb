@@ -45,7 +45,6 @@ RSpec.feature "guest user can see cart" do
       expect(page).to have_content package.description
       expect(page).to have_content package.price.to_s
 
-      expect(page).to have_content("Checkout")
       expect(page).to_not have_link("Login or Create Account to Purchase", login_path)
     end
   end

@@ -1,27 +1,31 @@
 
-  .cart-image {
-    width: 100px;
-    height: 100px;
-    }
-
-  .fi-x {
-    color: red;
+.cart-image {
+  width: 100px;
+  height: 100px;
   }
 
-  .fi-arrow-up {
-    color: #2be28a;
-  }
+.fi-x {
+  color: red;
+}
 
-  .quantity {
-    position: absolute;
-    color: black;
-    font-size: 20px;
-    top: 25%;
-    right: 37%;
-    z-index: 100;
+.fi-arrow-up {
+  color: #2be28a;
+}
 
-  }
+.quantity {
+  position: absolute;
+  color: black;
+  font-size: 20px;
+  top: 25%;
+  right: 37%;
+  z-index: 100;
 
-  .fi-arrow-down {
-    color: red
-  }
+}
+
+.fi-arrow-down {
+  color: red
+}
+
+.hidden {
+  display: none;
+}
