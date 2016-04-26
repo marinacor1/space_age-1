@@ -1,8 +1,14 @@
-Welcome to Eccentric Travel!
+## Eccentric Travel E-Commerce Site
 
-In this futuristic Rails app, users can shop for outer space travel packages, add them to a cart and then order them.
+Spage Age is an e-commerce site for space travel for Eccentric Travel. Shop various packages on three different planets and book your flight today!
 
-Administrators can add packages with images and view all user orders as well as shop themselves.
+**Want to interact with the app?** [Click here](https://http://eccentric-travel.herokuapp.com/).
+Or, [view the original spec](https://github.com/turingschool/curriculum/blob/master/source/projects/little_shop.markdown).
 
+#### Features
 
-In order to run the app, you need to clone it and bundle.  You can also check it out on our heroku site: eccentric-travel.herokuapp.com
+* **Index:** Full view of packages with javascript and Foundation 5 framework used
+* **Cart** Ability to shop and add packages to a cart
+* **Stripe** Ability to pay using the Stripe API.
+
+![App in Action](http://g.recordit.co/pn8dGevApY.gif)
