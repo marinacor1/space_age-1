@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(version: 20160424215610) do
     t.string   "title"
     t.decimal  "price"
     t.string   "description"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "destination_id"
-    t.integer  "status",             default: 0
+    t.integer  "status"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

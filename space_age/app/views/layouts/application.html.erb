@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= content_for?(:title) ? yield(:title) : "Eccentric" %></title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-    <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-      <%= render partial: 'layouts/nav' %>
-  <div class="row flash small-4 small-offset-2 no-border">
-    <% flash.each do |type, message|  %>
-    <div class="callout" data-closable>
-        <%= content_tag :div, message, class: "callout #{type}" %>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= content_for?(:title) ? yield(:title) : "Eccentric" %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render partial: 'layouts/nav' %>
+  <% flash.each do |type, message| %>
+  <div class="small-6 columns small-centered">
+    <div class="alert-box <%= type %> callout" data-alert data-closable >
+      <i class="fi-info"></i>
+      <%= message %>
+      <button class"close-button" aria-label="Dismiss alert" type="button" data-close >
+        <span aria-hidden="true" >&times;</span>
+      </button>
+      <!-- <a href="#" class="close">&CircleTimes;</a> -->
+    </div>
+  </div>
+  <% end %>
+  <%= yield %>
+</body>
+</html>
+
+<!-- <div class="callout" data-closable>
+        <#%#= content_tag :div, message, class: "callout #{type}" %>
         <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
           <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <% end %>
-  </div>
-    <%= yield %>
-  </body>
-</html>
+        </button> -->
