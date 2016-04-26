@@ -1,28 +1,8 @@
-== README
+Welcome to Eccentric Travel!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this futuristic Rails app, users can shop for outer space travel packages, add them to a cart and then order them.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Administrators can add packages with images and view all user orders as well as shop themselves.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+In order to run the app, you need to clone it and bundle.  You can also check it out on our heroku site: eccentric-travel.herokuapp.com
