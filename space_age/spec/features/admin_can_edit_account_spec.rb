@@ -13,7 +13,11 @@ RSpec.feature "admin can edit account" do
 
         fill_in "Email", with: "JonB"
         fill_in "Confirm Password", with: "password"
+        fill_in "Confirm Password Again", with: "password"
+
         click_on "Update Account"
+
+      visit admin_dashboard_path
 
       expect(page).to have_content "Welcome to Your Dashboard, Adminor"
       expect(page).to have_content "JonB"
