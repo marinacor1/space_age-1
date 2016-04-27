@@ -5,10 +5,10 @@ RSpec.feature "user can see past orders" do
   scenario "user will see order history with all past orders" do
     user1, user2 = create_list(:user, 2)
     User.create(username: "Administrator",
-                   email: "e",
+                email: "e",
                 password: "password",
-   password_confirmation: "password",
-                    role: 1)
+                password_confirmation: "password",
+                role: 1)
 
     order1 = Order.create(user_id: user1.id, total_cost: 1000 )
     order2 = Order.create(user_id: user1.id, total_cost: 2000)
