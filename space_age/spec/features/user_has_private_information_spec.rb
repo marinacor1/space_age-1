@@ -31,9 +31,9 @@ RSpec.feature "user cannot see another users private data" do
 
   it "guest cannot see user information" do
     user2 = User.create(username: "Miguel",
-                           email: "email277k",
+                        email: "email277k",
                         password: "password",
-           password_confirmation: "password")
+                        password_confirmation: "password")
 
     order = Order.create(user_id: user2.id, total_cost: 3000)
     package1, package2 = create_list(:package, 2)
