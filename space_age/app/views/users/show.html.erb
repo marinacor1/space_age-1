@@ -6,35 +6,4 @@
 <br>
 <hr>
 <h4 class="text-center"><%= link_to "Your Recent Orders", orders_path %></h4>
-<br>
-<div class="row small-4 offset-4 userchange">
-  <ul class="accordion" data-accordion>
-    <li class="accordion-item" data-accordion-item>
-      <a href="#" class="accordian-title"><h3 class="text-center">Edit Your Username or Email</h3></a>
-      <div class="accordion-content" data-tab-content>
-        <%= form_for @user do |f| %>
-        <%= f.text_field :username, placeholder: "Username" %>
-        <%= f.text_field :email, placeholder: "Email" %>
-        <%= f.password_field :password, placeholder: "Enter Password" %>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-        <%= f.submit "Update Account", class: "button expanded"%>
-        <% end %>
-      </div>
-    </ul>
-  </li>
-</div>
-<br>
-<div class="row small-4 offset-4 passwordchange">
-  <ul class="accordion" data-accordion>
-    <li class="accordion-item" data-accordion-item>
-      <a href="#" class="accordian-title"><h3 class="text-center">Change Your Password</h3></a>
-      <div class="accordion-content" data-tab-content>
-        <%= form_for @user do |f| %>
-        <%= f.password_field :password, placeholder: "New Password" %>
-        <%= f.password_field :password_confirmation, placeholder: "Confirm New Password" %>
-        <%= f.submit "Update Password", class: "button expanded"%>
-        <% end %>
-      </div>
-    </li>
-  </ul>
-</div>
+<%= render partial: "layouts/forms" %>
