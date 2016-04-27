@@ -73,13 +73,13 @@ RSpec.describe Order, type: :model do
   end
 
   it "can create order packages" do
-    package1 = Package.create(id: 1, price: 1000,
+    package = Package.create(id: 1, price: 1000,
                               title: "Basic1",
-                              description: "Basic package1.")
-    package2 = Package.create(id: 2,
+                              description: "Basic package.")
+    package1 = Package.create(id: 2,
                               price: 2000,
                               title: "Basic2",
-                              description: "Basic package2.")
+                              description: "Basic package1.")
     order = Order.new(id: 1)
     order.save(validate: false)
     trip = Trip.new({ "1" => 1, "2" => 2 })
