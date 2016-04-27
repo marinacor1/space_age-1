@@ -14,7 +14,7 @@
           <th width "150">Price</th>
           <th width "100">Passengers</th>
           <th width "150">Sub Total</th>
-          
+
         </tr>
       </thead>
       <tbody class="package">
@@ -41,10 +41,10 @@
       <% unless current_user %>
         <%= link_to "Login or Create Account to Purchase", login_path, class: "button primary" %>
       <% else %>
-        <%= link_to "Checkout", orders_path, class: "button success", method: :post %>
+      <%= render partial: "stripe" %>
+      <%= link_to "Checkout", orders_path, class: "hidden", method: :post %>
       <% end %>
     </div>
   <% end %>
-
 </div>
 <br>

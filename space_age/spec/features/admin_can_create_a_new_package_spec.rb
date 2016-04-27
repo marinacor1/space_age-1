@@ -13,14 +13,13 @@ RSpec.feature "admin can add a new item" do
 
     visit admin_dashboard_path(admin)
 
-    image = 'spec/support/fixtures/people_1.jpg'
     click_on "Create a New Package"
 
     fill_in "Package Title", with: "Super Lux"
     fill_in "Package Description", with: "very lux"
     fill_in "Choose a Price for the New Package", with: 1000.00
     select destination.planet, from: "Choose a Destination"
-    
+
 
 
     click_on "Create Package"
