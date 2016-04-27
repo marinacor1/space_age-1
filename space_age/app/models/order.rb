@@ -8,7 +8,9 @@ class Order < ActiveRecord::Base
   def create_packages(trip)
     trip.itinerary.each_pair do |key, value|
       value.times do
-        order_packages.create(user_id: user_id, order_id: id, package_id: key.to_i)
+        order_packages.create(user_id: user_id,
+                              order_id: id,
+                              package_id: key.to_i)
       end
     end
   end
