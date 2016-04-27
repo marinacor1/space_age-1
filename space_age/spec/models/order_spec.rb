@@ -74,8 +74,8 @@ RSpec.describe Order, type: :model do
 
   it "can create order packages" do
     package = Package.create(id: 1, price: 1000,
-                              title: "Basic1",
-                              description: "Basic package.")
+                             title: "Basic1",
+                             description: "Basic package.")
     package1 = Package.create(id: 2,
                               price: 2000,
                               title: "Basic2",
