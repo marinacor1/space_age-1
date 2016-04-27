@@ -13,12 +13,14 @@ RSpec.feature "user cannot see another users private data" do
 
     order = Order.create(user_id: user2.id, total_cost: 3000)
     package1, package2 = create_list(:package, 2)
-    OrderPackage.create(order_id: order.id,
-                         user_id: user2.id,
-                      package_id: package1.id)
-    OrderPackage.create(order_id: order.id,
-                         user_id: user2.id,
-                      package_id: package2.id)
+    OrderPackage.create(
+                        order_id: order.id,
+                        user_id: user2.id,
+                        package_id: package1.id)
+    OrderPackage.create(
+                        order_id: order.id,
+                        user_id: user2.id,
+                        package_id: package2.id)
 
     ApplicationController.any_instance.stubs(:current_user).returns(user)
     visit order_path(order)
@@ -37,12 +39,14 @@ RSpec.feature "user cannot see another users private data" do
 
     order = Order.create(user_id: user2.id, total_cost: 3000)
     package1, package2 = create_list(:package, 2)
-    OrderPackage.create(order_id: order.id,
-                         user_id: user2.id,
-                      package_id: package1.id)
-    OrderPackage.create(order_id: order.id,
-                         user_id: user2.id,
-                      package_id: package2.id)
+    OrderPackage.create(
+                        order_id: order.id,
+                        user_id: user2.id,
+                        package_id: package1.id)
+    OrderPackage.create(
+                        order_id: order.id,
+                        user_id: user2.id,
+                        package_id: package2.id)
 
     visit order_path(order)
 
