@@ -11,8 +11,7 @@ RSpec.feature "user sees past order details" do
 
       order = Order.create(user_id: user.id, total_cost: 3000)
       package1, package2 = create_list(:package, 2)
-      OrderPackage.create(
-                          order_id: order.id,
+      OrderPackage.create(order_id: order.id,
                           user_id: user.id,
                           package_id: package1.id)
       OrderPackage.create(order_id: order.id,
