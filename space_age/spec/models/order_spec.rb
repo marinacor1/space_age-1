@@ -71,4 +71,16 @@ RSpec.describe Order, type: :model do
     expect(order.subtotal(package1)).to eq 4000.0
     expect(order.subtotal(package2)).to eq 2000.0
   end
+
+  it "can create order packages" do
+    package1 = Package.create(id: 1, price: 1000, title: "Basic1", description: "Basic package1.")
+    package2 = Package.create(id: 2, price: 2000, title: "Basic2", description: "Basic package2.")
+    order = Order.new(id: 1)
+    order.save(validate: false)
+    trip = Trip.new({ "1" => 1, "2" => 2 })
+
+    order.create_packages(trip)
+
+    expect(order.packages.count). to eq(3)
+  end
 end

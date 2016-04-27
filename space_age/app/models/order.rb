@@ -6,8 +6,10 @@ class Order < ActiveRecord::Base
   enum status: %w(Pending Paid Cancelled)
 
   def create_packages(trip)
-    trip.itinerary.keys.each do |id|
-      order_packages.create(user_id: user_id, order_id: id, package_id: id.to_i)
+    trip.itinerary.each_pair do |key, value|
+      value.times do
+        order_packages.create(user_id: user_id, order_id: id, package_id: key.to_i)
+      end
     end
   end
 
