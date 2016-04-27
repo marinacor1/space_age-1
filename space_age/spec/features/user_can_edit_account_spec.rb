@@ -42,7 +42,9 @@ RSpec.feature "registered user can edit account" do
     scenario "they are redirected to index" do
 
       user = create(:user)
-      admin = User.create(username: "admin", email: "emailzzz", password: "password", password_confirmation: "password", role: 1)
+      admin = User.create(username: "admin", email: "emailzzz",
+                          password: "password",
+                          password_confirmation: "password", role: 1)
 
       visit login_path
       click_on "Login"

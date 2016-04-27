@@ -14,7 +14,7 @@ RSpec.feature "User can edit their cart" do
 
     click_on "Add Package to Trip"
 
-    visit '/trip'
+    visit "/trip"
 
     within ".cart" do
       expect(page).to have_content "2"

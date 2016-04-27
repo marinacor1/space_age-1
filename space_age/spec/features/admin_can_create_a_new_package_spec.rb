@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "admin can add a new item" do
   scenario "admin creates an item with a title, description, price" do
 
-    admin = User.create(username: "jb", email: "jb@jb", password: "password", role: 1)
+    admin = User.create(username: "jb", email: "jb@jb",
+                        password: "password", role: 1)
 
 
 

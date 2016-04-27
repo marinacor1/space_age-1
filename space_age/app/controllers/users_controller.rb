@@ -23,11 +23,10 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params_check)
       flash[:error] = "Success! Your account updated."
-      redirect_to  dashboard_path
     else
       flash[:error] = "Your account could not be updated. Please check your input and try again."
-      redirect_to  dashboard_path
     end
+      redirect_to  dashboard_path
   end
 
   def show

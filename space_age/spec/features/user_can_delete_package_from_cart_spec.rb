@@ -7,7 +7,7 @@ RSpec.feature "User can delete a package from their cart" do
 
     click_on "Add Package to Trip"
 
-    visit '/trip'
+    visit "/trip"
 
     within ".package" do
       find(".fi-x").click

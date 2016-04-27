@@ -16,7 +16,10 @@ RSpec.feature "a guest can browse by destination" do
 
   scenario "a guest sees all associated items for a destination" do
     package1, package2, package3 = create_list(:package, 3)
-    package4 = Package.create(title: "Luxury123", price: 300, description: "Fun timez", destination_id: "#{package1.destination_id}")
+    package4 = Package.create(title: "Luxury123", price: 300,
+                              description: "Fun timez",
+                              destination_id: "#{package1.destination_id}")
+
     visit destination_path(package1.destination.planet)
 
       expect(page).to have_content package1.title
