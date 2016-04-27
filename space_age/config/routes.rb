@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   get '/signup', to: "users#new"
+  
 
   delete '/logout', to: 'sessions#destroy'
 
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :packages, only: [:index, :show, :create]
   resources :trip_packages, only: [:create, :destroy, :update]
   resources :orders, only: [:show, :create]
+
   get '/orders' , to: "orders#index"
 
   get '/:planet', to: "destinations#show", as: :destination
