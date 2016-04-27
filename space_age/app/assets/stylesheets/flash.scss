@@ -1,40 +1,39 @@
-.alert-box.alert {
+@mixin flash {
   border: 3px solid #D91E18;
   border-radius: 5px;
-  background-color:rgba(217, 30, 24, 0.2);
+  background-color:rgba(#000000, 0.8);
+  font-size: 12px;
+  width: 15vw;
+  height: 10vw;
   position: absolute;
   z-index: 1000;
+}
+
+.flash-close {
+  font-size: 26px
+}
+
+
+.alert-box.alert {
+  @include flash;
   top: 25%;
   left: 35%;
 }
 
 .alert-box.warning {
-  border: 3px solid #D35400;
-  border-radius: 5px;
-  background-color:rgba(211, 84, 0, 0.2);
-  position: absolute;
-  z-index: 1000;
+  @include flash;
   top: 25%;
   left: 35%;
 }
 
 .alert-box.success {
-  border: 3px solid #1E824C;
-  border-radius: 5px;
-  background-color:rgba(30, 130, 76, 0.2);
-  position: absolute;
-  z-index: 1000;
-  top: 5%;
-  right: 12%;
+  @include flash;
+  top: 0.05%;
+  right: 8%;
 }
 
 .alert-box.info {
-  border: 3px solid #3498DB;
-  border-radius: 5px;
-  color: #fff;
-  background-color:rgba(52, 152, 219, 0.2);
-  position: absolute;
-  z-index: 1000;
+  @include flash;
   top: 50%;
   left: 7%;
 }

@@ -1,7 +1,8 @@
 
 .cart-image {
-  width: 100px;
   height: 100px;
+  object-fit: cover;
+  width: 100px;
   }
 
 .fi-x {
@@ -10,6 +11,10 @@
 
 .fi-arrow-up {
   color: #2be28a;
+}
+
+.squish {
+  width: 400px;
 }
 
 .quantity {
