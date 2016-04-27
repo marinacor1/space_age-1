@@ -1,7 +1,8 @@
 class Package < ActiveRecord::Base
   belongs_to :destination
   has_attached_file :image
-  validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png"],
+                                    default_url: "missing.jpg"
   validates :title, uniqueness: true
   validates_presence_of :title, :description, :price
 
