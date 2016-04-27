@@ -4,15 +4,17 @@ RSpec.feature "user sees past order details" do
   context "user has one past order" do
     scenario "they see the details of that order on a show page" do
       user = User.create(username: "Isabella", email: "email1sljf",
-                        password: "password", password_confirmation: "password")
+                         password: "password", password_confirmation: "password")
       ApplicationController.any_instance.stubs(:current_user).returns(user)
 
       order = Order.create(user_id: user.id, total_cost: 3000)
       package1, package2 = create_list(:package, 2)
-      OrderPackage.create(order_id: order.id, user_id: user.id,
-                         package_id: package1.id)
-      OrderPackage.create(order_id: order.id, user_id: user.id,
-                         package_id: package2.id)
+      OrderPackage.create(order_id: order.id,
+                           user_id: user.id,
+                        package_id: package1.id)
+      OrderPackage.create(order_id: order.id,
+                           user_id: user.id,
+                        package_id: package2.id)
 
       visit orders_path
 
