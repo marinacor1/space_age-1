@@ -13,12 +13,22 @@
 
 .landing-image {
   @include background-image-spec;
-  background-image: url("https://images.unsplash.com/photo-1445953993297-28dff00088f3?crop=entropy&dpr=2&fit=crop&fm=jpg&h=650&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1300");
   min-height: 100vh;
  }
 
+.landing-link {
+  font-size: 12px;
+  color: white;
+  background-color: rgba(47,79,79, .5)
+
+}
+
 .menu-centered {
 
+}
+
+.button {
+  border-radius: 3px;
 }
 
 .centered-button {
@@ -158,6 +168,7 @@ div.callout {
   border-radius: 5px;
 }
 
+
 .thumbnail {
   height: 300px;
   width: 400px;
@@ -179,4 +190,14 @@ div.callout {
 
 .user-info {
   background-color: black;
+}
+
+.apod {
+  position: relative;
+}
+
+.apod-tooltip {
+  position: absolute;
+  z-index: 1000;
+  bottom: 50%;
 }
