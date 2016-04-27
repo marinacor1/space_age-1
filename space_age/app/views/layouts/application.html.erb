@@ -11,17 +11,7 @@
 </head>
 <body>
   <%= render partial: 'layouts/nav' %>
-  <% flash.each do |type, message| %>
-  <div class="small-6 columns small-centered">
-    <div class="alert-box <%= type %> callout" data-alert data-closable >
-      <i class="fi-info"></i>
-      <%= message %>
-      <button class"close-button" aria-label="Dismiss alert" type="button" data-close >
-        <span aria-hidden="true" >&times;</span>
-      </button>
-    </div>
-  </div>
-  <% end %>
+  <%= render partial: 'layouts/flash' %>
   <%= yield %>
   <%= render partial: 'layouts/footer' %>
 </body>
