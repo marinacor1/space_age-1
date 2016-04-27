@@ -16,6 +16,12 @@ class Trip
     end.sum
   end
 
+  def find_packages
+    itinerary.keys.map do |id|
+      Package.find(id)
+    end
+  end
+
   def subtotal(package)
     package.price * sub_quantity(package.id)
   end

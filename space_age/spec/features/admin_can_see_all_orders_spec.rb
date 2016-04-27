@@ -4,7 +4,9 @@ RSpec.feature "user can see past orders" do
   include FeatureHelper
   scenario "user will see order history with all past orders" do
     user1, user2 = create_list(:user, 2)
-    admin = User.create(username: "Administrator", email: 'e', password: "password", password_confirmation: "password", role: 1)
+    admin = User.create(username: "Administrator", email: 'e',
+                        password: "password", password_confirmation: "password",
+                        role: 1)
 
     order1 = Order.create(user_id: user1.id, total_cost: 1000 )
     order2 = Order.create(user_id: user1.id, total_cost: 2000)
@@ -12,7 +14,7 @@ RSpec.feature "user can see past orders" do
 
     admin_login
 
-    visit 'admin/orders'
+    visit admin_orders_path
 
     expect(page).to have_content order1.id
     expect(page).to have_content order1.total_cost

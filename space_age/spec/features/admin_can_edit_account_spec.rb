@@ -25,11 +25,12 @@ RSpec.feature "admin can edit account" do
 
   context "with valid params only password" do
     scenario "they see a form to edit account" do
-      admin = User.create(username: "adminor", email: "emailz", password: "password", password_confirmation: "password", role: 1)
+      admin = User.create(username: "adminor", email: "emailz", password: "password",
+                          password_confirmation: "password", role: 1)
 
       admin_login
 
-      visit '/dashboard'
+      visit dashboard_path
 
       fill_in "New Password", with: "JonZ"
       fill_in "Confirm New Password", with: "JonZ"

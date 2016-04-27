@@ -13,7 +13,7 @@ RSpec.feature "User can checkout" do
 
     click_on "Add Package to Trip"
 
-    visit '/trip'
+    visit "/trip"
 
     click_on "Checkout"
 
@@ -42,11 +42,11 @@ RSpec.feature "User can checkout" do
 
     click_on "Add Package to Trip"
 
-    visit '/trip'
+    visit "/trip"
 
     click_on "Checkout"
 
-    visit '/trip'
+    visit "/trip"
 
     order = Order.first
 
@@ -64,7 +64,7 @@ RSpec.feature "User can checkout" do
 
     click_on "Add Package to Trip"
 
-    visit '/trip'
+    visit "/trip"
     click_on "Login or Create Account to Purchase"
 
     expect(current_path).to eq(login_path)

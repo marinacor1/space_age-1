@@ -9,7 +9,7 @@ RSpec.feature "registered user can edit account" do
 
       email = user.email
 
-      visit '/dashboard'
+      visit dashboard_path
 
       fill_in "Email", with: "JonB"
       fill_in "Enter Password", with: "password1"
@@ -29,7 +29,7 @@ RSpec.feature "registered user can edit account" do
 
       user_login
 
-      visit '/dashboard'
+      visit dashboard_path
       click_on "Update Account"
 
       fill_in "Confirm Password", with: "JonZ"
@@ -42,9 +42,11 @@ RSpec.feature "registered user can edit account" do
     scenario "they are redirected to index" do
 
       user = create(:user)
-      admin = User.create(username: "admin", email: "emailzzz", password: "password", password_confirmation: "password", role: 1)
+      admin = User.create(username: "admin", email: "emailzzz",
+                          password: "password",
+                          password_confirmation: "password", role: 1)
 
-      visit '/login'
+      visit login_path
       click_on "Login"
 
       expect(current_path).to eq(login_path)
@@ -61,9 +63,9 @@ RSpec.feature "registered user can edit account" do
 
   context "as a guest" do
     scenario "they see an error message" do
-      user = create(:user)
 
-      visit dashboard_path(user)
+      visit dashboard_path
+
       expect(page).to have_content "The page you were looking for doesn't exist."
     end
   end
