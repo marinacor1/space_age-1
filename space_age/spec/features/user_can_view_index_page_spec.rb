@@ -22,11 +22,4 @@ feature "user can view package index page" do
 
   end
 
-  xscenario "url is case insensitive for index path" do
-    package1, package2, package3 = create_list(:package, 3)
-
-    visit '/pAckAges'
-
-    expect(current_path).to eq(packages_path)
-  end
 end
