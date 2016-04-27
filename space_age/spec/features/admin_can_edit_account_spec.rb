@@ -29,7 +29,7 @@ RSpec.feature "admin can edit account" do
 
       admin_login
 
-      visit '/dashboard'
+      visit dashboard_path
 
       fill_in "New Password", with: "JonZ"
       fill_in "Confirm New Password", with: "JonZ"

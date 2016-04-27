@@ -7,7 +7,7 @@ RSpec.feature "admin can login" do
 
     admin_login
 
-    expect(current_path).to eq '/admin/dashboard'
+    expect(current_path).to eq admin_dashboard_path
     expect(page).to have_content "Welcome to Your Dashboard, adminor"
   end
 
@@ -21,6 +21,10 @@ RSpec.feature "admin can login" do
   end
 
   it "when guest tries to access admin dashboard gets error" do
+
+    user = create(:user)
+
+    ApplicationController.any_instance.stubs(:current_user).returns(user)
 
     visit admin_dashboard_path
     expect(page).to have_content "The page you were looking for doesn't exist."

@@ -6,7 +6,7 @@ RSpec.feature "user cannot make themselves an admin" do
 
     ApplicationController.any_instance.stubs(:current_user).returns(user)
 
-    visit '/admin/dashboard'
+    visit admin_dashboard_path
 
     expect(page).to have_content "The page you were looking for doesn't exist"
     end

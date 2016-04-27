@@ -12,7 +12,7 @@ RSpec.feature "user can see past orders" do
 
     admin_login
 
-    visit 'admin/orders'
+    visit admin_orders_path
 
     expect(page).to have_content order1.id
     expect(page).to have_content order1.total_cost

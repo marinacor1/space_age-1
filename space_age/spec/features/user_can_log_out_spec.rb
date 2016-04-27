@@ -9,7 +9,7 @@ RSpec.feature "user can log out" do
 
     user_login
 
-    visit '/cart'
+    visit '/trip'
 
     click_on "Logout"
 

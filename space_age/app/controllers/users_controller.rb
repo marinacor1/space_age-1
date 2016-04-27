@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.create(params_check)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to '/dashboard'
+      redirect_to dashboard_path
     else
       redirect_to login_path
     end
@@ -23,10 +23,10 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params_check)
       flash[:error] = "Success! Your account updated."
-      redirect_to  '/dashboard'
+      redirect_to  dashboard_path
     else
       flash[:error] = "Your account could not be updated. Please check your input and try again."
-      redirect_to  '/dashboard'
+      redirect_to  dashboard_path
     end
   end
 

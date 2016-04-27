@@ -12,9 +12,7 @@ class TripPackagesController < ApplicationController
 
    def show
     unless @trip.itinerary.nil?
-      @packages = @trip.itinerary.keys.map do |id|
-        Package.find(id)
-      end
+      @packages = @trip.find_packages
     end
   end
 

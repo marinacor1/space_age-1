@@ -18,7 +18,7 @@ RSpec.feature "registered user can log in" do
     scenario "they see an error message" do
       user = create(:user)
 
-      visit '/login'
+      visit login_path
       click_on "Login"
 
       expect(current_path).to eq(login_path)
@@ -37,7 +37,7 @@ RSpec.feature "registered user can log in" do
     scenario "they see an error message" do
       user = create(:user)
 
-      visit '/login'
+      visit login_path
       click_on "Login"
 
       expect(current_path).to eq(login_path)

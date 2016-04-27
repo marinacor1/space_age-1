@@ -13,7 +13,7 @@ RSpec.feature "user sees past order details" do
       OrderPackage.create(order_id: order.id, user_id: user.id,
                          package_id: package2.id)
 
-      visit '/orders'
+      visit orders_path
 
       click_on "View"
 
