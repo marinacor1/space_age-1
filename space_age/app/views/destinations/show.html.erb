@@ -2,25 +2,13 @@
   <section class="<%= @destination.planet%>-hero">
     <div class="row intro">
       <div class="small-centered medium-uncentered medium-6 large-7 columns">
-      <h1>Expand Your Space</h1>
-    </div>
-  </section>
-  <br>
-  <hr>
-  <h3 class="text-center"> Our <%=@destination.planet%> Packages</h3>
-  <hr>
-  <br>
-  <div class="row small-up-1 medium-up-2 large-up-4">
-    <% @destination.packages.each do |package| %>
-    <div class="column">
-      <h5 class="image-tag text-center"><%= link_to package.title, package_path(package), class: "package-tag" %></h5>
-      <div class="image-wrapper overlay-fade-in">
-        <%= image_tag package.image.url, class: "thumbnail" %>
-        <div class="image-overlay-content">
-          <h2><%= link_to "Explore", package_path(package) %></h2>
-        </div>
+        <h1>Expand Your Space</h1>
       </div>
-    </div>
-    <% end %>
-  </div>
+    </section>
+    <br>
+    <hr>
+    <h3 class="text-center"> Our <%=@destination.planet%> Packages</h3>
+    <hr>
+    <br>
+  <%= render partial: "shared/packages", locals: { packages: @destination.packages } %>
 <% end %>
