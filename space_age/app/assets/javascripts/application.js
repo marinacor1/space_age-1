@@ -16,3 +16,6 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+	$("#footer").click(function(){
+		$("#footer").slideToggle(100)
+	});

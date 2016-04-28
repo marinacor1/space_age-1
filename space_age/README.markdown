@@ -12,4 +12,4 @@ Or, [view the original spec](https://github.com/turingschool/curriculum/blob/mas
 * **Stripe** Ability to pay using the Stripe API.
 * **Testing** Feature and model testing with RSpec and Capybara
 
-[App in Action](http://recordit.co/nbFNiwYYC6)
+[App in Action](http://recordit.co/ytqtHCmjA4)
