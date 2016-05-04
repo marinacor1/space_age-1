@@ -15,27 +15,30 @@ Rails.application.routes.draw do
     resources :users, only: [:update, :delete]
     get '/orders', to: 'orders#index'
   end
+
   get '/trip', to: 'trip_packages#show'
   post '/charges', to: 'charges#create'
   get '/charges/new', to: 'charges#new'
   get "/packages", to: "packages#index"
+  post '/packages', to: 'packages#create'
+  resources :packages, only: [ :show]
 
   get '/logout', to: 'sessions#destroy'
   get '/orders', to: 'orders#index'
 
-  get '/trip_packages', to: 'trip_packages#show'
-  post '/trip_packages', to: 'trip_packages#show'
-  patch '/trip_package', to: 'trip_packages#update'
+  # get '/trip_packages', to: 'trip_packages#show'
+  # post '/trip_packages', to: 'trip_packages#create'
+  # patch '/trip_package', to: 'trip_packages#update'
+  # put '/trip_packages'
+  resources :trip_packages, only: [:create, :destroy, :update]
   # get '/orders/:id', to: 'orders#show'
   get '/orders', to: 'orders#index'
+  resources :orders, only: [:show]
 
   # get '/packages/:id', to: 'packages#show'
   # patch '/users/:id', to: 'users#update'
   # put '/users/:id', to: 'users#update'
   post '/orders', to: 'orders#create'
-  resources :orders, only: [:show]
-  post '/packages', to: 'packages#create'
-  resources :packages, only: [ :show]
 
   get '/:planet', to: 'destinations#show', as: :destination
   get '/destinations', to: 'destinations#create'
