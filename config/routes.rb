@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get '/logout', to: 'destroy#users'
+  get '/:planet', to: 'destinations#show', as: :destination
+  # get '/packages/:id', to: 'packages#show'
   # patch '/users/:id', to: 'users#update'
   # put '/users/:id', to: 'users#update'
+  resources :packages, only: [:index, :show, :create]
   resources :users, only: [:create, :update]
 end
