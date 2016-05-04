@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/:planet', to: 'destinations#show', as: :destination
   get '/trip_packages', to: 'trip_packages#show'
   post '/trip_packages', to: 'trip_packages#show'
+  patch '/trip_package', to: 'trip_packages#update'
   # get '/orders/:id', to: 'orders#show'
   get '/orders', to: 'orders#index'
 
@@ -27,12 +28,12 @@ Rails.application.routes.draw do
   # get '/packages/:id', to: 'packages#show'
   # patch '/users/:id', to: 'users#update'
   # put '/users/:id', to: 'users#update'
-  get 'packages', to: 'packages#index'
   post '/orders', to: 'orders#create'
   resources :orders, only: [:show]
   post '/packages', to: 'packages#create'
   resources :packages, only: [ :show]
   post '/signup', to: 'users#create'
   resources :users, only: [:update]
-  post '/chargest', to: 'charges#create'
+  post '/charges', to: 'charges#create'
+  get '/charges/new', to: 'charges#create'
 end
