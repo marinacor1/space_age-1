@@ -3629,3 +3629,385 @@ Processing by SessionsController#new as HTML
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:16:22.562242"], ["updated_at", "2016-05-04 03:16:22.562242"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$lw7Qw34su3HY0qQ/F2ycmeGMiruKc5axN.iznbLvhQDqIeYe9ICzG"], ["created_at", "2016-05-04 03:16:22.587462"], ["updated_at", "2016-05-04 03:16:22.587462"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 179], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:16:22.594299"], ["updated_at", "2016-05-04 03:16:22.594299"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66184-1i97oce.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:16:22.621186"], ["updated_at", "2016-05-04 03:16:22.621186"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66184-1qbossw.jpg'
+  [1m[35mPackage Exists (0.4ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:16:22.609620"], ["destination_id", 176], ["created_at", "2016-05-04 03:16:22.632420"], ["updated_at", "2016-05-04 03:16:22.632420"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$KAyvp1mRFHRoulVhYkHCR.0SBiu5Ebs5NTBe.qcfO/2txD4SgQDD2"], ["created_at", "2016-05-04 03:16:22.643410"], ["updated_at", "2016-05-04 03:16:22.643410"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:16:22 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (1.8ms)
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (2.6ms)
+  Rendered layouts/_flash.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 4700ms (Views: 444.8ms | ActiveRecord: 0.3ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.6ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.4ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_flash.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"User", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User"], ["email", "email"], ["password_digest", "$2a$04$nCVpwASpFWM3jSTrXOPgrun5iezSMJuJSziixmg1eqQG2ige6mtU2"], ["created_at", "2016-05-04 03:16:27.473941"], ["updated_at", "2016-05-04 03:16:27.473941"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'User' AND "users"."id" != 181) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'email' AND "users"."id" != 181) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 10ms (ActiveRecord: 1.7ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 181]]
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_forms.html.erb (23.8ms)
+  Rendered users/show.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.3ms)
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 307ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:16:27 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/login
+Completed 302 Found in 326ms (ActiveRecord: 1.1ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:16:28 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:17:43.632844"], ["updated_at", "2016-05-04 03:17:43.632844"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$sJXTRCqbb0qDei968RdTku7mw5LGb9CU5s0T/3.77yVtZd0oQPIHG"], ["created_at", "2016-05-04 03:17:43.655607"], ["updated_at", "2016-05-04 03:17:43.655607"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 182], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:17:43.662381"], ["updated_at", "2016-05-04 03:17:43.662381"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66200-18xsyd6.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:17:43.690982"], ["updated_at", "2016-05-04 03:17:43.690982"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66200-lj3zgb.jpg'
+  [1m[35mPackage Exists (0.4ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:17:43.677177"], ["destination_id", 178], ["created_at", "2016-05-04 03:17:43.702445"], ["updated_at", "2016-05-04 03:17:43.702445"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$XhMz0d8aq9d3FhQoWnyBd.Lz18e9QReLmkVtbPN21ZpcDOogfpMvy"], ["created_at", "2016-05-04 03:17:43.710180"], ["updated_at", "2016-05-04 03:17:43.710180"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:17:43 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (1.6ms)
+  [1m[35mDestination Load (0.4ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (3.3ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3805ms (Views: 448.9ms | ActiveRecord: 0.4ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.3ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.3ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"User", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User"], ["email", "email"], ["password_digest", "$2a$04$s4hUQ67nfNAax87BCinOmuzSr6UYSPqP0gvsTCBJvO1eMelOPMpuW"], ["created_at", "2016-05-04 03:17:47.635665"], ["updated_at", "2016-05-04 03:17:47.635665"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'User' AND "users"."id" != 184) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'email' AND "users"."id" != 184) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 184]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_forms.html.erb (24.6ms)
+  Rendered users/show.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.2ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 283ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:17:47 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/login
+Completed 302 Found in 328ms (ActiveRecord: 1.4ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:17:48 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.8ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (6.4ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:22:03.771224"], ["updated_at", "2016-05-04 03:22:03.771224"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$YGPQY3mGrOcNT1QGv/1w2.bm28cgYfdjIRHOKqJdjGcK7gpoC9QWq"], ["created_at", "2016-05-04 03:22:03.805520"], ["updated_at", "2016-05-04 03:22:03.805520"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 185], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:22:03.813395"], ["updated_at", "2016-05-04 03:22:03.813395"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66251-1ceoubr.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:22:03.848071"], ["updated_at", "2016-05-04 03:22:03.848071"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66251-1dl2m9u.jpg'
+  [1m[35mPackage Exists (0.5ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:22:03.828479"], ["destination_id", 180], ["created_at", "2016-05-04 03:22:03.859708"], ["updated_at", "2016-05-04 03:22:03.859708"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$MjhrXlurHAX3XPpnyfevQeIqiuzhyyEQnJBNtvgHzb7ps8tKVCKZu"], ["created_at", "2016-05-04 03:22:03.868695"], ["updated_at", "2016-05-04 03:22:03.868695"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:22:03 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (2.6ms)
+  [1m[35mDestination Load (0.4ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (3.1ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 3924ms (Views: 548.5ms | ActiveRecord: 0.4ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:22:07 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.3ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:22:07 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:22:07 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"User", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User"], ["email", "email"], ["password_digest", "$2a$04$3BJvMEGYvejRGzHjOFBvcOq6nwQp6UH9i.PeoZwxjMzrmFV9GSUPe"], ["created_at", "2016-05-04 03:22:07.900400"], ["updated_at", "2016-05-04 03:22:07.900400"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'User' AND "users"."id" != 187) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'email' AND "users"."id" != 187) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:22:07 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 187]]
+  Rendered layouts/_forms.html.erb (1.8ms)
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:22:07 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.3ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 269ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:22:08 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:22:08 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:22:08 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/login
+Completed 302 Found in 351ms (ActiveRecord: 1.4ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:22:08 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m

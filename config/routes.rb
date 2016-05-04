@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get '/logout', to: 'destroy#users'
-  patch '/users/:id', to: 'users#update'
+  # patch '/users/:id', to: 'users#update'
+  # put '/users/:id', to: 'users#update'
+  resources :users, only: [:create, :update]
 end
