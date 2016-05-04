@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   # post '/trip_packages', to: 'trip_packages#create'
   # patch '/trip_package', to: 'trip_packages#update'
   # put '/trip_packages'
+  # delete '/trip_packages', to: 'trip_packages#destroy'
   resources :trip_packages, only: [:create, :destroy, :update]
   # get '/orders/:id', to: 'orders#show'
   get '/orders', to: 'orders#index'
