@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: 'users#show'
-    resources :users, only: [:update, :delete]
+    delete '/user/:id', to: 'users#destroy'
+    resources :users, only: [:update]
     get '/orders', to: 'orders#index'
   end
 
@@ -21,17 +22,18 @@ Rails.application.routes.draw do
   get '/charges/new', to: 'charges#new'
   get "/packages", to: "packages#index"
   post '/packages', to: 'packages#create'
+  # get '/packages', to: 'packages#show'
   resources :packages, only: [ :show]
 
   get '/logout', to: 'sessions#destroy'
   get '/orders', to: 'orders#index'
 
   # get '/trip_packages', to: 'trip_packages#show'
-  # post '/trip_packages', to: 'trip_packages#create'
-  # patch '/trip_package', to: 'trip_packages#update'
+  post '/trip_packages', to: 'trip_packages#create'
+  # patch '/trip_package/:id', to: 'trip_packages#update'
   # put '/trip_packages'
-  # delete '/trip_packages', to: 'trip_packages#destroy'
-  resources :trip_packages, only: [:create, :destroy, :update]
+  delete '/trip_packages/:id', to: 'trip_packages#destroy'
+  resources :trip_packages, only: [ :update]
   # get '/orders/:id', to: 'orders#show'
   get '/orders', to: 'orders#index'
   resources :orders, only: [:show]
