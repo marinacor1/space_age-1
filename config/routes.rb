@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   post '/trip_packages', to: 'trip_packages#show'
   # get '/orders/:id', to: 'orders#show'
   get '/orders', to: 'orders#index'
+
+  namespace :admin do
+    get '/dashboard', to: 'users#show'
+    resources :users, only: [:update, :delete]
+    get '/orders', to: 'orders#index'
+  end
   # get '/packages/:id', to: 'packages#show'
   # patch '/users/:id', to: 'users#update'
   # put '/users/:id', to: 'users#update'
