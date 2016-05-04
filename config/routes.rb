@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
   post '/users', to: 'users#create'
 
-  get '/logout', to: 'destroy#users'
+  get '/logout', to: 'sessions#destroy'
   get '/:planet', to: 'destinations#show', as: :destination
   get '/trip_packages', to: 'trip_packages#show'
   post '/trip_packages', to: 'trip_packages#show'
@@ -27,7 +27,11 @@ Rails.application.routes.draw do
   # get '/packages/:id', to: 'packages#show'
   # patch '/users/:id', to: 'users#update'
   # put '/users/:id', to: 'users#update'
-  resources :orders, only: [:show, :create]
-  resources :packages, only: [:index, :show, :create]
-  resources :users, only: [:create, :update]
+  get 'packages', to: 'packages#index'
+  post '/orders', to: 'orders#create'
+  resources :orders, only: [:show]
+  post '/packages', to: 'packages#create'
+  resources :packages, only: [ :show]
+  post '/signup', to: 'users#create'
+  resources :users, only: [:update]
 end
