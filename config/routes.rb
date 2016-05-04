@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/charges/new', to: 'charges#new'
   get "/packages", to: "packages#index"
   post '/packages', to: 'packages#create'
-  # get '/packages', to: 'packages#show'
+  # get '/packages/:id', to: 'packages#show'
   resources :packages, only: [ :show]
 
   get '/logout', to: 'sessions#destroy'
