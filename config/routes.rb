@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/signup', to: 'users#new'
-
+  get '/logout', to: 'sessions#destroy'
   get '/trip', to: 'trip_packages#show'
   get '/orders', to: 'orders#index'
   post '/signup', to: 'users#create'
@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   resources :packages, only: [ :show]
   post '/signup', to: 'users#create'
   resources :users, only: [:update]
+  post '/chargest', to: 'charges#create'
 end
