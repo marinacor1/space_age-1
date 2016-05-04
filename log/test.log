@@ -6103,3 +6103,1806 @@ Processing by DestinationsController#show as HTML
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.4ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:10.651498"], ["updated_at", "2016-05-04 03:41:10.651498"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$KVDzcJPmzeMusrlmp9.bKepxDckjPAdF1qhEg/sPgd3NoCkhaCn92"], ["created_at", "2016-05-04 03:41:10.669630"], ["updated_at", "2016-05-04 03:41:10.669630"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 234], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:41:10.675842"], ["updated_at", "2016-05-04 03:41:10.675842"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1xc3jmh.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:10.700535"], ["updated_at", "2016-05-04 03:41:10.700535"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-qqjp09.jpg'
+  [1m[35mPackage Exists (0.5ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:10.688183"], ["destination_id", 256], ["created_at", "2016-05-04 03:41:10.712191"], ["updated_at", "2016-05-04 03:41:10.712191"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$aWIrW1BLR116xTGiRDnHteGEIFce60RXCWtd0ibPhGgXVNBwjilK2"], ["created_at", "2016-05-04 03:41:10.721669"], ["updated_at", "2016-05-04 03:41:10.721669"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'jb' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jb@jb' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:11.117280"], ["updated_at", "2016-05-04 03:41:11.117280"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'adminor' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'emailz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "adminor"], ["email", "emailz"], ["password_digest", "$2a$04$Bj/wU5HWlE4djqVB5.mEgetx2IyZcCM0Bj7r2KR0HAGMbt.RwFEcK"], ["role", 1], ["created_at", "2016-05-04 03:41:11.127987"], ["updated_at", "2016-05-04 03:41:11.127987"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (3.3ms)
+  Rendered layouts/_flash.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 435ms (Views: 425.6ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"adminor", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "adminor"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 236]]
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'adminor' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'emailz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["username", "adminor"], ["email", "emailz"], ["password_digest", "$2a$04$PsvQrYIzJVMONte8KkgUkemgcZojzYVqZKpsqmMx3idoTQ/adedwO"], ["role", 1], ["created_at", "2016-05-04 03:41:11.643228"], ["updated_at", "2016-05-04 03:41:11.643228"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"adminor", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "adminor"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 237]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'adminor' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'emailzzz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "adminor"], ["email", "emailzzz"], ["password_digest", "$2a$04$Yfy9HbcDrPR5JO5izI7jyOl5V/tj9UKXVYCq7yT6L3oseIdR1vgPK"], ["role", 1], ["created_at", "2016-05-04 03:41:11.702403"], ["updated_at", "2016-05-04 03:41:11.702403"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"adminor", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "adminor"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 238]]
+  [1m[35mDestination Load (0.4ms)[0m  SELECT "destinations".* FROM "destinations"
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User3' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User3"], ["email", "email3"], ["password_digest", "$2a$04$cnY23DSFLqqJKz3u81pAP.cuQB0XV.b4Dj5Ptla1VPvzWSRjCJSWu"], ["created_at", "2016-05-04 03:41:11.754837"], ["updated_at", "2016-05-04 03:41:11.754837"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User4' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email4' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User4"], ["email", "email4"], ["password_digest", "$2a$04$T97iXRG.rlB1YOgYD0WQSeR49OXxAHHFSoq/wvOXYKIVGszD4o0bO"], ["created_at", "2016-05-04 03:41:11.764467"], ["updated_at", "2016-05-04 03:41:11.764467"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User5' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email5' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User5"], ["email", "email5"], ["password_digest", "$2a$04$32q8vPXrlDFQbI2SFC2jbuwlVj9MQ/jFNeUiTrI5d7zC2G8IrvpFW"], ["created_at", "2016-05-04 03:41:11.773458"], ["updated_at", "2016-05-04 03:41:11.773458"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User6' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email6' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User6"], ["email", "email6"], ["password_digest", "$2a$04$ZBN95PTIdxI8Odfvm5hFNeKRFlc16kKr.jnSziOKMyWBHbdu7upSC"], ["created_at", "2016-05-04 03:41:11.779613"], ["updated_at", "2016-05-04 03:41:11.779613"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Administrator' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'e' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["username", "Administrator"], ["email", "e"], ["password_digest", "$2a$04$N4U5tr9mdMHcMCxoJGFgc.1LWggjfBX3E/1huGgaKEu7kyEVukqAy"], ["role", 1], ["created_at", "2016-05-04 03:41:11.785623"], ["updated_at", "2016-05-04 03:41:11.785623"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 241], ["total_cost", "1000.0"], ["created_at", "2016-05-04 03:41:11.788744"], ["updated_at", "2016-05-04 03:41:11.788744"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 241], ["total_cost", "2000.0"], ["created_at", "2016-05-04 03:41:11.791044"], ["updated_at", "2016-05-04 03:41:11.791044"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 242], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:41:11.793126"], ["updated_at", "2016-05-04 03:41:11.793126"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"adminor", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "adminor"]]
+Redirected to http://www.example.com/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Sam' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email123kk' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Sam"], ["email", "email123kk"], ["password_digest", "$2a$04$i3yBxynDTILfaDe1RlEJueeOsDcNCWlQLInvocIT.LXfMnUvWblmi"], ["created_at", "2016-05-04 03:41:11.833322"], ["updated_at", "2016-05-04 03:41:11.833322"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'adminor' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'emailzo' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["username", "adminor"], ["email", "emailzo"], ["password_digest", "$2a$04$zeEv9geoK2IV0fJB2n16sOOIV4D/9vcKODeawFntX4uxs7zx2BEW2"], ["role", 1], ["created_at", "2016-05-04 03:41:11.839014"], ["updated_at", "2016-05-04 03:41:11.839014"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:41:11 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 313ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.2ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"User", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User"], ["email", "email"], ["password_digest", "$2a$04$WZvR/28nx1qDcPw7lC1oKuLFG74wbN4IEne4O4Dp78PTo38LV.ZZO"], ["created_at", "2016-05-04 03:41:12.213071"], ["updated_at", "2016-05-04 03:41:12.213071"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'User' AND "users"."id" != 246) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'email' AND "users"."id" != 246) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 246]]
+  Rendered layouts/_forms.html.erb (2.1ms)
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.4ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 310ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+Started GET "/signup" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"", "email"=>"email", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/login
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-j5ykg1.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:12.610970"], ["updated_at", "2016-05-04 03:41:12.610970"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1g4s5l6.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "basic package"], ["price", "2000.0"], ["description", "description2"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:12.601322"], ["destination_id", 258], ["created_at", "2016-05-04 03:41:12.621312"], ["updated_at", "2016-05-04 03:41:12.621312"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/225" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"225"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 225]]
+  [1m[35mDestination Load (0.4ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered packages/show.html.erb within layouts/application (42.2ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-ytpi0n.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:12.708236"], ["updated_at", "2016-05-04 03:41:12.708236"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-byynop.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "luxury package"], ["price", "3000.0"], ["description", "description3"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:12.698504"], ["destination_id", 259], ["created_at", "2016-05-04 03:41:12.717747"], ["updated_at", "2016-05-04 03:41:12.717747"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/226" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"226"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 226]]
+  [1m[35mDestination Load (0.5ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered packages/show.html.erb within layouts/application (27.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User7' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email7' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User7"], ["email", "email7"], ["password_digest", "$2a$04$ccXTJr2LxaI2dwcUHuguneRP4iZC1BbENgCWS9HYYP8xuW88RcE2O"], ["created_at", "2016-05-04 03:41:12.759008"], ["updated_at", "2016-05-04 03:41:12.759008"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"User7", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "User7"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 247]]
+Redirected to http://www.example.com/packages
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/packages" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by PackagesController#index as HTML
+  [1m[35mPackage Load (0.2ms)[0m  SELECT "packages".* FROM "packages"
+  Rendered shared/_packages.html.erb (1.1ms)
+  Rendered packages/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 247]]
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User8' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email8' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User8"], ["email", "email8"], ["password_digest", "$2a$04$E9BveJBXq5s.tBKMjcoD2.MdfKRkyI83RCpIiiDqvJNGXjezLJQBC"], ["created_at", "2016-05-04 03:41:12.806042"], ["updated_at", "2016-05-04 03:41:12.806042"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_flash.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"Andrew", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Andrew"]]
+Redirected to http://www.example.com/login
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.6ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User9' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email9' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User9"], ["email", "email9"], ["password_digest", "$2a$04$aHaCQk7Z6vJuIZifgv6pruOCuoEKsuEqFr6yobmN0lngNvsOqC7nC"], ["created_at", "2016-05-04 03:41:12.840949"], ["updated_at", "2016-05-04 03:41:12.840949"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"Userzz", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Userzz"]]
+Redirected to http://www.example.com/login
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-hdiexy.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:12.884533"], ["updated_at", "2016-05-04 03:41:12.884533"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1pjhq.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "adventure package"], ["price", "4000.0"], ["description", "description4"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:12.874940"], ["destination_id", 260], ["created_at", "2016-05-04 03:41:12.895342"], ["updated_at", "2016-05-04 03:41:12.895342"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/227" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"227"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 227]]
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered packages/show.html.erb within layouts/application (35.4ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1rba0xm.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:12.952992"], ["updated_at", "2016-05-04 03:41:12.952992"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-19gf3bi.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'family package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "family package"], ["price", "1000.0"], ["description", "description5"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:12.942834"], ["destination_id", 261], ["created_at", "2016-05-04 03:41:12.963590"], ["updated_at", "2016-05-04 03:41:12.963590"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-bjsa74.jpg'
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:12.980967"], ["updated_at", "2016-05-04 03:41:12.980967"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-xtc9ae.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "2000.0"], ["description", "description6"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:12.969636"], ["destination_id", 262], ["created_at", "2016-05-04 03:41:12.991011"], ["updated_at", "2016-05-04 03:41:12.991011"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/228" for 127.0.0.1 at 2016-05-03 21:41:12 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"228"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 228]]
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered packages/show.html.erb within layouts/application (28.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-f6g385.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:13.041481"], ["updated_at", "2016-05-04 03:41:13.041481"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-6zyqgd.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "basic package"], ["price", "3000.0"], ["description", "description7"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.030892"], ["destination_id", 263], ["created_at", "2016-05-04 03:41:13.052317"], ["updated_at", "2016-05-04 03:41:13.052317"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.2ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 270ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+Started GET "/Jupiter" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by DestinationsController#show as HTML
+  Parameters: {"planet"=>"Jupiter"}
+  [1m[35mDestination Load (0.2ms)[0m  SELECT  "destinations".* FROM "destinations" WHERE "destinations"."planet" = $1 LIMIT 1  [["planet", "Jupiter"]]
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT "packages".* FROM "packages" WHERE "packages"."destination_id" = $1[0m  [["destination_id", 263]]
+  Rendered shared/_packages.html.erb (1.8ms)
+  Rendered destinations/show.html.erb within layouts/application (10.0ms)
+  [1m[35mDestination Load (0.3ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-186gjg2.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:13.405939"], ["updated_at", "2016-05-04 03:41:13.405939"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1ddg6c1.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "luxury package"], ["price", "4000.0"], ["description", "description8"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.396184"], ["destination_id", 264], ["created_at", "2016-05-04 03:41:13.416450"], ["updated_at", "2016-05-04 03:41:13.416450"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-ojzywa.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:13.433166"], ["updated_at", "2016-05-04 03:41:13.433166"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-tw481.jpg'
+  [1m[35mPackage Exists (0.4ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "adventure package"], ["price", "1000.0"], ["description", "description9"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.423091"], ["destination_id", 265], ["created_at", "2016-05-04 03:41:13.443323"], ["updated_at", "2016-05-04 03:41:13.443323"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-9zkjjw.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:13.461651"], ["updated_at", "2016-05-04 03:41:13.461651"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-wa8isq.jpg'
+  [1m[35mPackage Exists (0.4ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'family package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "family package"], ["price", "2000.0"], ["description", "description10"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.451302"], ["destination_id", 266], ["created_at", "2016-05-04 03:41:13.472622"], ["updated_at", "2016-05-04 03:41:13.472622"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Luxury123' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Luxury123"], ["price", "300.0"], ["description", "Fun timez"], ["destination_id", 264], ["created_at", "2016-05-04 03:41:13.478503"], ["updated_at", "2016-05-04 03:41:13.478503"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/Mars" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by DestinationsController#show as HTML
+  Parameters: {"planet"=>"Mars"}
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT  "destinations".* FROM "destinations" WHERE "destinations"."planet" = $1 LIMIT 1[0m  [["planet", "Mars"]]
+  [1m[35mPackage Load (0.3ms)[0m  SELECT "packages".* FROM "packages" WHERE "packages"."destination_id" = $1  [["destination_id", 264]]
+  Rendered shared/_packages.html.erb (2.4ms)
+  Rendered destinations/show.html.erb within layouts/application (3.0ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.1ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/neptune" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by DestinationsController#show as HTML
+  Parameters: {"planet"=>"neptune"}
+  [1m[35mDestination Load (0.2ms)[0m  SELECT  "destinations".* FROM "destinations" WHERE "destinations"."planet" = $1 LIMIT 1  [["planet", "neptune"]]
+  Rendered public/404.html within layouts/application (0.5ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-19shlk4.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:13.526877"], ["updated_at", "2016-05-04 03:41:13.526877"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1guxgg8.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "explore package"], ["price", "3000.0"], ["description", "description11"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.517396"], ["destination_id", 267], ["created_at", "2016-05-04 03:41:13.539227"], ["updated_at", "2016-05-04 03:41:13.539227"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User10' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email10' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User10"], ["email", "email10"], ["password_digest", "$2a$04$oslpYWvsDau8GQQZiEa4GOjKyy7gGnCJ1AoAoZ0MjdsSgieP1vWoy"], ["created_at", "2016-05-04 03:41:13.547881"], ["updated_at", "2016-05-04 03:41:13.547881"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/235" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"235"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 235]]
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered packages/show.html.erb within layouts/application (27.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-2jlich.jpg'
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:13.598760"], ["updated_at", "2016-05-04 03:41:13.598760"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-702ce1.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "basic package"], ["price", "4000.0"], ["description", "description12"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.588497"], ["destination_id", 268], ["created_at", "2016-05-04 03:41:13.609246"], ["updated_at", "2016-05-04 03:41:13.609246"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User11' LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email11' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User11"], ["email", "email11"], ["password_digest", "$2a$04$u/HfCMOay5TBgFpqhxQZe.v6dkmbx4QU1phy8pY1fuS50DYpA94IG"], ["created_at", "2016-05-04 03:41:13.616524"], ["updated_at", "2016-05-04 03:41:13.616524"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/236" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"236"}
+  [1m[35mPackage Load (0.3ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 236]]
+  [1m[36mDestination Load (0.7ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (29.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-8wvvbt.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:13.669053"], ["updated_at", "2016-05-04 03:41:13.669053"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-kvrjrx.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "luxury package"], ["price", "1000.0"], ["description", "description13"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.658365"], ["destination_id", 269], ["created_at", "2016-05-04 03:41:13.679470"], ["updated_at", "2016-05-04 03:41:13.679470"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/237" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"237"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 237]]
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-rxssge.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:13.750692"], ["updated_at", "2016-05-04 03:41:13.750692"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-g7xpnu.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "adventure package"], ["price", "2000.0"], ["description", "description14"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:13.740252"], ["destination_id", 270], ["created_at", "2016-05-04 03:41:13.762262"], ["updated_at", "2016-05-04 03:41:13.762262"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/238" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"238"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 238]]
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (31.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User12' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email12' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User12"], ["email", "email12"], ["password_digest", "$2a$04$6lk/vFWvU80n82P4i6wWpekX5arCzfdqaSMwnT5Jc.LnrQrdDXMl2"], ["created_at", "2016-05-04 03:41:13.807987"], ["updated_at", "2016-05-04 03:41:13.807987"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#show as HTML
+  Rendered layouts/_forms.html.erb (1.7ms)
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+Started PATCH "/users/252" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"User12", "email"=>"JonB", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Account", "id"=>"252"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'User12' AND "users"."id" != 252) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'JonB' AND "users"."id" != 252) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "email" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["email", "JonB"], ["password_digest", "$2a$04$afmLBM3TXYNc92HwezaBbu4pzsIb5pArsNffzxrHvtb5KMZt5g/Ea"], ["updated_at", "2016-05-04 03:41:13.833384"], ["id", 252]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#show as HTML
+  Rendered layouts/_forms.html.erb (1.0ms)
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.4ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'hotdog' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'wassup' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hotdog"], ["email", "wassup"], ["password_digest", "$2a$04$yOgmL7sabZ209tLgpqV90uc3B4ZEPXitvik8SU1h5Vp394uJIB79y"], ["created_at", "2016-05-04 03:41:13.858090"], ["updated_at", "2016-05-04 03:41:13.858090"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"hotdog", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "hotdog"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 253]]
+Redirected to http://www.example.com/packages
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/packages" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by PackagesController#index as HTML
+  [1m[36mPackage Load (0.3ms)[0m  [1mSELECT "packages".* FROM "packages"[0m
+  Rendered shared/_packages.html.erb (0.7ms)
+  Rendered packages/index.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 253]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.4ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 253]]
+  Rendered layouts/_forms.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+Started PATCH "/users/253" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"hotdog", "email"=>"wassup", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Account", "id"=>"253"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 253]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."username" = 'hotdog' AND "users"."id" != 253) LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."email" = 'wassup' AND "users"."id" != 253) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 253]]
+  Rendered layouts/_forms.html.erb (1.0ms)
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[35mDestination Load (0.4ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.3ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.6ms)
+Started PATCH "/users/253" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"username"=>"hotdog", "email"=>"wassup", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Account", "id"=>"253"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 253]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."username" = 'hotdog' AND "users"."id" != 253) LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'wassup' AND "users"."id" != 253) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/dashboard
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#show as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 253]]
+  Rendered layouts/_forms.html.erb (1.0ms)
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User13' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email13' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User13"], ["email", "email13"], ["password_digest", "$2a$04$.pJdjLhfMlwHZFE7LId92.XGAwAQlNkIwOBlQjRQKERg0d8ycGLki"], ["created_at", "2016-05-04 03:41:13.940281"], ["updated_at", "2016-05-04 03:41:13.940281"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'admin' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'emailzzz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["username", "admin"], ["email", "emailzzz"], ["password_digest", "$2a$04$KUugG2tBO15U0fHcy0JNSeOTfPsFYfwBg3ibY5DoigCvQZ7QS6qru"], ["role", 1], ["created_at", "2016-05-04 03:41:13.944195"], ["updated_at", "2016-05-04 03:41:13.944195"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+Started GET "/dashboard.254" for 127.0.0.1 at 2016-05-03 21:41:13 -0600
+Processing by UsersController#show as 
+  Rendered layouts/_forms.html.erb (2.3ms)
+  Rendered users/show.html.erb within layouts/application (15.2ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (59.5ms)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/dashboard" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by UsersController#show as HTML
+  Rendered public/404.html within layouts/application (0.3ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 200 OK in 60ms (Views: 59.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User14' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email14' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User14"], ["email", "email14"], ["password_digest", "$2a$04$RBJ8IdME7hiaxDaPfqiVy./LObaml3kfBZ4xc.Y0D9x5JDj8V2FMC"], ["created_at", "2016-05-04 03:41:14.129535"], ["updated_at", "2016-05-04 03:41:14.129535"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+Started GET "/login" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.7ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+Started POST "/login" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"username"=>"User14", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "User14"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 256]]
+Redirected to http://www.example.com/packages
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/packages" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by PackagesController#index as HTML
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT "packages".* FROM "packages"[0m
+  Rendered shared/_packages.html.erb (0.6ms)
+  Rendered packages/index.html.erb within layouts/application (0.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 256]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.3ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+Started GET "/trip" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by TripPackagesController#show as HTML
+  Rendered trip_packages/show.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 256]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.5ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+Started DELETE "/logout" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-4v5cv1.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:14.195646"], ["updated_at", "2016-05-04 03:41:14.195646"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1j64kao.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'family package' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "family package"], ["price", "3000.0"], ["description", "description15"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.186069"], ["destination_id", 271], ["created_at", "2016-05-04 03:41:14.205752"], ["updated_at", "2016-05-04 03:41:14.205752"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-17u8mm3.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:14.221567"], ["updated_at", "2016-05-04 03:41:14.221567"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-6dmj80.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "explore package"], ["price", "4000.0"], ["description", "description16"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.211661"], ["destination_id", 272], ["created_at", "2016-05-04 03:41:14.232635"], ["updated_at", "2016-05-04 03:41:14.232635"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/239" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"239"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 239]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1n2q3wb.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:14.295035"], ["updated_at", "2016-05-04 03:41:14.295035"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-ymgrrp.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "basic package"], ["price", "1000.0"], ["description", "description17"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.284891"], ["destination_id", 273], ["created_at", "2016-05-04 03:41:14.304987"], ["updated_at", "2016-05-04 03:41:14.304987"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-yf1av6.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:14.322587"], ["updated_at", "2016-05-04 03:41:14.322587"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1wsua0.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "luxury package"], ["price", "2000.0"], ["description", "description18"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.311360"], ["destination_id", 274], ["created_at", "2016-05-04 03:41:14.333569"], ["updated_at", "2016-05-04 03:41:14.333569"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/241" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"241"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 241]]
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (29.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1w4vfbd.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:14.386730"], ["updated_at", "2016-05-04 03:41:14.386730"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1wmzubt.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "adventure package"], ["price", "3000.0"], ["description", "description19"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.376017"], ["destination_id", 275], ["created_at", "2016-05-04 03:41:14.397394"], ["updated_at", "2016-05-04 03:41:14.397394"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by PackagesController#index as HTML
+  [1m[35mPackage Load (0.2ms)[0m  SELECT "packages".* FROM "packages"
+  Rendered shared/_packages.html.erb (1.7ms)
+  Rendered packages/index.html.erb within layouts/application (1.9ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+Started GET "/packages/243" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"243"}
+  [1m[35mPackage Load (0.4ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 243]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (29.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-augvf3.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:14.461802"], ["updated_at", "2016-05-04 03:41:14.461802"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-rv76pe.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'family package' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "family package"], ["price", "4000.0"], ["description", "description20"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.451247"], ["destination_id", 276], ["created_at", "2016-05-04 03:41:14.472463"], ["updated_at", "2016-05-04 03:41:14.472463"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-d5cnx9.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:14.489262"], ["updated_at", "2016-05-04 03:41:14.489262"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-auic4l.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "explore package"], ["price", "1000.0"], ["description", "description21"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.478698"], ["destination_id", 277], ["created_at", "2016-05-04 03:41:14.503086"], ["updated_at", "2016-05-04 03:41:14.503086"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-hfgm15.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:14.521946"], ["updated_at", "2016-05-04 03:41:14.521946"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-9ib19.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "basic package"], ["price", "2000.0"], ["description", "description22"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:14.510570"], ["destination_id", 278], ["created_at", "2016-05-04 03:41:14.532013"], ["updated_at", "2016-05-04 03:41:14.532013"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:41:14 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.2ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3372ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+Started GET "/packages" for 127.0.0.1 at 2016-05-03 21:41:17 -0600
+Processing by PackagesController#index as HTML
+  [1m[36mPackage Load (0.4ms)[0m  [1mSELECT "packages".* FROM "packages"[0m
+  Rendered shared/_packages.html.erb (3.2ms)
+  Rendered packages/index.html.erb within layouts/application (3.4ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.2ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/" for 127.0.0.1 at 2016-05-03 21:41:17 -0600
+Processing by WelcomeController#show as HTML
+  Rendered welcome/show.html.erb within layouts/application (0.2ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (0.8ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 274ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Moon' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Moon"], ["created_at", "2016-05-04 03:41:18.216146"], ["updated_at", "2016-05-04 03:41:18.216146"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("status", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["status", 1], ["created_at", "2016-05-04 03:41:18.218013"], ["updated_at", "2016-05-04 03:41:18.218013"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/247" for 127.0.0.1 at 2016-05-03 21:41:18 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"247"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 247]]
+  Rendered packages/show.html.erb within layouts/application (0.6ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Sam' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email123kk' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Sam"], ["email", "email123kk"], ["password_digest", "$2a$04$w6fjh7/Atnns6OV3eeV6X.NNB63DwCdtQCqVoNaLPLeIE3F56dBzq"], ["created_at", "2016-05-04 03:41:18.232663"], ["updated_at", "2016-05-04 03:41:18.232663"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'Maria' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1666k' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Maria"], ["email", "email1666k"], ["password_digest", "$2a$04$v4vS2Qb1o2QAMM8dHXHDv.2v3ZzntBElUas/n3CqXofB2w.zjCjsW"], ["created_at", "2016-05-04 03:41:18.239335"], ["updated_at", "2016-05-04 03:41:18.239335"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Miguel' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email277k' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Miguel"], ["email", "email277k"], ["password_digest", "$2a$04$hzhUaJI95s3ijC1/jJDAzubVeTAlJrs1s517eRRnaKBxfCs0Xckuu"], ["created_at", "2016-05-04 03:41:18.243898"], ["updated_at", "2016-05-04 03:41:18.243898"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 259], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:41:18.246036"], ["updated_at", "2016-05-04 03:41:18.246036"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-3apxrh.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:18.260965"], ["updated_at", "2016-05-04 03:41:18.260965"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-11aw61n.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "luxury package"], ["price", "3000.0"], ["description", "description23"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:18.250734"], ["destination_id", 280], ["created_at", "2016-05-04 03:41:18.272207"], ["updated_at", "2016-05-04 03:41:18.272207"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-f1pez8.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:18.289008"], ["updated_at", "2016-05-04 03:41:18.289008"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1whay8e.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "adventure package"], ["price", "4000.0"], ["description", "description24"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:18.278879"], ["destination_id", 281], ["created_at", "2016-05-04 03:41:18.299331"], ["updated_at", "2016-05-04 03:41:18.299331"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "order_packages" ("order_id", "user_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["order_id", 91], ["user_id", 259], ["package_id", 248], ["created_at", "2016-05-04 03:41:18.308790"], ["updated_at", "2016-05-04 03:41:18.308790"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "user_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["order_id", 91], ["user_id", 259], ["package_id", 249], ["created_at", "2016-05-04 03:41:18.311252"], ["updated_at", "2016-05-04 03:41:18.311252"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Miguel' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email277k' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Miguel"], ["email", "email277k"], ["password_digest", "$2a$04$MJrPnJpzhnrqM6FSHtoAi.6RU8qNvLMMraOmYvEBbnnz/KMGFqvI."], ["created_at", "2016-05-04 03:41:18.319322"], ["updated_at", "2016-05-04 03:41:18.319322"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 260], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:41:18.321432"], ["updated_at", "2016-05-04 03:41:18.321432"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1hyl6qp.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:18.336328"], ["updated_at", "2016-05-04 03:41:18.336328"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-16g2pvg.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'family package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "family package"], ["price", "1000.0"], ["description", "description25"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:18.325831"], ["destination_id", 282], ["created_at", "2016-05-04 03:41:18.346534"], ["updated_at", "2016-05-04 03:41:18.346534"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-1efe1ja.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:41:18.365190"], ["updated_at", "2016-05-04 03:41:18.365190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-qpmt9h.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "2000.0"], ["description", "description26"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:18.353526"], ["destination_id", 283], ["created_at", "2016-05-04 03:41:18.376082"], ["updated_at", "2016-05-04 03:41:18.376082"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "order_packages" ("order_id", "user_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["order_id", 92], ["user_id", 260], ["package_id", 250], ["created_at", "2016-05-04 03:41:18.380754"], ["updated_at", "2016-05-04 03:41:18.380754"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "user_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["order_id", 92], ["user_id", 260], ["package_id", 251], ["created_at", "2016-05-04 03:41:18.383713"], ["updated_at", "2016-05-04 03:41:18.383713"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'Isabella' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1sljf' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Isabella"], ["email", "email1sljf"], ["password_digest", "$2a$04$4fB0KtyRi5N9jDRpgAan0uBL8sv1HxOh7YRnOuN1VfmoA.f20jBpq"], ["created_at", "2016-05-04 03:41:18.390600"], ["updated_at", "2016-05-04 03:41:18.390600"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 261], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:41:18.393311"], ["updated_at", "2016-05-04 03:41:18.393311"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-e1j9t.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:41:18.408075"], ["updated_at", "2016-05-04 03:41:18.408075"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-jfkvmz.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "basic package"], ["price", "3000.0"], ["description", "description27"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:18.397607"], ["destination_id", 284], ["created_at", "2016-05-04 03:41:18.418588"], ["updated_at", "2016-05-04 03:41:18.418588"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-skrcs.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.4ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:41:18.437525"], ["updated_at", "2016-05-04 03:41:18.437525"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66573-84kojf.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "luxury package"], ["price", "4000.0"], ["description", "description28"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:41:18.426443"], ["destination_id", 285], ["created_at", "2016-05-04 03:41:18.448969"], ["updated_at", "2016-05-04 03:41:18.448969"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "order_packages" ("order_id", "user_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["order_id", 93], ["user_id", 261], ["package_id", 252], ["created_at", "2016-05-04 03:41:18.454037"], ["updated_at", "2016-05-04 03:41:18.454037"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "user_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["order_id", 93], ["user_id", 261], ["package_id", 253], ["created_at", "2016-05-04 03:41:18.455943"], ["updated_at", "2016-05-04 03:41:18.455943"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/orders" for 127.0.0.1 at 2016-05-03 21:41:18 -0600
+Processing by OrdersController#index as HTML
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 261]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "order_packages" WHERE "order_packages"."order_id" = $1  [["order_id", 93]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "packages"."title" FROM "packages" INNER JOIN "order_packages" ON "packages"."id" = "order_packages"."package_id" WHERE "order_packages"."order_id" = $1[0m  [["order_id", 93]]
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered orders/index.html.erb within layouts/application (44.4ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User15' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email15' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User15"], ["email", "email15"], ["password_digest", "$2a$04$fKUGLyYsrsDdFjr8OQxD1eU68t/yKns00yIkK/uFFgkpk3.9IAcWq"], ["created_at", "2016-05-04 03:41:18.530418"], ["updated_at", "2016-05-04 03:41:18.530418"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'User16' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'email16' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "User16"], ["email", "email16"], ["password_digest", "$2a$04$iazOu/6vpezisTQHJrG1fOsKdEo0kcIiemXVQS/X663HHjDV4iW5G"], ["created_at", "2016-05-04 03:41:18.548941"], ["updated_at", "2016-05-04 03:41:18.548941"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 262], ["total_cost", "1000.0"], ["created_at", "2016-05-04 03:41:18.552185"], ["updated_at", "2016-05-04 03:41:18.552185"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 262], ["total_cost", "2000.0"], ["created_at", "2016-05-04 03:41:18.554594"], ["updated_at", "2016-05-04 03:41:18.554594"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "orders" ("user_id", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 263], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:41:18.557326"], ["updated_at", "2016-05-04 03:41:18.557326"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/orders" for 127.0.0.1 at 2016-05-03 21:41:18 -0600
+Processing by OrdersController#index as HTML
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1  [["user_id", 262]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "order_packages" WHERE "order_packages"."order_id" = $1[0m  [["order_id", 94]]
+  [1m[35m (0.3ms)[0m  SELECT "packages"."title" FROM "packages" INNER JOIN "order_packages" ON "packages"."id" = "order_packages"."package_id" WHERE "order_packages"."order_id" = $1  [["order_id", 94]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered orders/index.html.erb within layouts/application (38.1ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT  "destinations".* FROM "destinations"  ORDER BY "destinations"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2016-05-04 03:41:18.616928"], ["updated_at", "2016-05-04 03:41:18.616928"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "destinations" SET "planet" = $1, "updated_at" = $2 WHERE "destinations"."id" = $3  [["planet", "an arbitrary value"], ["updated_at", "2016-05-04 03:41:18.619864"], ["id", 286]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'an arbitrary value' LIMIT 1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["id", 1], ["created_at", "2016-05-04 03:41:18.640858"], ["updated_at", "2016-05-04 03:41:18.640858"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orders" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["id", 1], ["created_at", "2016-05-04 03:41:18.642922"], ["updated_at", "2016-05-04 03:41:18.642922"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.645600"], ["updated_at", "2016-05-04 03:41:18.645600"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.647165"], ["updated_at", "2016-05-04 03:41:18.647165"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.648959"], ["updated_at", "2016-05-04 03:41:18.648959"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "order_packages" WHERE "order_packages"."order_id" = $1 AND "order_packages"."package_id" = $2[0m  [["order_id", 1], ["package_id", 1]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["id", 1], ["created_at", "2016-05-04 03:41:18.656723"], ["updated_at", "2016-05-04 03:41:18.656723"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orders" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["id", 1], ["created_at", "2016-05-04 03:41:18.659994"], ["updated_at", "2016-05-04 03:41:18.659994"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.663420"], ["updated_at", "2016-05-04 03:41:18.663420"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.665593"], ["updated_at", "2016-05-04 03:41:18.665593"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "order_packages" WHERE "order_packages"."order_id" = $1  [["order_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("id", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 1], ["title", "Mars"], ["created_at", "2016-05-04 03:41:18.669832"], ["updated_at", "2016-05-04 03:41:18.669832"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "orders" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["id", 1], ["created_at", "2016-05-04 03:41:18.672516"], ["updated_at", "2016-05-04 03:41:18.672516"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.675163"], ["updated_at", "2016-05-04 03:41:18.675163"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT "packages"."title" FROM "packages" INNER JOIN "order_packages" ON "packages"."id" = "order_packages"."package_id" WHERE "order_packages"."order_id" = $1  [["order_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["id", 1], ["price", "2000.0"], ["created_at", "2016-05-04 03:41:18.679924"], ["updated_at", "2016-05-04 03:41:18.679924"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 2], ["price", "2000.0"], ["created_at", "2016-05-04 03:41:18.682050"], ["updated_at", "2016-05-04 03:41:18.682050"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orders" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["id", 1], ["created_at", "2016-05-04 03:41:18.684115"], ["updated_at", "2016-05-04 03:41:18.684115"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.685844"], ["updated_at", "2016-05-04 03:41:18.685844"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.688548"], ["updated_at", "2016-05-04 03:41:18.688548"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 2], ["created_at", "2016-05-04 03:41:18.690266"], ["updated_at", "2016-05-04 03:41:18.690266"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "order_packages" WHERE "order_packages"."order_id" = $1 AND "order_packages"."package_id" = $2[0m  [["order_id", 1], ["package_id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "order_packages" WHERE "order_packages"."order_id" = $1 AND "order_packages"."package_id" = $2  [["order_id", 1], ["package_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.2ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Basic1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("id", "price", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 1], ["price", "1000.0"], ["title", "Basic1"], ["description", "Basic package."], ["created_at", "2016-05-04 03:41:18.696551"], ["updated_at", "2016-05-04 03:41:18.696551"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.2ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Basic2' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("id", "price", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["id", 2], ["price", "2000.0"], ["title", "Basic2"], ["description", "Basic package1."], ["created_at", "2016-05-04 03:41:18.699548"], ["updated_at", "2016-05-04 03:41:18.699548"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "orders" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["id", 1], ["created_at", "2016-05-04 03:41:18.701537"], ["updated_at", "2016-05-04 03:41:18.701537"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 1], ["created_at", "2016-05-04 03:41:18.704077"], ["updated_at", "2016-05-04 03:41:18.704077"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["order_id", 1], ["package_id", 2], ["created_at", "2016-05-04 03:41:18.706082"], ["updated_at", "2016-05-04 03:41:18.706082"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "order_packages" ("order_id", "package_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["order_id", 1], ["package_id", 2], ["created_at", "2016-05-04 03:41:18.708190"], ["updated_at", "2016-05-04 03:41:18.708190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "packages" INNER JOIN "order_packages" ON "packages"."id" = "order_packages"."package_id" WHERE "order_packages"."order_id" = $1[0m  [["order_id", 1]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPackage Exists (0.2ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPackage Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPackage Load (0.3ms)[0m  [1mSELECT  "packages".* FROM "packages"  ORDER BY "packages"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2016-05-04 03:41:18.735013"], ["updated_at", "2016-05-04 03:41:18.735013"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "packages" SET "title" = $1, "updated_at" = $2 WHERE "packages"."id" = $3  [["title", "an arbitrary value"], ["updated_at", "2016-05-04 03:41:18.736971"], ["id", 254]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'an arbitrary value' LIMIT 1
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Basic1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("id", "price", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["id", 1], ["price", "1000.0"], ["title", "Basic1"], ["description", "Basic package1."], ["created_at", "2016-05-04 03:41:18.750088"], ["updated_at", "2016-05-04 03:41:18.750088"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Basic2' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("id", "price", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["id", 2], ["price", "2000.0"], ["title", "Basic2"], ["description", "Basic package2."], ["created_at", "2016-05-04 03:41:18.753162"], ["updated_at", "2016-05-04 03:41:18.753162"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPackage Load (0.1ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.2ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.2ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPackage Exists (0.2ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Basic1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("id", "price", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["id", 1], ["price", "1000.0"], ["title", "Basic1"], ["description", "Basic package1."], ["created_at", "2016-05-04 03:41:18.787224"], ["updated_at", "2016-05-04 03:41:18.787224"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mPackage Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'Basic2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("id", "price", "title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["id", 2], ["price", "2000.0"], ["title", "Basic2"], ["description", "Basic package2."], ["created_at", "2016-05-04 03:41:18.789904"], ["updated_at", "2016-05-04 03:41:18.789904"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPackage Load (0.3ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPackage Load (0.1ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["password_digest", "$2a$04$TCkSFB/cqilLjcMi18e2p.6qlUYwGDGJE.cPViGBjgOKhq4eDZmCO"], ["created_at", "2016-05-04 03:41:18.838263"], ["updated_at", "2016-05-04 03:41:18.838263"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "an arbitrary value"], ["updated_at", "2016-05-04 03:41:18.840906"], ["id", 264]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("password_digest", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["password_digest", "$2a$04$NgoPMPC/QAPbv5LUF7KSMumX3MfPuOqPeSnaQ7pWr8k71tYYAwK12"], ["created_at", "2016-05-04 03:41:18.862681"], ["updated_at", "2016-05-04 03:41:18.862681"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["email", "an arbitrary value"], ["updated_at", "2016-05-04 03:41:18.865049"], ["id", 265]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'an arbitrary value' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'AN ARBITRARY VALUE' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:42:02.853510"], ["updated_at", "2016-05-04 03:42:02.853510"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$WoZVqLOOraqa/h8UIVGRtu4/95QEEsq3mnIzKND0UFvTQvNxMrLbq"], ["created_at", "2016-05-04 03:42:02.875667"], ["updated_at", "2016-05-04 03:42:02.875667"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 266], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:42:02.882759"], ["updated_at", "2016-05-04 03:42:02.882759"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-1ud8t5u.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:42:02.909396"], ["updated_at", "2016-05-04 03:42:02.909396"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-tlwycs.jpg'
+  [1m[35mPackage Exists (0.5ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:02.897084"], ["destination_id", 288], ["created_at", "2016-05-04 03:42:02.922340"], ["updated_at", "2016-05-04 03:42:02.922340"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$WOQjeJvP3bu53I9XNo.t5.cxvTsEE1TUBm8u7ZeSPJzq1hx2p205S"], ["created_at", "2016-05-04 03:42:02.930820"], ["updated_at", "2016-05-04 03:42:02.930820"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-8x3fgo.jpg'
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:42:02.946743"], ["updated_at", "2016-05-04 03:42:02.946743"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-d7e6z.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "basic package"], ["price", "2000.0"], ["description", "description2"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:02.937100"], ["destination_id", 289], ["created_at", "2016-05-04 03:42:02.957202"], ["updated_at", "2016-05-04 03:42:02.957202"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/256" for 127.0.0.1 at 2016-05-03 21:42:02 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"256"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 256]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (27.4ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-bwapa2.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:42:03.048168"], ["updated_at", "2016-05-04 03:42:03.048168"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-ra7u6d.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "luxury package"], ["price", "3000.0"], ["description", "description3"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:03.038927"], ["destination_id", 290], ["created_at", "2016-05-04 03:42:03.058603"], ["updated_at", "2016-05-04 03:42:03.058603"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-1sm5v39.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Venus"], ["created_at", "2016-05-04 03:42:03.074780"], ["updated_at", "2016-05-04 03:42:03.074780"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66637-guayfb.jpg'
+  [1m[36mPackage Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "adventure package"], ["price", "4000.0"], ["description", "description4"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:03.064791"], ["destination_id", 291], ["created_at", "2016-05-04 03:42:03.086912"], ["updated_at", "2016-05-04 03:42:03.086912"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/257" for 127.0.0.1 at 2016-05-03 21:42:03 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"257"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 257]]
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered packages/show.html.erb within layouts/application (23.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:42:46.745780"], ["updated_at", "2016-05-04 03:42:46.745780"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$Ift8ICglfBAoxBYzzCU.he5SkVJxW9L8.2VbYuYCS.aP3yHLu/IMu"], ["created_at", "2016-05-04 03:42:46.768743"], ["updated_at", "2016-05-04 03:42:46.768743"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 268], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:42:46.776615"], ["updated_at", "2016-05-04 03:42:46.776615"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-ltuys3.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:42:46.802190"], ["updated_at", "2016-05-04 03:42:46.802190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-13rsjad.jpg'
+  [1m[35mPackage Exists (0.6ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:46.790567"], ["destination_id", 293], ["created_at", "2016-05-04 03:42:46.813177"], ["updated_at", "2016-05-04 03:42:46.813177"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$bkEGTcUrIPSFSfyS8azDaOFJbDY7AcVQeDS4AmVMENfIAt1iRP7lW"], ["created_at", "2016-05-04 03:42:46.821279"], ["updated_at", "2016-05-04 03:42:46.821279"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-1olvfw.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:42:46.836437"], ["updated_at", "2016-05-04 03:42:46.836437"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-1y5x1v0.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "basic package"], ["price", "2000.0"], ["description", "description2"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:46.826692"], ["destination_id", 294], ["created_at", "2016-05-04 03:42:46.846896"], ["updated_at", "2016-05-04 03:42:46.846896"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/260" for 127.0.0.1 at 2016-05-03 21:42:46 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"260"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 260]]
+  Rendered packages/show.html.erb within layouts/application (2.9ms)
+  [1m[36mDestination Load (0.4ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (52.4ms)
+Completed 500 Internal Server Error in 525ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-182xtai.jpg'
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:42:47.416454"], ["updated_at", "2016-05-04 03:42:47.416454"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-1nhjej5.jpg'
+  [1m[36mPackage Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "luxury package"], ["price", "3000.0"], ["description", "description3"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:47.400776"], ["destination_id", 295], ["created_at", "2016-05-04 03:42:47.433657"], ["updated_at", "2016-05-04 03:42:47.433657"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-fijv9r.jpg'
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Venus"], ["created_at", "2016-05-04 03:42:47.458503"], ["updated_at", "2016-05-04 03:42:47.458503"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66655-hltckc.jpg'
+  [1m[36mPackage Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "adventure package"], ["price", "4000.0"], ["description", "description4"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:42:47.443362"], ["destination_id", 296], ["created_at", "2016-05-04 03:42:47.475579"], ["updated_at", "2016-05-04 03:42:47.475579"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/261" for 127.0.0.1 at 2016-05-03 21:42:47 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"261"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 261]]
+  Rendered packages/show.html.erb within layouts/application (0.8ms)
+  [1m[36mDestination Load (0.3ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (31.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:44:40.252357"], ["updated_at", "2016-05-04 03:44:40.252357"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$g9baBFmK1b6KOeyUHbdM/.zgq00hRCyTWrcuYyk5eVBh3jHFrzWzu"], ["created_at", "2016-05-04 03:44:40.274601"], ["updated_at", "2016-05-04 03:44:40.274601"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 270], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:44:40.280825"], ["updated_at", "2016-05-04 03:44:40.280825"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-1y47xuj.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:44:40.306341"], ["updated_at", "2016-05-04 03:44:40.306341"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-wi4me0.jpg'
+  [1m[35mPackage Exists (0.4ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:44:40.295277"], ["destination_id", 298], ["created_at", "2016-05-04 03:44:40.317922"], ["updated_at", "2016-05-04 03:44:40.317922"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$4NWdPX6nvx2U/2skIiigYexH3Bo2gBHLn8/DRnrrk8r1t3la/y6WC"], ["created_at", "2016-05-04 03:44:40.325653"], ["updated_at", "2016-05-04 03:44:40.325653"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-1fwcm6n.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:44:40.340689"], ["updated_at", "2016-05-04 03:44:40.340689"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-1tr2qj0.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "basic package"], ["price", "2000.0"], ["description", "description2"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:44:40.331147"], ["destination_id", 299], ["created_at", "2016-05-04 03:44:40.350729"], ["updated_at", "2016-05-04 03:44:40.350729"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/264" for 127.0.0.1 at 2016-05-03 21:44:40 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"264"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 264]]
+  Rendered packages/show.html.erb within layouts/application (2.6ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.8ms)
+  Rendered layouts/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 451ms (Views: 435.3ms | ActiveRecord: 0.4ms)
+Started POST "/trip_packages?package_id=264" for 127.0.0.1 at 2016-05-03 21:44:40 -0600
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-1rsbw2x.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Mars"], ["created_at", "2016-05-04 03:44:40.845011"], ["updated_at", "2016-05-04 03:44:40.845011"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-168dg9y.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "luxury package"], ["price", "3000.0"], ["description", "description3"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:44:40.835772"], ["destination_id", 300], ["created_at", "2016-05-04 03:44:40.854670"], ["updated_at", "2016-05-04 03:44:40.854670"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-1egtsp7.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Venus"], ["created_at", "2016-05-04 03:44:40.873206"], ["updated_at", "2016-05-04 03:44:40.873206"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66684-1ep5eoo.jpg'
+  [1m[36mPackage Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "adventure package"], ["price", "4000.0"], ["description", "description4"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:44:40.862194"], ["destination_id", 301], ["created_at", "2016-05-04 03:44:40.884053"], ["updated_at", "2016-05-04 03:44:40.884053"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/265" for 127.0.0.1 at 2016-05-03 21:44:40 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"265"}
+  [1m[35mPackage Load (0.3ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 265]]
+  Rendered packages/show.html.erb within layouts/application (0.9ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.5ms)
+Started POST "/trip_packages?package_id=265" for 127.0.0.1 at 2016-05-03 21:44:40 -0600
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.6ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (3.4ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:47:49.831359"], ["updated_at", "2016-05-04 03:47:49.831359"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User1' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User1"], ["email", "email1"], ["password_digest", "$2a$04$AVbxbIua1nXCr7Umhiu/BeOcuQFjU8MiFuGSDVIkmOB.5SanvhMVK"], ["created_at", "2016-05-04 03:47:49.858972"], ["updated_at", "2016-05-04 03:47:49.858972"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "orders" ("user_id", "status", "total_cost", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 272], ["status", 1], ["total_cost", "3000.0"], ["created_at", "2016-05-04 03:47:49.865544"], ["updated_at", "2016-05-04 03:47:49.865544"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-1inxb1c.jpg'
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.2ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:47:49.893296"], ["updated_at", "2016-05-04 03:47:49.893296"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-9m1pp2.jpg'
+  [1m[35mPackage Exists (0.4ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'explore package' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "explore package"], ["price", "1000.0"], ["description", "description1"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:47:49.880472"], ["destination_id", 303], ["created_at", "2016-05-04 03:47:49.905287"], ["updated_at", "2016-05-04 03:47:49.905287"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'User2' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'email2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "User2"], ["email", "email2"], ["password_digest", "$2a$04$sM2Gfzw0syfOapxl/DPRXOIo6/KA4wvFthCYEJbv4920AGFw2n/Xe"], ["created_at", "2016-05-04 03:47:49.912692"], ["updated_at", "2016-05-04 03:47:49.912692"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-w4nb66.jpg'
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mDestination Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Jupiter' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["planet", "Jupiter"], ["created_at", "2016-05-04 03:47:49.927100"], ["updated_at", "2016-05-04 03:47:49.927100"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-67g6bx.jpg'
+  [1m[36mPackage Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'basic package' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "basic package"], ["price", "2000.0"], ["description", "description2"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:47:49.917584"], ["destination_id", 304], ["created_at", "2016-05-04 03:47:49.937229"], ["updated_at", "2016-05-04 03:47:49.937229"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/packages/268" for 127.0.0.1 at 2016-05-03 21:47:49 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"268"}
+  [1m[35mPackage Load (0.2ms)[0m  SELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1  [["id", 268]]
+  Rendered packages/show.html.erb within layouts/application (2.8ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.8ms)
+  Rendered layouts/_flash.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 492ms (Views: 476.9ms | ActiveRecord: 0.4ms)
+Started POST "/trip_packages?package_id=268" for 127.0.0.1 at 2016-05-03 21:47:50 -0600
+Processing by TripPackagesController#show as HTML
+  Parameters: {"package_id"=>"268"}
+  Rendered trip_packages/show.html.erb within layouts/application (0.8ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-1eb2598.jpg'
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Mars' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Mars"], ["created_at", "2016-05-04 03:47:50.506884"], ["updated_at", "2016-05-04 03:47:50.506884"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-4hc6y3.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'luxury package' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "luxury package"], ["price", "3000.0"], ["description", "description3"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:47:50.497153"], ["destination_id", 305], ["created_at", "2016-05-04 03:47:50.517272"], ["updated_at", "2016-05-04 03:47:50.517272"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-14n0etj.jpg'
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mDestination Exists (0.3ms)[0m  SELECT  1 AS one FROM "destinations" WHERE "destinations"."planet" = 'Venus' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("planet", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["planet", "Venus"], ["created_at", "2016-05-04 03:47:50.532196"], ["updated_at", "2016-05-04 03:47:50.532196"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+Command :: file -b --mime '/var/folders/qx/dznxjnvj15qdtf1z2k0znkc00000gn/T/1f58409a4b7666285f40d32a4860fc5920160503-66720-r9runv.jpg'
+  [1m[35mPackage Exists (0.3ms)[0m  SELECT  1 AS one FROM "packages" WHERE "packages"."title" = 'adventure package' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "packages" ("title", "price", "description", "image_file_name", "image_content_type", "image_file_size", "image_updated_at", "destination_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "adventure package"], ["price", "4000.0"], ["description", "description4"], ["image_file_name", "people_1.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 30916], ["image_updated_at", "2016-05-04 03:47:50.522945"], ["destination_id", 306], ["created_at", "2016-05-04 03:47:50.544597"], ["updated_at", "2016-05-04 03:47:50.544597"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/packages/269" for 127.0.0.1 at 2016-05-03 21:47:50 -0600
+Processing by PackagesController#show as HTML
+  Parameters: {"id"=>"269"}
+  [1m[36mPackage Load (0.2ms)[0m  [1mSELECT  "packages".* FROM "packages" WHERE "packages"."id" = $1 LIMIT 1[0m  [["id", 269]]
+  Rendered packages/show.html.erb within layouts/application (0.9ms)
+  [1m[35mDestination Load (0.2ms)[0m  SELECT "destinations".* FROM "destinations"
+  Rendered layouts/_nav.html.erb (0.9ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+Started POST "/trip_packages?package_id=269" for 127.0.0.1 at 2016-05-03 21:47:50 -0600
+Processing by TripPackagesController#show as HTML
+  Parameters: {"package_id"=>"269"}
+  Rendered trip_packages/show.html.erb within layouts/application (0.0ms)
+  [1m[36mDestination Load (0.2ms)[0m  [1mSELECT "destinations".* FROM "destinations"[0m
+  Rendered layouts/_nav.html.erb (1.0ms)
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK

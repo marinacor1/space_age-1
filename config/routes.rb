@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'destroy#users'
   get '/:planet', to: 'destinations#show', as: :destination
+  get '/trip_packages', to: 'trip_packages#show'
+  post '/trip_packages', to: 'trip_packages#show'
   # get '/packages/:id', to: 'packages#show'
   # patch '/users/:id', to: 'users#update'
   # put '/users/:id', to: 'users#update'
